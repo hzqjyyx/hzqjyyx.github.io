@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Python,TensorFlow," />
+
+
+<meta name="description" content="备注：必做或强烈推荐阅读的网址，会有标识：eg： 推荐阅读 前言最近准备学习神经网络，尝试搭建了各个库，最后选择了TensorFlow。期间遇到大量问题，所幸通过Google一一解决，现留做记录。 说来到是不难，只是非常繁杂，希望这份记录能让新入门的朋友或者等我以后换一台电脑的时候有所帮助 :) 为什么要使用TensorFlow首先列出来目前非常火的几个深度学习的平台  TensorFlow">
+<meta name="keywords" content="Python,TensorFlow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何搭建深度学习平台：Python, TensorFlow">
+<meta property="og:url" content="https://hzqjyyx.github.io/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="备注：必做或强烈推荐阅读的网址，会有标识：eg： 推荐阅读 前言最近准备学习神经网络，尝试搭建了各个库，最后选择了TensorFlow。期间遇到大量问题，所幸通过Google一一解决，现留做记录。 说来到是不难，只是非常繁杂，希望这份记录能让新入门的朋友或者等我以后换一台电脑的时候有所帮助 :) 为什么要使用TensorFlow首先列出来目前非常火的几个深度学习的平台  TensorFlow">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/200738301.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/200715662.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/200906197.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/193825010.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/195404263.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/195158903.png?imageslim">
+<meta property="og:updated_time" content="2017-05-13T11:40:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何搭建深度学习平台：Python, TensorFlow">
+<meta name="twitter:description" content="备注：必做或强烈推荐阅读的网址，会有标识：eg： 推荐阅读 前言最近准备学习神经网络，尝试搭建了各个库，最后选择了TensorFlow。期间遇到大量问题，所幸通过Google一一解决，现留做记录。 说来到是不难，只是非常繁杂，希望这份记录能让新入门的朋友或者等我以后换一台电脑的时候有所帮助 :) 为什么要使用TensorFlow首先列出来目前非常火的几个深度学习的平台  TensorFlow">
+<meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/200738301.png?imageslim">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>如何搭建深度学习平台：Python, TensorFlow | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何搭建深度学习平台：Python, TensorFlow</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-07T15:24:49-07:00">2017-04-07</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/" class="leancloud_visitors" data-flag-title="如何搭建深度学习平台：Python, TensorFlow">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>备注</strong>：必做或强烈推荐阅读的网址，会有<i class="fa fa-hand-o-right"></i>标识：<br>eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推荐阅读</a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近准备学习神经网络，尝试搭建了各个库，最后选择了TensorFlow。期间遇到大量问题，所幸通过Google一一解决，现留做记录。</p>
+<p>说来到是不难，只是非常繁杂，希望这份记录能让新入门的朋友或者等我以后换一台电脑的时候有所帮助 :)</p>
+<h1 id="为什么要使用TensorFlow"><a href="#为什么要使用TensorFlow" class="headerlink" title="为什么要使用TensorFlow"></a>为什么要使用TensorFlow</h1><p>首先列出来目前非常火的几个深度学习的平台</p>
+<ul>
+<li>TensorFlow  </li>
+<li>Theano  </li>
+<li>Caffe  </li>
+<li>Caffe2  </li>
+<li>Matlab  </li>
+<li>Keras  </li>
+<li>待补充  </li>
+</ul>
+<p>还有非常多的可选项，自然，由于诞生时间，针对的细分领域不同，都有各自的优势、劣势。<br>下面引用CS231n的PPT简要说明，还有很多我也不太了解，希望大家在下面补充。</p>
+<a id="more"></a>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/200738301.png?imageslim" alt="mark"></p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/200715662.png?imageslim" alt="mark"></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="版本要求"><a href="#版本要求" class="headerlink" title="版本要求"></a>版本要求</h3><p>TensorFlow要求Python版本为2.7.X或者3.5.X，注意不要下载错误<br><i class="fa fa-hand-o-right"></i><a href="https://www.python.org/downloads/release/python-352/" target="_blank" rel="noopener">Python 3.5安装</a></p>
+<p><strong>注意</strong> ：特别要注意选上<code>pip</code>和<code>Add python.exe to Path</code>，然后一路点“Next”即可完成安装。<br>最好安装完以后，更新一下pip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 查看Python版本</span><br><span class="line">python -V</span><br><span class="line"># 查看pip版本</span><br><span class="line">pip -V</span><br><span class="line"># 如果前两步除了问题，就是Python或Pip没有安装好，请重新安装</span><br><span class="line"># 更新Pip</span><br><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参见<a href="http://docs.python-guide.org/en/latest/" target="_blank" rel="noopener">Python安装指南</a></p>
+</blockquote>
+<h3 id="VirtualEnv-强烈推荐"><a href="#VirtualEnv-强烈推荐" class="headerlink" title="VirtualEnv 强烈推荐"></a><i class="fa fa-hand-o-right"></i>VirtualEnv <code>强烈推荐</code></h3><p>VirtualEnv是一个可以让你的电脑上同时存在多个不同版本的Python的工具，人这一生，总会遇到有的项目需要Python3，有的项目只支持Python2，比如奇怪的TensorFlow就支持Python3.5，我当时Python是3.6，难道要为这种事情再买一台电脑么！（当然可以）VirtualEnv在这种情况下就是救星。</p>
+<p>VirtualEnv相当于在某个目录下重新安装了一个Python，并且可以把需要安装的库只安装在这个项目里面，保持整台电脑的整洁，可控。</p>
+<p>下面介绍一下使用方法</p>
+<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br><span class="line"># 测试版本</span><br><span class="line">virtualenv --version</span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd my_project_folder</span><br><span class="line">virtualenv my_project</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>virtualenv my_project</code> will create a folder in the current directory which will contain the Python executable files, and a copy of the <code>pip</code> library which you can use to install other packages. The name of the virtual environment (in this case, it was <code>my_project</code>) can be anything.</p>
+<p><code>virtualenv my_project</code> 会在当前目录下创建一个包含了Python可执行文件, 一份 <code>pip</code> 库的拷贝. 虚拟环境的名字(在此例中，为 <code>my_project</code>) 可以随意命名。</p>
+</blockquote>
+<p>创建完是这个样子：</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/200906197.png?imageslim" alt="mark"></p>
+<h4 id="特别的"><a href="#特别的" class="headerlink" title="特别的"></a>特别的</h4><p>默认创建的Python版本是<code>python</code>命令所使用的版本。比如你在命令行中输入<code>python -V</code>出来的是2.7，则默认也会使用Python 2.7做解释器。如果你希望指定Python版本，有三种办法。</p>
+<ol>
+<li>使用文件全路径</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p /usr/bin/python2.7 my_project</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用别名</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p python3 my_project</span><br></pre></td></tr></table></figure>
+<ol>
+<li>修改全局环境变量</li>
+</ol>
+<h4 id="启用VirtualEnv"><a href="#启用VirtualEnv" class="headerlink" title="启用VirtualEnv"></a>启用VirtualEnv</h4><p>在Mac或Linux下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source my_project/bin/activate</span><br></pre></td></tr></table></figure>
+<p>在Windows下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd my_project</span><br><span class="line">.\Scripts\activate</span><br></pre></td></tr></table></figure>
+<h4 id="停用VirtualEnv"><a href="#停用VirtualEnv" class="headerlink" title="停用VirtualEnv"></a>停用VirtualEnv</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+<h4 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h4><p>Windows下VirtualEnv好像有问题，如果用到GUI的时候，会报错，类似以下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import Tkinter</span><br><span class="line">Tkinter._test()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File &quot;&quot;, line 1, in </span><br><span class="line">File &quot;C:\Python26\Lib\lib-tk\Tkinter.py&quot;, line 3749, in _test</span><br><span class="line">root = Tk()</span><br><span class="line">File &quot;C:\Python26\Lib\lib-tk\Tkinter.py&quot;, line 1643, in init</span><br><span class="line">self.tk = _tkinter.create(screenName, baseName, className, interactive, want</span><br><span class="line">objects, useTk, sync, use)</span><br><span class="line">_tkinter.TclError: Can&apos;t find a usable init.tcl in the following directories:</span><br><span class="line">C:/Python26/lib/tcl8.5 H:/testvirtualenv/lib/tcl8.5 H:/lib/tcl8.5 H:/testvir</span><br><span class="line">tualenv/library H:/library H:/tcl8.5.2/library H:/tcl8.5.2/library</span><br></pre></td></tr></table></figure>
+<p>我把C:/Python27文件夹下的tcl文件夹整个拷贝到了virtualenv的文件夹下解决了该问题。</p>
+<p>拷贝完成后：</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/193825010.png?imageslim" alt="mark"></p>
+<p>在Github上找到了其他的解决办法，大家可以尝试一下</p>
+<p><a href="https://github.com/pypa/virtualenv/issues/93" target="_blank" rel="noopener">Tcl doesn’t work inside a virtualenv on Windows</a></p>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>强烈推荐使用PyCharm</p>
+<p>推荐原因：</p>
+<ol>
+<li><p>有代码高亮，自动补全，跳转，错误提醒等现代IDE该有的功能</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/195404263.png?imageslim" alt="mark"></p>
+</li>
+<li><p>可以使用<strong>图形化方式创建VirtualEnv，图形化方式安装库</strong>（File-Settings-Project-Project Interpreter)</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/195158903.png?imageslim" alt="mark"></p>
+</li>
+<li><p>项目组织更容易</p>
+</li>
+</ol>
+<h2 id="依赖库"><a href="#依赖库" class="headerlink" title="依赖库"></a>依赖库</h2><h3 id="Numpy，Scipy和Matplotlib"><a href="#Numpy，Scipy和Matplotlib" class="headerlink" title="Numpy，Scipy和Matplotlib"></a>Numpy，Scipy和Matplotlib</h3><h4 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h4><blockquote>
+<p>NumPy is the fundamental package for scientific computing with Python. It contains among other things:</p>
+<ul>
+<li>a powerful N-dimensional array object</li>
+<li>sophisticated (broadcasting) functions</li>
+<li>tools for integrating C/C++ and Fortran code</li>
+<li>useful linear algebra, Fourier transform, and random number capabilities</li>
+</ul>
+<p>Numpy是Python科学计算的基础库，包含了以下功能：</p>
+<ul>
+<li>强大的N维数组</li>
+<li>完善的broadcasting功能（broadcast真的很厉害）</li>
+<li>包含用来集成C/C++和Fortran代码的工具</li>
+<li>有用的线性代数，傅里叶变换，随机数等工具</li>
+</ul>
+</blockquote>
+<p>Numpy的安装非常简单</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+<h4 id="Scipy"><a href="#Scipy" class="headerlink" title="Scipy"></a>Scipy</h4><blockquote>
+<p>The SciPy library is one of the core packages that make up the SciPy stack. It provides many user-friendly and efficient numerical routines such as routines for numerical integration and optimization.</p>
+<p>SciPy library是SciPy stack的核心包，提供了很多用户友好，高效的数值计算和优化。</p>
+</blockquote>
+<p>SciPy安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scipy</span><br></pre></td></tr></table></figure>
+<h4 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h4><blockquote>
+<p>Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and <i class="fa fa-hand-o-right"></i><a href="http://ipython.org/" target="_blank" rel="noopener">IPython</a> shell, the <a href="http://jupyter.org/index.html" target="_blank" rel="noopener">jupyter</a> notebook, web application servers, and four graphical user interface toolkits.</p>
+<p>Matplotlib是一个Python的2D绘图库，提供了多格式的用于出版质量的图像绘制以及跨平台的交互环境。Matplotlib可以用于Python脚本和IPython shell， the jupyter notebook，web应用服务器，and four graphical user interface toolkits。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
+<h4 id="Windows平台安装略有不同"><a href="#Windows平台安装略有不同" class="headerlink" title="Windows平台安装略有不同"></a>Windows平台安装略有不同</h4><p>windows下如果直接安装，SciPy会报错，所以需要下载Pre-Build的package，采用本地安装，切记切记。</p>
+<ol>
+<li><p>首先访问<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="noopener">Library</a>，找到numpy和scipy并下载，一定要匹配好Python的版本和本机的版本。</p>
+</li>
+<li><p>使用命令行，进入下载目录</p>
+</li>
+<li><p>使用Pip进行本地安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 文件名换成你自己下载的文件名</span><br><span class="line">pip install &apos;numpy‑1.12.1+mkl‑cp35‑cp35m‑win_amd64.whl&apos;</span><br><span class="line">pip install &apos;scipy‑0.19.0‑cp35‑cp35m‑win_amd64.whl&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Matplotlib不需要特殊对待</p>
+<h1 id="安装TensorFlow"><a href="#安装TensorFlow" class="headerlink" title="安装TensorFlow"></a>安装TensorFlow</h1><p><a href="https://www.tensorflow.org" target="_blank" rel="noopener"><i class="fa fa-hand-o-right"></i>点击查看TensorFlow官网</a></p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>[1]Unofficial Windows Binaries for Python Extension Packages<br><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy" target="_blank" rel="noopener">http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy</a><br>[2]TensorFlow官网<br>[3]CS231n <a href="http://vision.stanford.edu/teaching/cs231n/project.html" target="_blank" rel="noopener">http://vision.stanford.edu/teaching/cs231n/project.html</a><br>[4]Python安装指南 <a href="http://docs.python-guide.org/en/latest/" target="_blank" rel="noopener">http://docs.python-guide.org/en/latest/</a><br>[5]Tcl doesn’t work <a href="https://github.com/pypa/virtualenv/issues/93" target="_blank" rel="noopener">https://github.com/pypa/virtualenv/issues/93</a><br>[6]SciPy Stack <a href="https://www.scipy.org/install.html" target="_blank" rel="noopener">https://www.scipy.org/install.html</a>  </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/推荐网页/" rel="next" title="推荐网页">
+                <i class="fa fa-chevron-left"></i> 推荐网页
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/如何免费搭建个人博客/" rel="prev" title="如何免费搭建个人博客">
+                如何免费搭建个人博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要使用TensorFlow"><span class="nav-number">2.</span> <span class="nav-text">为什么要使用TensorFlow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#版本要求"><span class="nav-number">3.1.1.</span> <span class="nav-text">版本要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualEnv-强烈推荐"><span class="nav-number">3.1.2.</span> <span class="nav-text">VirtualEnv 强烈推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-1"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特别的"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">特别的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用VirtualEnv"><span class="nav-number">3.1.2.4.</span> <span class="nav-text">启用VirtualEnv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#停用VirtualEnv"><span class="nav-number">3.1.2.5.</span> <span class="nav-text">停用VirtualEnv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#备注"><span class="nav-number">3.1.2.6.</span> <span class="nav-text">备注</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE"><span class="nav-number">3.1.3.</span> <span class="nav-text">IDE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖库"><span class="nav-number">3.2.</span> <span class="nav-text">依赖库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Numpy，Scipy和Matplotlib"><span class="nav-number">3.2.1.</span> <span class="nav-text">Numpy，Scipy和Matplotlib</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">Numpy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scipy"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">Scipy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Matplotlib"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">Matplotlib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows平台安装略有不同"><span class="nav-number">3.2.1.4.</span> <span class="nav-text">Windows平台安装略有不同</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装TensorFlow"><span class="nav-number">4.</span> <span class="nav-text">安装TensorFlow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">5.</span> <span class="nav-text">引用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/';
+        this.page.identifier = '2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/';
+        this.page.title = '如何搭建深度学习平台：Python, TensorFlow';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ebkw82HKvG8gVHMVNdhYwTXH-gzGzoHsz", "HHUiCQCiKnzUn96uwRxbES4x");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

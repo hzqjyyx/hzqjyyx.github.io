@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Machine Learning,Paper,Translation," />
+
+
+<meta name="description" content="A Few Useful Things to Know about Machine LearningPedro DomingosDepartment of Computer Science and EngineeringUniversity of WashingtonSeattle, WA 98195-2350, U.S.A.*pedrod@cs.washington.edu*   摘要机器学习算">
+<meta name="keywords" content="Machine Learning,Paper,Translation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习：一些需要知道的知识-论文翻译">
+<meta property="og:url" content="https://hzqjyyx.github.io/2017/05/机器学习：一些需要知道的知识-论文翻译/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="A Few Useful Things to Know about Machine LearningPedro DomingosDepartment of Computer Science and EngineeringUniversity of WashingtonSeattle, WA 98195-2350, U.S.A.*pedrod@cs.washington.edu*   摘要机器学习算">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/094633368.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/100533172.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/100829781.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/104517177.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/104557564.png?imageslim">
+<meta property="og:updated_time" content="2017-05-13T11:35:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习：一些需要知道的知识-论文翻译">
+<meta name="twitter:description" content="A Few Useful Things to Know about Machine LearningPedro DomingosDepartment of Computer Science and EngineeringUniversity of WashingtonSeattle, WA 98195-2350, U.S.A.*pedrod@cs.washington.edu*   摘要机器学习算">
+<meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/094633368.png?imageslim">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2017/05/机器学习：一些需要知道的知识-论文翻译/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>机器学习：一些需要知道的知识-论文翻译 | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/05/机器学习：一些需要知道的知识-论文翻译/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习：一些需要知道的知识-论文翻译</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-11T21:10:49-07:00">2017-05-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/机器学习：一些需要知道的知识-论文翻译/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/机器学习：一些需要知道的知识-论文翻译/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/机器学习：一些需要知道的知识-论文翻译/" class="leancloud_visitors" data-flag-title="机器学习：一些需要知道的知识-论文翻译">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="A-Few-Useful-Things-to-Know-about-Machine-Learning"><a href="#A-Few-Useful-Things-to-Know-about-Machine-Learning" class="headerlink" title="A Few Useful Things to Know about Machine Learning"></a>A Few Useful Things to Know about Machine Learning</h1><p><em>Pedro Domingos</em><br><em>Department of Computer Science and Engineering</em><br><em>University of Washington</em><br><em>Seattle, WA 98195-2350, U.S.A.</em><br><a href="mailto:*pedrod@cs.washington.edu" target="_blank" rel="noopener">*pedrod@cs.washington.edu</a>*  </p>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>机器学习算法可以从训练集中泛化（generalize），自动编程完成重要任务。对于手动编程来说，这通常是不可行和高成本的。随着时代发展，我们可以获得更多的数据，可以解决更多的困难的问题。因此，机器学习被广泛应用于计算机科学等领域。然而，开发成功的机器学习应用程序需要大量的“black art”，这些东西在教科书中很难找到的。本文总结了机器学习研究人员和从业人员学到的12个关键点。这些包括要避免的陷阱，重点关注的问题和常见问题的答案。</p>
+<a id="more"></a>
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>机器学习系统自动从数据中学习。这通常是非常有吸引力的替代手动构建程序的方案，而在过去十年中，机器学习在计算机领域和其他领域都迅速普及开来。机器学习用于网络搜索，垃圾邮件过滤器，推荐系统，广告布置，信用评分，欺诈检测，股票交易，药物设计和许多其他应用程序。麦肯锡全球研究院最近的一份报告称，机器学习（即数据挖掘或预测分析）将成为下一轮创新浪潮的驱动力[16]。对此有兴趣的从业人员和研究人员能够买到几本精美的教科书（例如[17,25]）。然而，成功开发机器学习应用程序所需的大部分诀窍并不能轻易地从众获得。因此，许多机器学习项目花费了远超必要的时间，或者无法产生理想的结果。然而，很多这样的诀窍相当容易传授。这是本文的目的。</p>
+<p>当前存在许多不同类型的机器学习，但是为了便于说明，我将重点关注最成熟和广泛使用的一个：分类（Classification）。然而，我将讨论的问题适用于所有的机器学习。分类器（Classifier）是输入（通常）离散和/或连续特征向量（Feature values）的系统，并输出单个<del>差分值</del>（Class）。例如，垃圾邮件过滤器将电子邮件分类为“垃圾邮件”或“非垃圾邮件”，其输入可能是布尔向量$x = (x_1, …, x_j, …, x_d)$，其中，如果字典中的第j个字出现在电子邮件中$x_j = 1$，否则为$x_j = 0$。学习器输入一组训练集$(x_i, y_i)$，其中$x_i =(x_{i,1} ,…, x_{i,d})$是可观测的输入，$y_i$是相应的输出，学习器最终会输出分类器。对学习器的测试是这种分类器对于不在测试集中的数据$x_t$是否产生正确输出$y_t$（例如，垃圾邮件过滤器是否将以前没见过的电子邮件正确地分类为垃圾邮件或非垃圾邮件）。</p>
+<h1 id="学习-表示-评估-优化"><a href="#学习-表示-评估-优化" class="headerlink" title="学习=表示+评估+优化"></a>学习=表示+评估+优化</h1><p>假设你有一个应用程序，并且认为机器学习对此可能是有益的。那你将面临的第一个问题是令人困惑的大量的学习算法。应该使用哪一个？当前有几千种可用，而且每年仍会出版数百种。在这个巨大的空间中不迷失的<strong>关键</strong>是意识到它只包含<strong>三个组件</strong>的组合。组件是：</p>
+<ul>
+<li><strong>表示：</strong>分类器必须用计算机可以处理的某种形式语言来表示。相反，选择一个学习器的表示就是选择一组它（即学习器）可能生成的分类器。这个集合被称为学习器的假设空间（hypothesis space）。如果分类器不在假设空间中，则无法学习出该分类器。一个相关的问题是如何表示输入，例如，使用什么特征表示。我们将在稍后的一节中讨论。</li>
+<li><strong>评估：</strong>需要一个评估函数（也称为目标函数或评分函数）来区分好的分类器和坏的分类器。算法内部使用的评估函数可能与我们希望分类器优化的外部评估函数不同，外部评估函数用于优化（见下文）以及处理下一节将讨论的问题。</li>
+<li><strong>优化：</strong>最后，我们需要一种方法来在分类器中搜索最高分。优化技术的选择是学习器效率的关键，也有助于确定分类器的结果（如果评估函数具有多于一个最优值）。新的学习器通常会在开始使用现成的优化器，之后会用定制设计的优化器替代。</li>
+</ul>
+<img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/094633368.png?imageslim" title="表1：学习算法的三个组成部分。">
+<p>表1显示了这三个组件中的常见示例。例如，k最近邻通过查找k个最相似的训练样本并预测其中的大多数类来分类测试示例。基于超平面的方法形成每个类的特征的线性组合，并预测具有最高值组合的类。决策树在每个内部节点测试一个特征，每个特征值都有一个分支，并且在叶上有类预测。算法1显示了使用信息增益（information gain）和贪心搜索（greedy search）的布尔域（Boolean domain）的简单的决策树学习器[21]。 $InfoGain(x_j，y)$是特征$x_j$和分类$y$之间的相互信息。 $MakeNode (x，c_0，c_1)$返回一个测试特征$x$并将$c_0$作为$x = 0$的子节点，$c_1$作为$x = 1$的子节点。</p>
+<img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/100533172.png?imageslim" width="400" title="算法1">
+<p>当然，并非表1的每一列的一个组件的所有组合都是一样的。例如，离散的表示自然就是组合优化，连续的表示配有连续优化。然而，许多学习器都有离散的和连续的组件。实际上，<del>当每一个可能的组合出现在一些学习器这一天可能不是很远</del>！</p>
+<p>大多数教科书是通过表示来组织的，容易忽视其他组件同样重要的事实。没有选择每个组件的简单方法，但下一节将介绍一些关键问题。而且，正如我们将在下面看到的，机器学习项目中的一些选择可能比学习器的选择更为重要。</p>
+<h1 id="泛化最重要"><a href="#泛化最重要" class="headerlink" title="泛化最重要"></a>泛化最重要</h1><p>机器学习的基本目标是泛化训练集。这是因为，无论我们有多少数据，我们不太可能在测试时再次看到这些确切的例子。（例如，如果字典中有10万个字，则上述垃圾邮件过滤器可能有不同的输入可能有$2^{100,00}$个。）在训练集上做得很好非常简单（比如只是简单的记住训练集）。机器学习初学者最常见的错误是对训练数据进行测试，并有一种已经成功的幻想。如果用这样的分类器对新数据进行测试，通常不会比随机猜测更好。所以，如果你雇用一个人建立一个分类器，一定要保留一些数据给自己，并测试他们给你的分类器。相反，如果您已经被雇用来构建分类器，请在第一开始预留一些数据，并且仅在最后使用它来测试您选择的分类器，然后在整个数据上学习最终的分类器。</p>
+<p>测试数据对您的分类器的污染可能以一种微妙的方式发生，例如，如果您使用测试数据来调整参数并进行大量微调。 （机器学习算法有很多小部分，成功通常来自于微调他们，所以这是一个实际中很常见的情况。）当然，保留数据用于测试减少了可用的训练数据量。这可以通过交叉验证（Cross-Validation）来缓解：将训练数据随机分为（例如）十个子集，保留其中一个，同时训练其余的，使用未参加训练的示例测试分类器，并计算平均结果看特定参数设置的效果如何。</p>
+<p>在机器学习的早期阶段，不需要特别分开训练和测试数据。这是因为，如果学习器的表达非常有限（例如超平面），训练和测试错误之间的差异可能不大。但是使用非常灵活的分类器（例如决策树），或者甚至具有很多特征的线性分类器，必须严格分离。</p>
+<p>请注意，以泛化为目标才会给机器学习带来有意义的结果。与大多数其他优化问题不同，我们不能获取到我们要优化的函数！我们必须使用训练错误作为测试错误的近似替代，这充满危险。下一节将介绍如何处理它。从积极的角度来看，由于目标函数只是真正目标的代理，我们可能不需要对其进行全面优化；实际上，通过简单的贪心搜索返回的局部最优可能比全局最优更好。</p>
+<h1 id="数据本身还不够"><a href="#数据本身还不够" class="headerlink" title="数据本身还不够"></a>数据本身还不够</h1><p>以泛化作为目标还有一个重大影响：数据本身还不够，无论你有多少。考虑我们现在需要构建一个布尔函数，打算从一百万个例子中学习100个变量。你所缺失个数据。你怎么弄清楚那些数据对应的分类？在没有进一步的信息的情况下，这样做还不如抛一枚硬币。哲学家大卫·休谟（David Hume）在200多年前首先做了这个观察（有点不一样），但即使在今天，机器学习中的许多错误都源自于不了解它。每个学习器必须包含一些超出它所提供的数据之外的知识或假设，以便做泛化。这是由Wolpert在他着名的“no free lunch’定理提出的，根据该定理，没有学习器可以随意猜测所有可能的学习功能[26]。</p>
+<p>这似乎是令人沮丧的消息。我们怎么能希望学习任何事情呢？幸运的是，我们要在现实世界中学习的功能_不是_从所有数学上可能的功能集合中得出来的！事实上，非常普遍的假设通常足以做得很好——<del>例如稳定，相似的例子有相似的分类，，有限的依赖性或有限的复杂性</del>，这是为什么机器学习如此成功的一大原因。像推演，归纳（学习器所做的）是一个知识杠杆：它将少量的输入知识转化为大量的知识。归纳是比推演更强大的杠杆，需要更少的知识来产生有用的结果，但是它仍然需要大于零的输入知识来工作。而且，与任何杠杆一样，我们投入的越多，我们越能够得到。</p>
+<p>一个推论是，选择表示的关键标准之一是哪种知识在其中很容易表达出来。例如，如果我们有很多关于什么使我们的域中的示例相似的知识，基于实例的方法可能是一个不错的选择。如果我们了解概率依赖关系，图形模型是一个很好的契合。如果我们知道每个类，”IF需要什么样的前提条件。 。 。然后 。 。 ‧规则可能是最好的选择。在这方面，最有用的学习器是那些没有假设硬连线的学习器，但允许我们明确地说明它们，并将它们广泛地变化，并将它们自动地并入到学习中（例如，使用一阶逻辑[ 22]或语法[6]）。</p>
+<p>回想起来，学习知识的需要不应该</p>
+<p>即使真正的分类器</p>
+<p>令人惊讶机器学习不是魔术;它可以从没有任何东西得到东西。它做的是从更少的更多。编程与所有工程类似，都有很多工作：我们必须从头开始构建一切。学习更像是农业，让自然做大部分工作。农民将种子与营养物质结合起来种植作物。学习器将知识与数据结合起来，以增加程序。</p>
+<h1 id="过拟合有多个面孔"><a href="#过拟合有多个面孔" class="headerlink" title="过拟合有多个面孔"></a>过拟合有多个面孔</h1><p>如果我们拥有的知识和数据不足以训练出正确的分类器该怎么办？那么我们会训练出一个不依赖现实的分类器（或其中的一部分不依赖显示），而且只是在数据中随机编码误差。这个问题叫过拟合（overfitting）。是机器学习的bug。 当您的学习器输出一个对训练集是100％准确的分类器，但在测试数据上只有50％的准确度，实际上它可以输出一个在两者上都是75％准确的，它过拟合了。</p>
+<p>机器学习中的每个人都知道过拟合，但它有许多形式，不是立即显而易见的。了解过拟合的一种方法是将泛化误差分解为偏差和方差[9]。偏差是一个学习者<br>一贯学习同样错误的东西的倾向。方差是学习事物随机化的倾向，无论实际信号如何。图1通过类似于在板子上投掷飞镖来说明这一点。一个线性学习者有很高的偏差，因为当两个阶级之间的边界不是一个超平面时，学习者就不能诱导它。决策树没有这个问题，因为它们可以表示任何布尔函数，但另一方面它们可能遭受高度差异：由同一现象产生的不同训练集上学到的决策树通常是非常不同的，实际上它们应该是一样的类似的推理适用于优化方法的选择：波束搜索比贪婪搜索具有较低的偏差，但是较高的方差，因为它尝试更多的假设。因此，与直觉相反，更强大的学习者不会比功能较弱的学习者更好。</p>
+<img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/100829781.png?imageslim" title="图1：标靶下的偏差和方差。">
+<p>图2说明了这一点.1即使真正的分类器是一组规则，最多有1000个例子，幼稚贝叶斯比规则学习者更准确。尽管天真的贝叶斯假设前沿是线性的，但这种情况发生了！这样的情况在机器学习中是常见的：强虚假假设可以比弱真实假设更好，因为后者的学习者需要更多的数据来避免过度拟合。</p>
+<p>是一套规则，最多有1000个例子，天真的贝叶斯是<br>比规则学习器更准确。这发生在天真的贝叶斯﹑假的假设边界是线性的！这样的情况在机器学习中是常见的：强虚假假设可以比弱真实假设更好，因为后者的学习器需要更多的数据来避免过度拟合。</p>
+<p>交叉验证可以帮助打击过度装配，例如通过使用它来选择最佳尺寸的决策树来学习。但是它没有灵丹妙药，因为如果我们用它来做太多的参数选择，它本身就可以开始过度[18]。</p>
+<p>除了交叉验证之外，还有许多打击过度配对的方法。最受欢迎的是在评估功能中增加一个正则化词语。例如，这可以惩罚具有更多结构的分类器，从而有利于较小的分类器，具有较少的过度空间。另外一个选择是在添加新的结构之前执行一个统计显着性测试，如卡方，以确定类的分布是否与此结构是否有所不同。当数据非常少时，这些技术特别有用。不过，您应该怀疑一种特定的技术。解决过度配合问题。呃容易避免过度拟合（方差）落入配合（偏置）的反差错误。同时避免两者都需要学习一个完美的分类器，而且事先知道这一点，并不是一直以来都是最好的技术（没有免费的午餐）。</p>
+<p>关于过度配合的一个常见的误解是，它是由噪音引起的，例如标有错误类的训练示例。这可能会加剧过度配戴，使学习器画一个反复无常的前沿，把这些例子保持在正确的位置。但是即使没有噪音也会发生严重的过度拟合。例如，假设我们学习一个布尔分类器，它只是训练集中标记为.true的示例的分离。 （换句话说，分类器是分离正态形式的布尔公式，其中每个项是特定训练样本的特征值的结合）。这个分类器可以获得正确的训练示例和每个正面测试示例的错误，无论训练数据是否有噪音。</p>
+<p>多重测试的问题[14]与过度配合密切相关。标准统计测试假设只有一个假设被测试，但现代学习器可以在完成之前轻松测试数百万。因此，看起来重要的事实上可能不是。例如，连续十年打入市场的共同基金看起来非常令人印象深刻，直到你意识到，如果有1000个基金，而且每个基金在任何一年都有50％的机会跳水，那么它很可能那个人就会幸运地成功了十次。可以通过纠正有意义的测试来考虑假设的数量来解决这个问题，但这可能导致设备不足。一个更好的方法是控制错误接受的非零假设的分数，被称为错误发现率（false discovery rate）[3]。</p>
+<h1 id="高维反人类"><a href="#高维反人类" class="headerlink" title="高维反人类"></a>高维反人类</h1><p>过拟合后，机器学习中最大的问题是维度的诅咒（curse of dimensionality）。这个表达是由贝尔曼在1961年创造的，指的是，当输入是高维的时，许多在低维度上工作正常的算法变得难以实现。但在机器学习中，它的有更多的含义。由于固定尺寸的训练集仅仅覆盖了输入空间的一小部分，所以正确地泛化变得指数级困难，因为数据的维数（特征数）增加。即使是适度的100维和一个有万亿数据量的巨大的训练集，后者仅占投入空间约$10^{-18}$的一小部分。这使得机器学习必要和困难。</p>
+<p>更重要的是，机器学习算法依赖（明确或隐含）的相似性推理在高维度上无法使用。考虑具有汉明距离的最近邻分类器作为相似性度量，并且假设分类只是$x1  \land x2$。如果没有其他特征值，这是一个容易的问题。但是如果有98个不相关的特征$x_3, … , x_{100}$，来自它们的噪声完全遮盖$x_1$和$x_2$的信号，最邻近算法会做随机的预测。</p>
+<p>更令人不安的是，即使所有100个功能都相关，最邻近算法仍然有问题！这是因为在高维度上，所有的例子都是相似的。例如，这些例子被布置在常规网格上，并考虑一个测试示例$x_t$。如果网格是d维，$x_t$的2d最近的例子都与它的距离相同。因此，随着维度的增加，越来越多的例子成为$x_t$的最近邻，直到最近邻（亦及分类）的选择是随机的。</p>
+<p>这仅仅是一个更大的问题的一个例子：我们的直觉来自三维世界，通常不适用于高维度。在高维度上，多变量高斯分布的大部分质量不是接近平均值，而在它周围的“壳”上。在高维中，大部分的体积都在皮肤上，而不是果肉上。如果恒定数量的示例在高维度超立方体中均匀分布，在超过某一维度后，大多数示例比其最近邻居更接近超立方体的面。如果我们通过将超球面刻画在超立方体中来近似超球体，在高维度中，超立方体的几乎所有体积都在超球体之外。这是机器学习的坏消息，其中一种类型的形状通常由另一种类型的形状近似。</p>
+<p>建立二维或三维分类器很容易;我们可以通过目视检查找到不同类别的示例之间的合理边界。（甚至有人说，如果人们可以看到高维空间，则机器学习不是必要的）。但在高维度上，我们很难理解发生了什么。这反过来又使得难以设计好的分类器。天真地，人们可能会认为，更多的特征从来没有害处，因为最差它们也只是没有提供新信息。但事实上，他们带来的好处可能被维度的诅咒所超越。</p>
+<p>幸运的是，这有一种效果，部分抵消了诅咒，这可能被称为不均匀的赐福（blessing of non-uniformity）。在大多数应用中，数据在整个实例空间中不是均匀分布，而是集中在或靠近低维多方面的。例如，即使图像的数字每像素仅有一维，k-最近邻近似在手写数字识别也工作的很好，因为数字图像的空间远小于所有可能图像的空间。学习器可以隐含地利用这种较低的有效维度，或者可以使用显式降低维度的算法（例如，[23]）。</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/104517177.png?imageslim" alt="mark"></p>
+<h1 id="理论上的保证不是你想的那样"><a href="#理论上的保证不是你想的那样" class="headerlink" title="理论上的保证不是你想的那样"></a>理论上的保证不是你想的那样</h1><blockquote>
+<p>机器学习论文充满理论保证。最常见的是确保良好泛化所需要的训练集数量的约束。你应该怎么做这些保证？首先，他们说的很有可能是正确的。归纳在传统上与演绎相抵触：在演绎中，您可以保证结论正确；在归纳时，啥都不能信。或许是几个世纪以来的智慧。近几十年来的重大发展之一就是认识到，事实上，我们可以对归纳结果作出保证，特别是如果我们愿意解决概率担保问题。</p>
+</blockquote>
+<blockquote>
+<p>基本论点非常简单[5]。让我们看看，如果分类器的真实错误率大于$\epsilon$，则分类器是差的。那么差分类器与n个随机的独立训练样例一致的概率小于$(1-\epsilon)^n$。令b是学习器中不良分类器的数量。假设空间H。通过联合界限，其中至少一个一致的概率小于$b(1-\epsilon)^n$。假设学习器总是返回一致的分类器，那么这个分类器的差的概率就小于$|H|(1-\epsilon)^n$，其中我们使用了$b \leq|H|$的事实。所以如果我们希望这个概率小于$\delta$，就可使：</p>
+</blockquote>
+<blockquote>
+<p>$$n&gt; \frac{ln( \frac{\delta}{|H|})}{ln(1-\epsilon)} \geq \frac{1}{\epsilon} (ln|H| + ln \frac{1}{\epsilon})$$</p>
+</blockquote>
+<blockquote>
+<p>不幸的是，这种类型的保证是值得怀疑的。这是因为以这种方式获得的界限通常是非常宽松的。上面所述的奇妙特征是所需的例子数量仅与$|H|$成对数和$1/ \delta$ 。不幸，</p>
+</blockquote>
+<blockquote>
+<p>最有趣的假设空间是双指数的特征d的数量，仍然需要d中的数量的指数。例如，考虑布尔变量的布尔函数的空间。如果有可能的不同的例子，有$2^e$可能的不同的功能，所以由于有二个可能的例子功能总数为$2^d$。即使是假设空间是指数级的，限制仍然很宽松，因为联盟约束非常悲观。例如，如果有100个布尔特征，假设空间是多达10个级别的决策树，以保证 =？ = 1％在上面我们需要50万个例子。但在实践中，只有一小部分足以准确学习。</p>
+</blockquote>
+<blockquote>
+<p>此外，我们必须小心，这意味着什么。例如，如果您的学习器返回与特定训练集相符的假设，那么这个假设可能会很好地概括出来。它说的是，考虑到一个足够大的训练集，你的学习器很有可能会返回一个概括得很好或者不能找到一致的假设的假说。绑定也没有说明如何选择一个良好的假想空间。它只告诉我们，如果假设空间包含真正的分类器，则学习器输出坏分类器的概率随培训集大小而减小。如果我们收缩假设空间，绑定就会改进，但是它包含真正分类器的机会也会缩小。 （对于真实分类不在假设空间的情况，有一些限制，但是类似的考虑也适用于它们）。</p>
+</blockquote>
+<blockquote>
+<p>另一种常见类型的理论保证是渐近的：给定无限数据，学习器被保证输出正确的分类器。这是令人放心的，但是由于其渐近的保证，选择一个学习器是另一个学习器会变得很疯狂。在实践中，我们很少在渐近的政权（也称为.mpmpopia‧）。而且，由于上面讨论了偏差方差的折衷，如果学习器A比学习器B比无限数据更好，则B通常比A给定的有限数据更好。</p>
+</blockquote>
+<blockquote>
+<p>理论保证在机器学习中的主要作用不是实际决策的标准，而是作为算法设计的理解和推动力的来源。在这个能力上，他们是非常有用的;事实上，理论与实践的密切相关是机器学习多年来取得重大进展的主要原因之一。但是要注意的是，学习是一个复杂的现象，只是因为一个学习器有理论上的理由，实践中的作品并不意味着前者是后者的原因。</p>
+</blockquote>
+<p>本段没看懂，等看懂了再翻译</p>
+<h1 id="特征提取是关键"><a href="#特征提取是关键" class="headerlink" title="特征提取是关键"></a>特征提取是关键</h1><p>当前，一些机器学习项目成功，一些失败。他们之间有什么区别？最重要的因素是使用的特征。如果您有很多独立的特征，每个功能都与分类相关，学习则很简单。另一方面，如果分类是非常复杂的特征函数，您可能无法学习。通常，原始数据不是适合学习的形式，而是可以从中构建特征。这通常是机器学习项目的大部分工作。它通常也是最有趣的部分之一，直觉，创造力和“black art”与技术一样重要。</p>
+<p>新手可能会惊讶，机器学习项目花费的时间在实际的机器学习中花费的时间并不多。但是，如果您考虑收集数据，整合，清理和预处理，以及特征设计中有多少实验和错误，这些事情是多么费时，你会理解的。此外，机器学习不是建立数据集和运行学习器的一个单一过程，而是一个迭代过程，运行学习器，分析结果，修改数据和/或学习器，并重复。学习往往是最快的部分，这是因为我们已经掌握得很好！特征提取比较困难，因为它具有领域特异性，而学习器则可以在很大程度上是通用的。然而，两者之间没有尖锐的边界，这是另一个原因，最有用的学习器是促进结合知识的学习器。</p>
+<p>当然，机器学习的圣杯之一就是自动化越来越多的特征提取过程。今天经常做的一种方式是通过自动生成大量的候选特征，并通过他们对分类的信息增益来选择最好的。但是请记住，孤立地看起来不相关的功能可能实际上是相关的。例如，如果分类是k个输入特征的异或，它们中的每一个本身不携带关于该类的信息。 （如果你想惹恼机器学习器，提出XOR吧）另一方面，运行一个具有很多功能的学习器来找出哪些是有用的组合可能太费时，或者导致过拟合。因此，在特征提取中聪明的您是无法替代的。</p>
+<h1 id="更多的数据比更聪明的算法更好"><a href="#更多的数据比更聪明的算法更好" class="headerlink" title="更多的数据比更聪明的算法更好"></a>更多的数据比更聪明的算法更好</h1><p>假设你已经构建了你能做到的最好的一组功能（feature），但你得到的分类仍然不够准确。你现在可以做什么？有两个主要选择：设计一个更好的学习算法，或收集更多的数据（更多的例子，可能有更多的原始特征，受到维度的诅咒）。机器学习研究人员主要关注前者，但讲真，成功的最快途径往往是获得更多的数据。作为一个经验法则，一个笨重的算法与大量的数据能击败一个聪明的一个适量的数据。（毕竟，机器学习就是让数据做重活。）</p>
+<p>但这确实带来了另一个问题：可扩展性。在大多数计算机科学中，两个主要的有限资源是时间和记忆。在机器学习中，有第三个：训练数据。瓶颈随着时间变化而变化。在20世纪80年代，它往往是数据。今天是时候了有大量的数据可用，但没有足够的时间处理它，所以数据往往没有被使用。这导致了一个悖论：即使在原理上更多的数据意味着更复杂的分类器可以被学习，实际上更简单的分类器更有用，因为复杂的分类器需要太长时间才能学习。我们也提出快速的方法来学习复杂的分类器，而且在这个方向上也取得了显着的进步（例如[12]）。</p>
+<p>使用更聪明的算法有一个较小的回报的一部分原因是他们可能不满足您的期望，在初始近似时（first approximation），复杂和简单的都是一样的。您会惊讶的发现，神经网络和一套规则，他们表示方式区别很大，但是效果非常相似。但事实上，命题规则很容易被编码为神经网络，并且类似的关系在其他表示之间存在。所有学习器通过将邻近的数据分组到同一个分类中;关键区别在于“邻近”的含义。使用不均匀分布的数据，学习器可以产生不同的边界，同时在有必要的地方（具有相当数量的训练数据的地方，因此也是大多数测试集数据很可能会出现的地方）仍然做出相同的预测。这也有助于解释为什么强大的学习器可能不稳定但仍然准确。图3显示了在2-D中的这一点;在高维度上效果要明显得多。</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170512/104557564.png?imageslim" alt="图3：非常不同的边界可以产生相似的预测。（+和-是两个分类的训练实例。）"></p>
+<p>通常，首先尝试最简单的学习器（例如，逻辑回归之前使用朴素贝叶斯，支持向量机之前使用k-最近邻）。更复杂的学习器是诱人的，但它们通常更难使用，因为它们有更多的部分，你需要微调以获得好的结果，并且它们的内部是不透明的。</p>
+<p>学习器可以分为两种主要类型：表示具有固定大小的，如线性分类器，以及表示可以与数据一起增长的决策树。（后者有时被称为非参数学习器，但这有点不幸，因为他们通常会比参数学习更多的参数。）固定大小的学习器只能利用这么多的数据。 （注意图2中朴素贝叶斯渐近的准确度约为70％）可变大小的学习器可以原则上学习给定足够数据的任何函数，但实际上，由于算法的限制（例如，贪心搜索属于局部最优）或计算成本，它们可能做不到。此外，由于维度的诅咒，或者现有的数据量可能不够。对于这些理由，如果您愿意付出努力，那么巧妙的算法 - 那些能够最有效地利用数据和计算资源的算法 - 通常会得到回报。设计学习器和学习分类器之间没有尖锐的边界;相反，任何给定的知识可以在学习器中编码或从数据中学习。因此，机器学习项目经常陷入如何设计学习器的重要组成部分，从业人员需要具备一定的专业知识[13]。</p>
+<p>最后，最大的瓶颈不在于数据或CPU周期，而是人的周期。在研究论文中，通常将学习器的准确度和计算成本进行比较。但是，人的作用虽然更难衡量，但往往更为重要。这有利于产生人为可理解的输出（例如规则集）的学习器。那些充分利用机器学习的组织是那些建立了基础设施的组织，它使许多不同的学习者，数据源和学习问题变得简单高效，以及在这个基础设施之上，机器学习专家和应用领域之间密切合作。</p>
+<h1 id="学习许多模型，不只是一个"><a href="#学习许多模型，不只是一个" class="headerlink" title="学习许多模型，不只是一个"></a>学习许多模型，不只是一个</h1><p>在机器学习的早期，每个人都有自己的最爱的学习器，并根据一些先验知识相信其优越性。绝大多数的努力是尝试其中的许多变量，并选择最好的。然后系统的比较表明，最佳学习器因应用而异，包含许多不同学习器的系统开始出现。现在，大家在努力尝试多学习器多变量，并且仍然选择最好的学习器。但是研究人员注意到，如果不是选择最佳的变量，而是结合了许多变量，结果更好 - 通常要好得多，而且只需要额外增加一点点用户的工作量。</p>
+<p>现在创建这样的模型集合（model ensembles）是标准[1]。在最简单的技术中，称为包（bag），我们简单地通过重采样生成训练集的随机变量，每个学习一个分类器，并通过投票结合结果。这是因为它大大减少了方差，而只是稍微增加了偏差。在boosting中，训练集中有权重，而且这些变量都是变化的，所以每个新的分类器都会关注之前的分类器可能搞错的例子上。在stacking中，单个分类器的输出成为“更高层次”学习器的输入，并确定如何最好地组合上一个分类器的输出。</p>
+<p>存在许多其他技术，趋势是朝向越来越大的集合。在Netflix的奖项中，来自世界各地的团队竞相打造最好的视频推荐系(<a href="http://netflixprize.com)。随着竞争的进行，团队发现他们通过将学习器与其他团队结合起来，获得了最好的结果，并且合并成了更大更大的团队。获奖者和亚军都是超过100名学习器的堆叠组合，并结合两个组合进一步改进了结果。我们将来会看到更大的。" target="_blank" rel="noopener">http://netflixprize.com)。随着竞争的进行，团队发现他们通过将学习器与其他团队结合起来，获得了最好的结果，并且合并成了更大更大的团队。获奖者和亚军都是超过100名学习器的堆叠组合，并结合两个组合进一步改进了结果。我们将来会看到更大的。</a></p>
+<p>模型集合不应与贝叶斯模型平均（BMA）混淆。 BMA是理论上最优的学习方法[4]。在BMA中，通过对假设空间中所有分类器的各个预测进行平均，通过对分类器解释训练数据以及我们先验知识的多少进行加权，来对新数据进行预测。尽管他们表面上有相似之处，模型集合和BMA是非常不同的。模型集合改变假设空间（例如，从单个决策树到它们的线性组合），并且可以采用各种各样的形式。 BMA根据固定公式将权重分配给原始空间中的假设。 BMA的权重和bag或boosting产生的权重极为不同：后者是相当均匀的，而前者是非常倾斜的，单个最高权重分类器通常占有主导地位，使得BMA有效地等同于选择它[8]。这样做的实际结果是，模型组合是机器学习工具包的关键部分，但是BMA很少是值得使用的。</p>
+<h1 id="简单不意味准确"><a href="#简单不意味准确" class="headerlink" title="简单不意味准确"></a>简单不意味准确</h1><p>奥卡姆的剃刀说，实体不应该超过必需。在机器学习中，这被认为是指，给定两个具有相同训练误差的分类器，两者中较简单的可能具有最低的测试误差。这项声明在文学中显而易见，但实际上有很多反例，“no free lunch”定理也暗示着奥卡姆剃刀是不正确的（在机器学习中）。</p>
+<p>我们在上一节中看到了一个反例：模型集合。即使在训练误差达到零之后，通过添加分类器也可以提高增强的一致性的泛化误差。另一个反例是支持向量机，可以有效地拥有无限数量的参数而不会过度拟合。相反，函数符号$(sin(ax))$可以区分任意大的，任意标记的x轴集合，即使它只有一个参数[24]。因此，与参考相反，模型参数的数量与其过拟合倾向之间没有必要的联系。</p>
+<p>更复杂的视图反而将复杂度与假设空间的大小相等，因为较小的空间允许用更短的代码表示假设。像上述理论保证部分的界限可能被认为意味着较短的概念更为普遍。这可以通过在我们有一些先验偏好的空间中为假设分配更短的代码来进一步改进。但是将其看作是准确性与简单性之间权衡的“证明”，是电子推理：我们假设设计更为简单，如果它们是准确的，那是因为我们的偏好是准确的，而不是因为假设是“简单“在我们选择的表示。</p>
+<p>另一个原因是由于很少的学习器彻底搜索他们的假设空间。具有较大假设空间的学习器尝试较少的假设产生的效果，不太可能超过具有较小的假设空间的学习器尝试更多假设。正如Pearl[19]所指出的，假设空间的大小仅仅是关于训练和测试错误的真正重要性的粗略指导：选择假说的过程。</p>
+<p>Domingos [7]调查了奥卡姆剃须刀在机器学习问题上的主要论据和证据。结论是，更简单的假设应该是首选的，因为简单性是其本身的一个优点，而不是因为与准确性的高度连接。这可能是奥卡姆第一个意思。</p>
+<h1 id="可表示不意味可学习"><a href="#可表示不意味可学习" class="headerlink" title="可表示不意味可学习"></a>可表示不意味可学习</h1><p>基本上用于可变大小的学习器的所有的表示具有这样的相关定理——“每个函数可以被这种表示或近似的形式所实现”的。由此证实，表示的粉丝经常忽略所有其他的。然而，只是因为一个函数可以被表示并不意味着它可以被学习。例如，当叶子节点比训练集更多的时候，标准决策树学习器不能学习。在连续空间中，使用固定的原始集合表示简单的函数通常需要无数个组件。此外，如果假设空间具有很多评估函数的局部最优值，通常情况下，学习器即使可以表示也可能找不到真正的功能。给定有限的数据，时间和内存，标准学习器只能学习所有可能函数的一小部分，这些子集对于具有不同表示的学习器是不同的。因此，关键问题不是“可以表示吗”，答案往往是微不足道的，尝试问自己“可以学到吗”，并且去尝试不同的学习器（并可能结合起来）。</p>
+<p>对于某些功能，某些表示形式比其他表现形式更为紧凑。因此，他们也可能需要较少的数据（指数级递减）来学习这些功能。许多学习器通过形成简单基本功能的线性组合来工作。例如，支持向量机形成以一些训练样本（支持向量）为中心的核心的组合。以这种方式表示n位的奇偶校验需要$2^n$个基函数。但是使用更多层次的表示（即，输入和输出之间的更多步骤），奇偶校验可以在线性大小分类器中编码。寻找学习这些更深层次表征的方法是机器学习的主要研究前沿之一[2]。</p>
+<h1 id="相关不意味因果"><a href="#相关不意味因果" class="headerlink" title="相关不意味因果"></a>相关不意味因果</h1><p>相关性并不意味着因果关系的观点经常发生，这可能不值得讨论。但是，即使我们一直在讨论的学习者只能学习相关性，他们的结果往往被视为代表因果关系。这错了吗？如果是这样，那么人们为什么要这样做呢？</p>
+<p>通常情况下，学习预测模型的目标是将其用作行动指南。如果我们发现啤酒和尿布经常在超市买到，那么也许把啤酒放在尿布部分旁边会增加销量。 （这是数据挖掘世界的一个着名例子）。但实际上很难说。机器学习通常应用于观测数据，其中需要预测的变量不受学习器的控制。一些学习算法可以潜在地从观察数据中提取因果信息，但其适用性相当有限[20]。另一方面，相关性是潜在因果关系的标志，我们可以将其作为进一步调查的指南（例如，试图了解因果链可能是什么）。</p>
+<p>许多研究人员认为，因果关系只是一个方便的唤醒。例如，在物理法上没有因果关系的概念。是否存在因果关系是一个深刻的哲学问题，没有明确的答案，但机器学习器的实践要点是两个。首先，不管我们是否称之为“因果”，我们想预测我们行为的影响，而不仅仅是可观察变量之间的相关性。其次，如果您可以获得实验数据（例如通过随机将访问者分配给不同版本的网站），那么一定要这样做[15]。</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>像任何学科一样，机器学习有很多“民间智慧”可能难以了解，但对成功至关重要。本文总结了一些最突出的部分。一个想要学习更多的好地方是我的书“掌握算法”，一个非技术性的对机器学习的介绍[10]。有关完整的在线机器学习课程，请查看<a href="http://www.cs.washington.edu/homes/pedrod/class。还有一个机器学习讲座的宝藏在http://www.videolectures.net。一个广泛使用的开源机器学习工具包是Weka" target="_blank" rel="noopener">http://www.cs.washington.edu/homes/pedrod/class。还有一个机器学习讲座的宝藏在http://www.videolectures.net。一个广泛使用的开源机器学习工具包是Weka</a> [25]。快乐学习！</p>
+<h1 id="REFERENCES"><a href="#REFERENCES" class="headerlink" title="REFERENCES"></a>REFERENCES</h1><p>[1] E. Bauer and R. Kohavi. An empirical comparison of voting classification algorithms: Bagging, boosting and variants. Machine Learning, 36:105–142, 1999.<br>[2] Y. Bengio. Learning deep architectures for AI. Foundations and Trends in Machine Learning, 2:1–127, 2009.<br>[3] Y. Benjamini and Y. Hochberg. Controlling the false discovery rate: A practical and powerful approach to multiple testing. Journal of the Royal Statistical Society, Series B, 57:289–300, 1995.<br>[4] J. M. Bernardo and A. F. M. Smith. Bayesian Theory. Wiley, New York, NY, 1994.<br>[5] A. Blumer, A. Ehrenfeucht, D. Haussler, and M. K. Warmuth. Occam’s razor. Information Processing Letters, 24:377–380, 1987.<br>[6] W. W. Cohen. Grammatically biased learning: Learning logic programs using an explicit antecedent description language. Artificial Intelligence, 68:303–366, 1994.<br>[7]  P. Domingos. The role of Occam’s razor in knowledge discovery. Data Mining and Knowledge Discovery, 3:409–425, 1999.<br>[8] P. Domingos. Bayesian averaging of classifiers and the overfitting problem. In Proceedings of the Seventeenth International Conference on Machine Learning, pages 223–230, Stanford, CA, 2000. Morgan Kaufmann.<br>[9]  P.  Domingos. A unified bias-variance decomposition  and its applications. In Proceedings of the Seventeenth International Conference on Machine Learning, pages 231–238, Stanford, CA, 2000. Morgan Kaufmann.<br>[10] P. Domingos. The Master Algorithm: How the Quest for the Ultimate Learning Machine Will Remake Our World. Basic Books, New York, NY,   2015.<br>[11] P. Domingos and M. Pazzani. On the optimality of the simple Bayesian classifier under zero-one loss. Machine Learning, 29:103–130, 1997.<br>[12] G. Hulten and P. Domingos. Mining complex models from arbitrarily large databases in constant time. In Proceedings of the Eighth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pages 525–531, Edmonton, Canada, 2002. ACM Press.<br>[13] D. Kibler and P. Langley. Machine learning as an experimental science. In Proceedings of the Third European Working Session on Learning, London, UK, 1988.  Pitman.<br>[14] A. J. Klockars and G. Sax. Multiple Comparisons.<br>Sage, Beverly Hills, CA, 1986.<br>[15] R. Kohavi, R. Longbotham, D. Sommerfield, and<br>R. Henne. Controlled experiments on the Web: Survey  and practical guide. Data Mining and Knowledge Discovery, 18:140–181, 2009.<br>[16] J. Manyika, M. Chui, B. Brown, J. Bughin, R. Dobbs,<br>C. Roxburgh, and A. Byers. Big data: The next frontier for innovation, competition, and productivity. Technical report, McKinsey Global Institute, 2011.<br>[17] T. M. Mitchell. Machine Learning. McGraw-Hill, New York, NY, 1997.<br>[18]  A. Y. Ng. Preventing “overfitting” of cross-validation data. In Proceedings of the   Fourteenth International Conference on Machine Learning, pages 245–253, Nashville,  TN,  1997.  Morgan Kaufmann.<br>[19] J. Pearl. On the connection between the complexity and credibility of inferred models. International Journal of General Systems, 4:255–264, 1978.<br>[20] J. Pearl. Causality: Models, Reasoning, and Inference.<br>Cambridge  University  Press,  Cambridge,  UK,  2000. [21] J. R. Quinlan. C4.5: Programs for Machine Learning. Morgan Kaufmann, San Mateo, CA,  1993.<br>[22] M. Richardson and P. Domingos. Markov logic networks. Machine Learning, 62:107–136, 2006.<br>[23] J. Tenenbaum, V. Silva, and J. Langford. A global geometric framework for nonlinear dimensionality reduction. Science, 290:2319–2323, 2000.<br>[24] V. N. Vapnik. The Nature of Statistical Learning Theory. Springer, New York, NY,  1995.<br>[25]  I. Witten, E. Frank, and M. Hall. Data Mining:  Practical Machine Learning Tools and<br>Techniques. Morgan Kaufmann, San Mateo, CA,  3rd edition,     2011.<br>[26] D. Wolpert. The lack of a priori distinctions between learning algorithms. Neural<br>Computation, 8:1341–1390, 1996.  </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Paper/" rel="tag"># Paper</a>
+          
+            <a href="/tags/Translation/" rel="tag"># Translation</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/如何免费搭建个人博客/" rel="next" title="如何免费搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 如何免费搭建个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/数学公式和Markdown的结合/" rel="prev" title="数学公式和Markdown的结合">
+                数学公式和Markdown的结合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Few-Useful-Things-to-Know-about-Machine-Learning"><span class="nav-number">1.</span> <span class="nav-text">A Few Useful Things to Know about Machine Learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">2.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">3.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习-表示-评估-优化"><span class="nav-number">4.</span> <span class="nav-text">学习=表示+评估+优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#泛化最重要"><span class="nav-number">5.</span> <span class="nav-text">泛化最重要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据本身还不够"><span class="nav-number">6.</span> <span class="nav-text">数据本身还不够</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过拟合有多个面孔"><span class="nav-number">7.</span> <span class="nav-text">过拟合有多个面孔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高维反人类"><span class="nav-number">8.</span> <span class="nav-text">高维反人类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理论上的保证不是你想的那样"><span class="nav-number">9.</span> <span class="nav-text">理论上的保证不是你想的那样</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征提取是关键"><span class="nav-number">10.</span> <span class="nav-text">特征提取是关键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多的数据比更聪明的算法更好"><span class="nav-number">11.</span> <span class="nav-text">更多的数据比更聪明的算法更好</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习许多模型，不只是一个"><span class="nav-number">12.</span> <span class="nav-text">学习许多模型，不只是一个</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单不意味准确"><span class="nav-number">13.</span> <span class="nav-text">简单不意味准确</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可表示不意味可学习"><span class="nav-number">14.</span> <span class="nav-text">可表示不意味可学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关不意味因果"><span class="nav-number">15.</span> <span class="nav-text">相关不意味因果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结论"><span class="nav-number">16.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REFERENCES"><span class="nav-number">17.</span> <span class="nav-text">REFERENCES</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2017/05/机器学习：一些需要知道的知识-论文翻译/';
+        this.page.identifier = '2017/05/机器学习：一些需要知道的知识-论文翻译/';
+        this.page.title = '机器学习：一些需要知道的知识-论文翻译';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ebkw82HKvG8gVHMVNdhYwTXH-gzGzoHsz", "HHUiCQCiKnzUn96uwRxbES4x");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
