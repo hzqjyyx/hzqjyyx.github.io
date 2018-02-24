@@ -110,16 +110,18 @@
 <meta name="description" content="Basic Idea  The problem of learning The perceptron rule for perceptrons  And its inapplicability to multi-layer perceptrons   Greedy solutions for classification networks ADALINE and MADALINE Learnin">
 <meta name="keywords" content="deeplearning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Deep Learning:Learning the network">
+<meta property="og:title" content="Deep Learning: Learning the network">
 <meta property="og:url" content="https://hzqjyyx.github.io/2018/02/DL-Learning the network/index.html">
 <meta property="og:site_name" content="泽强的工作台">
 <meta property="og:description" content="Basic Idea  The problem of learning The perceptron rule for perceptrons  And its inapplicability to multi-layer perceptrons   Greedy solutions for classification networks ADALINE and MADALINE Learnin">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180224/ilkHd4Lb6H.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/9KIGi3gII9.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/bKg1K8kjiF.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/1akh1ecdK6.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/a8bHlEh12f.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/Cjde5H8c3l.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/EBkGKeBcm6.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180224/f9IeLehLJf.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/EGijHLm9j0.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/Df29k7i9Bl.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/eAL3a843IA.png?imageslim">
@@ -135,11 +137,11 @@
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/mk3eJkg3id.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/C6AkD8j6fj.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/gjafDlL0B1.png?imageslim">
-<meta property="og:updated_time" content="2018-02-24T04:22:16.336Z">
+<meta property="og:updated_time" content="2018-02-24T18:54:20.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Deep Learning:Learning the network">
+<meta name="twitter:title" content="Deep Learning: Learning the network">
 <meta name="twitter:description" content="Basic Idea  The problem of learning The perceptron rule for perceptrons  And its inapplicability to multi-layer perceptrons   Greedy solutions for classification networks ADALINE and MADALINE Learnin">
-<meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180223/9KIGi3gII9.png?imageslim">
+<meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180224/ilkHd4Lb6H.png?imageslim">
 
 
 
@@ -155,7 +157,7 @@
     sidebar: "",
   };
 </script>
-  <title>Deep Learning:Learning the network | 泽强的工作台</title>
+  <title>Deep Learning: Learning the network | 泽强的工作台</title>
   
 
 
@@ -349,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Deep Learning:Learning the network</h1>
+          <h1 class="post-title" itemprop="name headline">Deep Learning: Learning the network</h1>
         
 
         <div class="post-meta">
@@ -389,7 +391,7 @@
 
           
           
-             <span id="/2018/02/DL-Learning the network/" class="leancloud_visitors" data-flag-title="Deep Learning:Learning the network">
+             <span id="/2018/02/DL-Learning the network/" class="leancloud_visitors" data-flag-title="Deep Learning: Learning the network">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -433,6 +435,7 @@
 <li><strong>Intro to function optimization and gradient descent</strong></li>
 <li><strong>Backpropagation</strong></li>
 </ul>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180224/ilkHd4Lb6H.png?imageslim" alt="mark"></p>
 <a id="more"></a>
 <h1 id="network-setup"><a class="markdownIt-Anchor" href="#network-setup"></a> Network Setup</h1>
 <p>Core formula:</p>
@@ -586,6 +589,8 @@ Actual output will be probability distribution <span class="katex"><span class="
 <h2 id="network-structure"><a class="markdownIt-Anchor" href="#network-structure"></a> Network Structure</h2>
 <p>The parameters of the network:The weights and biases. Weights are basically connection between perceptrons.</p>
 <p>Learning the network : Determining the values of these parameters such that the network computes the desired function. The network is a function <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">f()</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span> with parameters <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">W</span></span></span></span> which must be set to the appropriate values to get the desired behavior from the net</p>
+<h2 id="algorithm"><a class="markdownIt-Anchor" href="#algorithm"></a> Algorithm</h2>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180224/f9IeLehLJf.png?imageslim" alt="mark"></p>
 <h1 id="gradient-descent"><a class="markdownIt-Anchor" href="#gradient-descent"></a> Gradient Descent</h1>
 <p><strong>Assumptions</strong></p>
 <ul>
@@ -849,8 +854,8 @@ NP!  Exponential complexity</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/DL-Optimization/" rel="next" title="Deep Learning:Learning the network">
-                <i class="fa fa-chevron-left"></i> Deep Learning:Learning the network
+              <a href="/2018/02/DL-Introduction/" rel="next" title="Deep Learning:Introduction">
+                <i class="fa fa-chevron-left"></i> Deep Learning:Introduction
               </a>
             
           </div>
@@ -858,6 +863,10 @@ NP!  Exponential complexity</p>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/DL-Optimization/" rel="prev" title="Deep Learning: Optimization">
+                Deep Learning: Optimization <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -1027,7 +1036,7 @@ NP!  Exponential complexity</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#network-setup"><span class="nav-number">2.</span> <span class="nav-text"> Network Setup</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#notation"><span class="nav-number">2.1.</span> <span class="nav-text"> Notation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#perceptron"><span class="nav-number">2.2.</span> <span class="nav-text"> Perceptron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input-and-output"><span class="nav-number">2.3.</span> <span class="nav-text"> Input and Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#activations"><span class="nav-number">2.4.</span> <span class="nav-text"> Activations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#common-activations"><span class="nav-number">2.4.1.</span> <span class="nav-text"> Common Activations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-not-use-threshold"><span class="nav-number">2.4.2.</span> <span class="nav-text"> Why not use threshold</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#differentiable-activation-functions"><span class="nav-number">2.4.3.</span> <span class="nav-text"> Differentiable Activation Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid"><span class="nav-number">2.4.4.</span> <span class="nav-text"> Sigmoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector-activation"><span class="nav-number">2.4.5.</span> <span class="nav-text"> Vector activation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#divergence-functions"><span class="nav-number">2.5.</span> <span class="nav-text"> Divergence Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#l2-squared-euclidean-distance"><span class="nav-number">2.5.1.</span> <span class="nav-text"> L2- Squared Euclidean distance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cross-entropy"><span class="nav-number">2.5.2.</span> <span class="nav-text"> Cross entropy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#network-structure"><span class="nav-number">2.6.</span> <span class="nav-text"> Network Structure</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gradient-descent"><span class="nav-number">3.</span> <span class="nav-text"> Gradient Descent</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#label-variables"><span class="nav-number">3.1.</span> <span class="nav-text"> Label Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-flow"><span class="nav-number">3.2.</span> <span class="nav-text"> Basic Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forward"><span class="nav-number">3.3.</span> <span class="nav-text"> Forward</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mathematical-model"><span class="nav-number">3.3.1.</span> <span class="nav-text"> Mathematical Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector-format"><span class="nav-number">3.3.2.</span> <span class="nav-text"> Vector format</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#backward"><span class="nav-number">3.4.</span> <span class="nav-text"> Backward</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#derivatives"><span class="nav-number">4.</span> <span class="nav-text"> Derivatives</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic"><span class="nav-number">4.1.</span> <span class="nav-text"> Basic:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization"><span class="nav-number">4.2.</span> <span class="nav-text"> Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#single-variable"><span class="nav-number">4.2.1.</span> <span class="nav-text"> Single Variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multiple-variables"><span class="nav-number">4.2.2.</span> <span class="nav-text"> Multiple Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hessian-matrix"><span class="nav-number">4.2.3.</span> <span class="nav-text"> Hessian Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iterative-solutions"><span class="nav-number">4.2.4.</span> <span class="nav-text"> Iterative solutions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gradient-descent-2"><span class="nav-number">4.2.4.1.</span> <span class="nav-text"> Gradient descent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-size"><span class="nav-number">4.2.4.2.</span> <span class="nav-text"> Step size</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convergence"><span class="nav-number">4.2.5.</span> <span class="nav-text"> Convergence</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#appendix"><span class="nav-number">5.</span> <span class="nav-text"> Appendix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#empirical-risk-minimization-emr"><span class="nav-number">5.1.</span> <span class="nav-text"> Empirical Risk Minimization (EMR)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history-methods"><span class="nav-number">5.2.</span> <span class="nav-text"> History Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#greedy-algorithms"><span class="nav-number">5.2.1.</span> <span class="nav-text"> Greedy algorithms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adaline"><span class="nav-number">5.2.2.</span> <span class="nav-text"> Adaline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-rule"><span class="nav-number">5.2.3.</span> <span class="nav-text"> Delta Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#madaline-multilayer-perceptron"><span class="nav-number">5.2.4.</span> <span class="nav-text"> Madaline: Multilayer perceptron</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#learning-the-network"><span class="nav-number">5.3.</span> <span class="nav-text"> Learning the network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#learning-the-perceptron"><span class="nav-number">5.3.1.</span> <span class="nav-text"> Learning the perceptron</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#perceptron-learning-algorithm"><span class="nav-number">5.3.2.</span> <span class="nav-text"> Perceptron Learning Algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculus-chain-rules"><span class="nav-number">5.4.</span> <span class="nav-text"> Calculus: Chain rules</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#network-setup"><span class="nav-number">2.</span> <span class="nav-text"> Network Setup</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#notation"><span class="nav-number">2.1.</span> <span class="nav-text"> Notation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#perceptron"><span class="nav-number">2.2.</span> <span class="nav-text"> Perceptron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input-and-output"><span class="nav-number">2.3.</span> <span class="nav-text"> Input and Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#activations"><span class="nav-number">2.4.</span> <span class="nav-text"> Activations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#common-activations"><span class="nav-number">2.4.1.</span> <span class="nav-text"> Common Activations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-not-use-threshold"><span class="nav-number">2.4.2.</span> <span class="nav-text"> Why not use threshold</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#differentiable-activation-functions"><span class="nav-number">2.4.3.</span> <span class="nav-text"> Differentiable Activation Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid"><span class="nav-number">2.4.4.</span> <span class="nav-text"> Sigmoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector-activation"><span class="nav-number">2.4.5.</span> <span class="nav-text"> Vector activation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#divergence-functions"><span class="nav-number">2.5.</span> <span class="nav-text"> Divergence Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#l2-squared-euclidean-distance"><span class="nav-number">2.5.1.</span> <span class="nav-text"> L2- Squared Euclidean distance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cross-entropy"><span class="nav-number">2.5.2.</span> <span class="nav-text"> Cross entropy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#network-structure"><span class="nav-number">2.6.</span> <span class="nav-text"> Network Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#algorithm"><span class="nav-number">2.7.</span> <span class="nav-text"> Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gradient-descent"><span class="nav-number">3.</span> <span class="nav-text"> Gradient Descent</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#label-variables"><span class="nav-number">3.1.</span> <span class="nav-text"> Label Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-flow"><span class="nav-number">3.2.</span> <span class="nav-text"> Basic Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forward"><span class="nav-number">3.3.</span> <span class="nav-text"> Forward</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mathematical-model"><span class="nav-number">3.3.1.</span> <span class="nav-text"> Mathematical Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector-format"><span class="nav-number">3.3.2.</span> <span class="nav-text"> Vector format</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#backward"><span class="nav-number">3.4.</span> <span class="nav-text"> Backward</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#derivatives"><span class="nav-number">4.</span> <span class="nav-text"> Derivatives</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic"><span class="nav-number">4.1.</span> <span class="nav-text"> Basic:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization"><span class="nav-number">4.2.</span> <span class="nav-text"> Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#single-variable"><span class="nav-number">4.2.1.</span> <span class="nav-text"> Single Variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multiple-variables"><span class="nav-number">4.2.2.</span> <span class="nav-text"> Multiple Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hessian-matrix"><span class="nav-number">4.2.3.</span> <span class="nav-text"> Hessian Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iterative-solutions"><span class="nav-number">4.2.4.</span> <span class="nav-text"> Iterative solutions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gradient-descent-2"><span class="nav-number">4.2.4.1.</span> <span class="nav-text"> Gradient descent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step-size"><span class="nav-number">4.2.4.2.</span> <span class="nav-text"> Step size</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convergence"><span class="nav-number">4.2.5.</span> <span class="nav-text"> Convergence</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#appendix"><span class="nav-number">5.</span> <span class="nav-text"> Appendix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#empirical-risk-minimization-emr"><span class="nav-number">5.1.</span> <span class="nav-text"> Empirical Risk Minimization (EMR)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history-methods"><span class="nav-number">5.2.</span> <span class="nav-text"> History Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#greedy-algorithms"><span class="nav-number">5.2.1.</span> <span class="nav-text"> Greedy algorithms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adaline"><span class="nav-number">5.2.2.</span> <span class="nav-text"> Adaline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-rule"><span class="nav-number">5.2.3.</span> <span class="nav-text"> Delta Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#madaline-multilayer-perceptron"><span class="nav-number">5.2.4.</span> <span class="nav-text"> Madaline: Multilayer perceptron</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#learning-the-network"><span class="nav-number">5.3.</span> <span class="nav-text"> Learning the network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#learning-the-perceptron"><span class="nav-number">5.3.1.</span> <span class="nav-text"> Learning the perceptron</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#perceptron-learning-algorithm"><span class="nav-number">5.3.2.</span> <span class="nav-text"> Perceptron Learning Algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculus-chain-rules"><span class="nav-number">5.4.</span> <span class="nav-text"> Calculus: Chain rules</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1204,7 +1213,7 @@ NP!  Exponential complexity</p>
       var disqus_config = function () {
         this.page.url = 'https://hzqjyyx.github.io/2018/02/DL-Learning the network/';
         this.page.identifier = '2018/02/DL-Learning the network/';
-        this.page.title = 'Deep Learning:Learning the network';
+        this.page.title = 'Deep Learning: Learning the network';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

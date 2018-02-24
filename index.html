@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/02/DL-Learning the network/">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/02/DL-Optimization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
@@ -328,7 +328,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/DL-Learning the network/" itemprop="url">Deep Learning:Learning the network</a></h1>
+                <a class="post-title-link" href="/2018/02/DL-Optimization/" itemprop="url">Deep Learning: Optimization</a></h1>
         
 
         <div class="post-meta">
@@ -340,7 +340,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T16:27:36-08:00">2018-02-23</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T17:27:36-08:00">2018-02-23</time>
             
 
             
@@ -358,9 +358,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/DL-Learning the network/#comments" itemprop="discussionUrl">
+                <a href="/2018/02/DL-Optimization/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/DL-Learning the network/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/02/DL-Optimization/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -368,7 +368,7 @@
 
           
           
-             <span id="/2018/02/DL-Learning the network/" class="leancloud_visitors" data-flag-title="Deep Learning:Learning the network">
+             <span id="/2018/02/DL-Optimization/" class="leancloud_visitors" data-flag-title="Deep Learning: Optimization">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,22 +400,19 @@
 
       
         
-          <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+          <p>[TOC]</p>
+<h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
 <ul>
-<li>The problem of learning</li>
-<li>The perceptron rule for perceptrons
-<ul>
-<li>And its inapplicability to multi-layer perceptrons</li>
-</ul>
-</li>
-<li>Greedy solutions for classification networks ADALINE and MADALINE</li>
-<li>Learning through Empirical Risk Minimization</li>
-<li><strong>Intro to function optimization and gradient descent</strong></li>
-<li><strong>Backpropagation</strong></li>
+<li>backprop property</li>
+<li>convergence of gradient descent, like rprop, quickprop, momentum, nestorov</li>
+<li>stochastic gradients, incremental updates</li>
+<li>speedup extensions: RMSprop, Adagrad</li>
+<li>generalization</li>
+<li>tricks of the trade</li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/DL-Learning the network/#more" rel="contents">
+            <a class="btn" href="/2018/02/DL-Optimization/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -471,7 +468,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/02/DL-Optimization/">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/02/DL-Learning the network/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
@@ -490,7 +487,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/DL-Optimization/" itemprop="url">Deep Learning:Learning the network</a></h1>
+                <a class="post-title-link" href="/2018/02/DL-Learning the network/" itemprop="url">Deep Learning: Learning the network</a></h1>
         
 
         <div class="post-meta">
@@ -520,9 +517,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/DL-Optimization/#comments" itemprop="discussionUrl">
+                <a href="/2018/02/DL-Learning the network/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/DL-Optimization/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/02/DL-Learning the network/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -530,7 +527,7 @@
 
           
           
-             <span id="/2018/02/DL-Optimization/" class="leancloud_visitors" data-flag-title="Deep Learning:Learning the network">
+             <span id="/2018/02/DL-Learning the network/" class="leancloud_visitors" data-flag-title="Deep Learning: Learning the network">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -564,14 +561,21 @@
         
           <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
 <ul>
-<li>backprop property</li>
-<li>convergence of gradient descent</li>
-<li>stochastic gradients</li>
-<li>speedup extensions: RMSprop, Adagrad</li>
+<li>The problem of learning</li>
+<li>The perceptron rule for perceptrons
+<ul>
+<li>And its inapplicability to multi-layer perceptrons</li>
 </ul>
+</li>
+<li>Greedy solutions for classification networks ADALINE and MADALINE</li>
+<li>Learning through Empirical Risk Minimization</li>
+<li><strong>Intro to function optimization and gradient descent</strong></li>
+<li><strong>Backpropagation</strong></li>
+</ul>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180224/ilkHd4Lb6H.png?imageslim" alt="mark"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/DL-Optimization/#more" rel="contents">
+            <a class="btn" href="/2018/02/DL-Learning the network/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
