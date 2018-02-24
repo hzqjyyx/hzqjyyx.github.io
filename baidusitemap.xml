@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/02/DL-Optimization/</loc>
-    <lastmod>2018-02-24T19:11:35.385Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/02/DL-Introduction/</loc>
+    <lastmod>2018-02-24T19:41:44.112Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning: Optimization</title>
-        <pubTime>2018-02-24T01:27:36.000Z</pubTime>
+        <title>Deep Learning: Introduction</title>
+        <pubTime>2018-02-23T20:49:36.000Z</pubTime>
         
         <tag>deeplearning</tag>
          
@@ -22,7 +22,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/02/DL-Learning%20the%20network/</loc>
-    <lastmod>2018-02-24T18:54:20.120Z</lastmod>
+    <lastmod>2018-02-24T19:41:12.049Z</lastmod>
     <data>
         <display>
         <title>Deep Learning: Learning the network</title>
@@ -38,12 +38,12 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/02/DL-Introduction/</loc>
-    <lastmod>2018-02-24T03:47:47.025Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/02/DL-Optimization/</loc>
+    <lastmod>2018-02-24T19:39:37.339Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning:Introduction</title>
-        <pubTime>2018-02-23T20:49:36.000Z</pubTime>
+        <title>Deep Learning: Optimization</title>
+        <pubTime>2018-02-24T01:27:36.000Z</pubTime>
         
         <tag>deeplearning</tag>
          
@@ -62,9 +62,9 @@
         <title>如何免费搭建个人博客</title>
         <pubTime>2017-05-08T01:38:15.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>github pages</tag>
+         
+        <tag>hexo</tag>
          
          
            
@@ -98,9 +98,9 @@
         <title>数学公式和Markdown的结合</title>
         <pubTime>2017-05-12T21:37:25.000Z</pubTime>
         
-        <tag>mathjax</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>mathjax</tag>
          
          
            
