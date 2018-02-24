@@ -41,10 +41,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -82,7 +78,7 @@
     scheme: 'Gemini',
     version: '6.0.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -766,10 +762,12 @@ about Λrrow’s main features.</p>
       
       <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
+          <div id="toc-div" class="post-toc" style="display:none">
 
             
-              
+                
+                
+                
             
 
             
@@ -863,8 +861,6 @@ about Λrrow’s main features.</p>
 
 
 
-  
-
 
 
 
@@ -892,11 +888,6 @@ about Λrrow’s main features.</p>
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
 
