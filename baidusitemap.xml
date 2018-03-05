@@ -4,6 +4,51 @@
 
     
   <url>
+    <loc>https://hzqjyyx.github.io/2018/03/Behavior-Design-Pattern/</loc>
+    <lastmod>2018-03-05T08:19:03.999Z</lastmod>
+    <data>
+        <display>
+        <title>Behavior Design Pattern</title>
+        <pubTime>2018-03-05T08:16:53.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/03/Creational-Design-Pattern/</loc>
+    <lastmod>2018-03-05T07:41:01.910Z</lastmod>
+    <data>
+        <display>
+        <title>Creational Design Pattern</title>
+        <pubTime>2018-03-05T06:58:28.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/03/Structural-Design-Pattern/</loc>
+    <lastmod>2018-03-05T07:40:08.392Z</lastmod>
+    <data>
+        <display>
+        <title>Structural Design Pattern</title>
+        <pubTime>2018-03-05T07:39:43.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hzqjyyx.github.io/2018/03/Mid-term-Review-SOC/</loc>
     <lastmod>2018-03-05T06:22:40.331Z</lastmod>
     <data>
@@ -79,9 +124,9 @@
         <title>如何免费搭建个人博客</title>
         <pubTime>2017-05-08T01:38:15.000Z</pubTime>
         
-        <tag>github pages</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>github pages</tag>
          
          
            
@@ -115,9 +160,9 @@
         <title>数学公式和Markdown的结合</title>
         <pubTime>2017-05-12T21:37:25.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>mathjax</tag>
+         
+        <tag>hexo</tag>
          
          
            
