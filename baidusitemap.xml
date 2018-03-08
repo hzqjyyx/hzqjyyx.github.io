@@ -4,27 +4,12 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/03/SOC-4-1-Views/</loc>
-    <lastmod>2018-03-06T07:39:31.134Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/03/SAD-Mid-term-Review/</loc>
+    <lastmod>2018-03-06T22:20:30.383Z</lastmod>
     <data>
         <display>
-        <title>SOC:4+1 Views</title>
+        <title>SAD: Mid-term Review</title>
         <pubTime>2018-03-06T07:26:22.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/03/Mid-term-Review-SOC/</loc>
-    <lastmod>2018-03-06T07:39:06.125Z</lastmod>
-    <data>
-        <display>
-        <title>Mid-term Review:SOC</title>
-        <pubTime>2018-03-05T06:18:15.000Z</pubTime>
         
         <tag>review</tag>
          
@@ -36,43 +21,15 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/03/Structural-Design-Pattern/</loc>
-    <lastmod>2018-03-06T07:24:10.283Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/03/SOC-Mid-term-Review/</loc>
+    <lastmod>2018-03-06T22:20:22.672Z</lastmod>
     <data>
         <display>
-        <title>Structural Design Pattern</title>
-        <pubTime>2018-03-05T07:39:43.000Z</pubTime>
+        <title>SOC: Mid-term Review</title>
+        <pubTime>2018-03-05T06:18:15.000Z</pubTime>
         
+        <tag>review</tag>
          
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/03/Behavior-Design-Pattern/</loc>
-    <lastmod>2018-03-06T07:19:03.616Z</lastmod>
-    <data>
-        <display>
-        <title>Behavior Design Pattern</title>
-        <pubTime>2018-03-05T08:16:53.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/03/Creational-Design-Pattern/</loc>
-    <lastmod>2018-03-05T07:41:01.910Z</lastmod>
-    <data>
-        <display>
-        <title>Creational Design Pattern</title>
-        <pubTime>2018-03-05T06:58:28.000Z</pubTime>
-        
          
            
         </display>
@@ -139,9 +96,9 @@
         <title>如何免费搭建个人博客</title>
         <pubTime>2017-05-08T01:38:15.000Z</pubTime>
         
-        <tag>github pages</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>github pages</tag>
          
          
            
@@ -175,9 +132,9 @@
         <title>数学公式和Markdown的结合</title>
         <pubTime>2017-05-12T21:37:25.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>mathjax</tag>
+         
+        <tag>hexo</tag>
          
          
            
