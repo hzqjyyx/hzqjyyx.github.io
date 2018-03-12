@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>https://hzqjyyx.github.io/2018/03/DL-CNN/</loc>
+    <lastmod>2018-03-12T18:06:39.701Z</lastmod>
+    <data>
+        <display>
+        <title>Deep Learning: CNN</title>
+        <pubTime>2018-03-12T18:04:38.000Z</pubTime>
+        
+        <tag>deeplearning</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hzqjyyx.github.io/2018/02/DL-Optimization/</loc>
     <lastmod>2018-03-12T17:55:03.828Z</lastmod>
     <data>
@@ -96,9 +113,9 @@
         <title>如何免费搭建个人博客</title>
         <pubTime>2017-05-08T01:38:15.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>github pages</tag>
+         
+        <tag>hexo</tag>
          
          
            
@@ -132,9 +149,9 @@
         <title>数学公式和Markdown的结合</title>
         <pubTime>2017-05-12T21:37:25.000Z</pubTime>
         
-        <tag>mathjax</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>mathjax</tag>
          
          
            
