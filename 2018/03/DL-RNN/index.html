@@ -100,16 +100,15 @@
 
 
   
-  <meta name="keywords" content="deeplearning," />
+  <meta name="keywords" content="Zeqiang, NexT" />
 
 
-<meta name="description" content="Basic Idea  finite response model and simple recurrent network are not good rnn basic structure train basic rnn stability LSTM and GTM">
-<meta name="keywords" content="deeplearning">
+<meta name="description" content="[TOC]  Basic Idea Problem with Time delay network Infinite response systems NARX net An input at t=0 affects outputs forever BPTT  Representational shortcut  Input at each time is a vector Each layer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Deep Learning: RNN">
+<meta property="og:title" content="泽强的工作台">
 <meta property="og:url" content="https://hzqjyyx.github.io/2018/03/DL-RNN/index.html">
 <meta property="og:site_name" content="泽强的工作台">
-<meta property="og:description" content="Basic Idea  finite response model and simple recurrent network are not good rnn basic structure train basic rnn stability LSTM and GTM">
+<meta property="og:description" content="[TOC]  Basic Idea Problem with Time delay network Infinite response systems NARX net An input at t=0 affects outputs forever BPTT  Representational shortcut  Input at each time is a vector Each layer">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180312/DD4lcKIdCe.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180312/8G9g41lAgB.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180312/gdklE9Gg8a.png?imageslim">
@@ -125,10 +124,23 @@
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/amhH4235ba.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/HIKcbKLkAf.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/BcfAfiHkbL.png?imageslim">
-<meta property="og:updated_time" content="2018-03-13T20:13:48.884Z">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/g3k56GL28a.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/835djH0eFI.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/B1Kh52ILDA.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/876kKm4Jk4.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/je3E5J7IdH.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/l2BILF7I6k.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/7hF63Cfefa.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/6BDJ9845eJ.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/la2heDhHGF.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/0KeB8Eg4Dg.png?imageslim">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fpd5htb2qwj30pe08x3ys.jpg">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/G73mKKHCKC.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/GAGa2hFfH8.png?imageslim">
+<meta property="og:updated_time" content="2018-03-14T23:31:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Deep Learning: RNN">
-<meta name="twitter:description" content="Basic Idea  finite response model and simple recurrent network are not good rnn basic structure train basic rnn stability LSTM and GTM">
+<meta name="twitter:title" content="泽强的工作台">
+<meta name="twitter:description" content="[TOC]  Basic Idea Problem with Time delay network Infinite response systems NARX net An input at t=0 affects outputs forever BPTT  Representational shortcut  Input at each time is a vector Each layer">
 <meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180312/DD4lcKIdCe.png?imageslim">
 
 
@@ -145,7 +157,7 @@
     sidebar: "",
   };
 </script>
-  <title>Deep Learning: RNN | 泽强的工作台</title>
+  <title> | 泽强的工作台</title>
   
 
 
@@ -339,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Deep Learning: RNN</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -351,7 +363,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T17:17:09-07:00">2018-03-12</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-14T16:28:23-07:00">2018-03-14</time>
             
 
             
@@ -379,7 +391,7 @@
 
           
           
-             <span id="/2018/03/DL-RNN/" class="leancloud_visitors" data-flag-title="Deep Learning: RNN">
+             <span id="/2018/03/DL-RNN/" class="leancloud_visitors" data-flag-title="">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,15 +422,13 @@
       
 
       
-        <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
-<ul>
-<li>finite response model and simple recurrent network are not good</li>
-<li>rnn basic structure</li>
-<li>train basic rnn</li>
-<li>stability</li>
-<li>LSTM and GTM</li>
-</ul>
-<a id="more"></a>
+        <p>[TOC]</p>
+<h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<p>Problem with Time delay network</p>
+<p>Infinite response systems</p>
+<p>NARX net</p>
+<p>An input at t=0 affects outputs forever</p>
+<p>BPTT</p>
 <h1 id="representational-shortcut"><a class="markdownIt-Anchor" href="#representational-shortcut"></a> Representational shortcut</h1>
 <p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180312/DD4lcKIdCe.png?imageslim" alt="mark"></p>
 <p>Input at each time is a vector<br>
@@ -593,7 +603,7 @@ Complex Eigen values cause oscillatory response, which we may or may not want. W
 <li>“Prefers” weights close to 1.0</li>
 </ul>
 </li>
-<li>Relu: Sensitive to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02691em;">w</span></span></span></span>, can blow up</li>
+<li>ReLU: Sensitive to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02691em;">w</span></span></span></span>, can blow up</li>
 </ul>
 <p>For vector non-linearity</p>
 <p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/HIKcbKLkAf.png?imageslim" alt="mark"></p>
@@ -639,7 +649,68 @@ In a single-layer RNN, the weight matrices are identical. The chain product for 
 <blockquote>
 <p>Long Short-Term Memory</p>
 </blockquote>
-<h1 id="variants-on-recurrent-nets"><a class="markdownIt-Anchor" href="#variants-on-recurrent-nets"></a> Variants on recurrent nets</h1>
+<h2 id="introduce-constant-error-carousel"><a class="markdownIt-Anchor" href="#introduce-constant-error-carousel"></a> Introduce constant error carousel</h2>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/g3k56GL28a.png?imageslim" alt="mark"></p>
+<p>We need to recall history based on input, not network parameter/structures. Apply input to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">h(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">h</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span></span></span></span> make it recall this pattern.</p>
+<p>History is carried through uncompressed. There is no weights and no nonlinearities. Only scaling is through the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">σ</span></span></span></span> “gating” term that captures other triggers. Uncompressed means <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">h(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">h</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span></span></span></span> do not need to compress to -1 to 1 as LSTM used.</p>
+<p>Actual non-linear work is done by other portions of the network.</p>
+<h2 id="lstm-2"><a class="markdownIt-Anchor" href="#lstm-2"></a> LSTM</h2>
+<p><strong>Explicitly latch information to prevent decay / blowup</strong></p>
+<p>Here is the whole picture of LSTM unit. Remember, every line actually represents a vector.</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/835djH0eFI.png?imageslim" alt="mark"></p>
+<p>The concepts includes:</p>
+<ul>
+<li>constant-error carousel</li>
+<li>gates</li>
+<li>forget gate</li>
+<li>input gate</li>
+<li>output gate</li>
+<li>peephole connection</li>
+</ul>
+<h3 id="constant-error-carousel"><a class="markdownIt-Anchor" href="#constant-error-carousel"></a> Constant error carousel</h3>
+<p>a remembered cell state, carries the linear history, and only affected by gates.<br>
+Memory unit C are distinguished with state h.</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/B1Kh52ILDA.png?imageslim" alt="mark"></p>
+<h3 id="gates"><a class="markdownIt-Anchor" href="#gates"></a> Gates</h3>
+<p>Gates are simple sigmoidal units with outputs in the range (0,1) .<br>
+Controls how much of the information is to be let through</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/876kKm4Jk4.png?imageslim" alt="mark"></p>
+<h3 id="forget-gate"><a class="markdownIt-Anchor" href="#forget-gate"></a> Forget gate</h3>
+<p>It determines how much of the history to carry over, and how much of that to forget.<br>
+Computed based on state <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">h_{t-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">t</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">x_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>.</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/je3E5J7IdH.png?imageslim" alt="mark"></p>
+<h3 id="input-gate"><a class="markdownIt-Anchor" href="#input-gate"></a> Input gate</h3>
+<p>A perceptron layer that determines if there’s something interesting in the input.<br>
+A gate that decides if its worth remembering.</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/l2BILF7I6k.png?imageslim" alt="mark"></p>
+<h3 id="update-memory-cell"><a class="markdownIt-Anchor" href="#update-memory-cell"></a> Update memory cell</h3>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/7hF63Cfefa.png?imageslim" alt="mark"></p>
+<h3 id="output-gate"><a class="markdownIt-Anchor" href="#output-gate"></a> Output gate</h3>
+<p>Output of the cell will receive 2 input: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>o</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">o_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">o</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>a</mi><mi>n</mi><mi>h</mi><mo>(</mo><msub><mi>C</mi><mi>t</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">tanh(C_t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">h</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.07153em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span>.<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>a</mi><mi>n</mi><mi>h</mi><mo>(</mo><msub><mi>C</mi><mi>t</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">tanh(C_t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">h</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.07153em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span> means simply compress linear history with tanh to make it lie between 1 and -1.<br>
+Output decide if the memory contents are worth reporting at this time, based on input <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">x_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, previous state <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">h_{t-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">t</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> and linear history <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">C_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.07153em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>.</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/6BDJ9845eJ.png?imageslim" alt="mark"></p>
+<h3 id="peephole-connection"><a class="markdownIt-Anchor" href="#peephole-connection"></a> Peephole connection</h3>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/la2heDhHGF.png?imageslim" alt="mark"></p>
+<p>Why not just let the cell directly influence the gates while at it?</p>
+<p>No idea</p>
+<h3 id="whole-picture"><a class="markdownIt-Anchor" href="#whole-picture"></a> Whole picture</h3>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/0KeB8Eg4Dg.png?imageslim" alt="mark"></p>
+<h2 id="backpropagation"><a class="markdownIt-Anchor" href="#backpropagation"></a> Backpropagation</h2>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fpd5htb2qwj30pe08x3ys.jpg" alt=""></p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/G73mKKHCKC.png?imageslim" alt="mark"></p>
+<h1 id="gated-recurrent-units"><a class="markdownIt-Anchor" href="#gated-recurrent-units"></a> Gated Recurrent Units</h1>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180313/GAGa2hFfH8.png?imageslim" alt="mark"></p>
+<ul>
+<li>Combine forget and input gates
+<ul>
+<li>In new input is to be remembered, then this means old memory is to be forgotten</li>
+</ul>
+</li>
+<li>Don’t bother to separately maintain compressed and regular memories</li>
+<li>But compress it before using it to decide on the usefulness of the current input!</li>
+</ul>
+<h1 id="divergence"><a class="markdownIt-Anchor" href="#divergence"></a> Divergence</h1>
 
       
     </div>
@@ -657,12 +728,6 @@ In a single-layer RNN, the weight matrices are identical. The chain product for 
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/deeplearning/" rel="tag"># deeplearning</a>
-          
-        </div>
       
 
       
@@ -857,7 +922,7 @@ In a single-layer RNN, the weight matrices are identical. The chain product for 
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#representational-shortcut"><span class="nav-number">2.</span> <span class="nav-text"> Representational shortcut</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#primer"><span class="nav-number">3.</span> <span class="nav-text"> Primer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#finite-response-model"><span class="nav-number">3.1.</span> <span class="nav-text"> Finite-response model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time-delay-neural-network"><span class="nav-number">3.1.1.</span> <span class="nav-text"> Time-Delay neural network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more-general"><span class="nav-number">3.1.2.</span> <span class="nav-text"> More general</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#narx-network"><span class="nav-number">3.2.</span> <span class="nav-text"> NARX network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#simple-recurrent-network"><span class="nav-number">3.3.</span> <span class="nav-text"> Simple Recurrent Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jordan-network"><span class="nav-number">3.3.1.</span> <span class="nav-text"> Jordan Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elman-network"><span class="nav-number">3.3.2.</span> <span class="nav-text"> Elman Network</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rnn-model"><span class="nav-number">4.</span> <span class="nav-text"> RNN model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#state-space-model"><span class="nav-number">4.1.</span> <span class="nav-text"> State-space model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#states"><span class="nav-number">4.2.</span> <span class="nav-text"> States</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#different-states"><span class="nav-number">4.2.1.</span> <span class="nav-text"> Different States</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#easier-representation"><span class="nav-number">4.2.2.</span> <span class="nav-text"> Easier representation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#model-detail"><span class="nav-number">4.3.</span> <span class="nav-text"> Model Detail</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#equations"><span class="nav-number">4.3.1.</span> <span class="nav-text"> Equations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-model-organized"><span class="nav-number">4.3.2.</span> <span class="nav-text"> How model organized</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#how-to-train-model"><span class="nav-number">5.</span> <span class="nav-text"> How to train model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stability"><span class="nav-number">6.</span> <span class="nav-text"> Stability</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stability-analysis"><span class="nav-number">6.1.</span> <span class="nav-text"> Stability Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-system"><span class="nav-number">6.1.1.</span> <span class="nav-text"> Linear System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-linear-system"><span class="nav-number">6.1.2.</span> <span class="nav-text"> Non-linear System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-more-tap"><span class="nav-number">6.1.3.</span> <span class="nav-text"> Add more ‘tap’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#in-summary"><span class="nav-number">6.1.4.</span> <span class="nav-text"> In summary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gradient-vanish"><span class="nav-number">6.2.</span> <span class="nav-text"> Gradient Vanish</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#where-to-explore-and-shrink"><span class="nav-number">6.2.1.</span> <span class="nav-text"> Where to explore and shrink</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lstm"><span class="nav-number">7.</span> <span class="nav-text"> LSTM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#variants-on-recurrent-nets"><span class="nav-number">8.</span> <span class="nav-text"> Variants on recurrent nets</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#representational-shortcut"><span class="nav-number">2.</span> <span class="nav-text"> Representational shortcut</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#primer"><span class="nav-number">3.</span> <span class="nav-text"> Primer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#finite-response-model"><span class="nav-number">3.1.</span> <span class="nav-text"> Finite-response model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time-delay-neural-network"><span class="nav-number">3.1.1.</span> <span class="nav-text"> Time-Delay neural network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more-general"><span class="nav-number">3.1.2.</span> <span class="nav-text"> More general</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#narx-network"><span class="nav-number">3.2.</span> <span class="nav-text"> NARX network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#simple-recurrent-network"><span class="nav-number">3.3.</span> <span class="nav-text"> Simple Recurrent Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jordan-network"><span class="nav-number">3.3.1.</span> <span class="nav-text"> Jordan Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elman-network"><span class="nav-number">3.3.2.</span> <span class="nav-text"> Elman Network</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rnn-model"><span class="nav-number">4.</span> <span class="nav-text"> RNN model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#state-space-model"><span class="nav-number">4.1.</span> <span class="nav-text"> State-space model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#states"><span class="nav-number">4.2.</span> <span class="nav-text"> States</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#different-states"><span class="nav-number">4.2.1.</span> <span class="nav-text"> Different States</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#easier-representation"><span class="nav-number">4.2.2.</span> <span class="nav-text"> Easier representation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#model-detail"><span class="nav-number">4.3.</span> <span class="nav-text"> Model Detail</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#equations"><span class="nav-number">4.3.1.</span> <span class="nav-text"> Equations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-model-organized"><span class="nav-number">4.3.2.</span> <span class="nav-text"> How model organized</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#how-to-train-model"><span class="nav-number">5.</span> <span class="nav-text"> How to train model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stability"><span class="nav-number">6.</span> <span class="nav-text"> Stability</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stability-analysis"><span class="nav-number">6.1.</span> <span class="nav-text"> Stability Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-system"><span class="nav-number">6.1.1.</span> <span class="nav-text"> Linear System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-linear-system"><span class="nav-number">6.1.2.</span> <span class="nav-text"> Non-linear System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-more-tap"><span class="nav-number">6.1.3.</span> <span class="nav-text"> Add more ‘tap’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#in-summary"><span class="nav-number">6.1.4.</span> <span class="nav-text"> In summary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gradient-vanish"><span class="nav-number">6.2.</span> <span class="nav-text"> Gradient Vanish</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#where-to-explore-and-shrink"><span class="nav-number">6.2.1.</span> <span class="nav-text"> Where to explore and shrink</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lstm"><span class="nav-number">7.</span> <span class="nav-text"> LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduce-constant-error-carousel"><span class="nav-number">7.1.</span> <span class="nav-text"> Introduce constant error carousel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lstm-2"><span class="nav-number">7.2.</span> <span class="nav-text"> LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#constant-error-carousel"><span class="nav-number">7.2.1.</span> <span class="nav-text"> Constant error carousel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gates"><span class="nav-number">7.2.2.</span> <span class="nav-text"> Gates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forget-gate"><span class="nav-number">7.2.3.</span> <span class="nav-text"> Forget gate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input-gate"><span class="nav-number">7.2.4.</span> <span class="nav-text"> Input gate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update-memory-cell"><span class="nav-number">7.2.5.</span> <span class="nav-text"> Update memory cell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output-gate"><span class="nav-number">7.2.6.</span> <span class="nav-text"> Output gate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peephole-connection"><span class="nav-number">7.2.7.</span> <span class="nav-text"> Peephole connection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#whole-picture"><span class="nav-number">7.2.8.</span> <span class="nav-text"> Whole picture</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#backpropagation"><span class="nav-number">7.3.</span> <span class="nav-text"> Backpropagation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gated-recurrent-units"><span class="nav-number">8.</span> <span class="nav-text"> Gated Recurrent Units</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#divergence"><span class="nav-number">9.</span> <span class="nav-text"> Divergence</span></a></li></ol></div>
             
 
           </div>
@@ -1020,7 +1085,7 @@ In a single-layer RNN, the weight matrices are identical. The chain product for 
       var disqus_config = function () {
         this.page.url = 'https://hzqjyyx.github.io/2018/03/DL-RNN/';
         this.page.identifier = '2018/03/DL-RNN/';
-        this.page.title = 'Deep Learning: RNN';
+        this.page.title = '';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
@@ -1502,11 +1567,6 @@ In a single-layer RNN, the weight matrices are identical. The chain product for 
   
   
 
-  
-    
-      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.7.1/dist/katex.min.css" type="text/css">
-
-   
   
 
 

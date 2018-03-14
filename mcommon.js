@@ -19,14 +19,8 @@ function decryptAES() {
                 document.getElementById("toc-div").style.display     = "inline";
             }
         }
-
-        MathJax.Hub.Queue(
-                ["resetEquationNumbers",MathJax.InputJax.TeX],
-                ["PreProcess",MathJax.Hub],
-                ["Reprocess",MathJax.Hub]
-            );
     } catch (e) {
-        // alert("解密失败");
+        alert("解密失败");
         console.log(e);
     }
 }
