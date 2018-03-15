@@ -5,12 +5,14 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/03/DL-RNN/</loc>
-    <lastmod>2018-03-14T23:31:40.000Z</lastmod>
+    <lastmod>2018-03-15T16:41:24.000Z</lastmod>
     <data>
         <display>
-        <title></title>
-        <pubTime>2018-03-14T23:28:23.000Z</pubTime>
+        <title>Deep Learning: RNN</title>
+        <pubTime>2018-03-14T23:52:38.000Z</pubTime>
         
+        <tag>deeplearning</tag>
+         
          
            
         </display>
@@ -20,7 +22,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/03/DL-CNN/</loc>
-    <lastmod>2018-03-12T18:06:39.701Z</lastmod>
+    <lastmod>2018-03-12T18:06:40.000Z</lastmod>
     <data>
         <display>
         <title>Deep Learning: CNN</title>
@@ -37,7 +39,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/02/DL-Optimization/</loc>
-    <lastmod>2018-03-12T17:55:03.828Z</lastmod>
+    <lastmod>2018-03-12T17:55:04.000Z</lastmod>
     <data>
         <display>
         <title>Deep Learning: Optimization</title>
@@ -54,7 +56,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/02/DL-Learning%20the%20network/</loc>
-    <lastmod>2018-03-12T17:08:02.518Z</lastmod>
+    <lastmod>2018-03-12T17:08:04.000Z</lastmod>
     <data>
         <display>
         <title>Deep Learning: Learning the network</title>
@@ -71,7 +73,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/02/DL-Introduction/</loc>
-    <lastmod>2018-03-11T18:57:25.331Z</lastmod>
+    <lastmod>2018-03-11T18:57:26.000Z</lastmod>
     <data>
         <display>
         <title>Deep Learning: Introduction</title>
@@ -88,7 +90,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/03/SAD-Mid-term-Review/</loc>
-    <lastmod>2018-03-06T22:20:30.383Z</lastmod>
+    <lastmod>2018-03-06T22:20:32.000Z</lastmod>
     <data>
         <display>
         <title>SAD: Mid-term Review</title>
@@ -105,7 +107,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/03/SOC-Mid-term-Review/</loc>
-    <lastmod>2018-03-06T22:20:22.672Z</lastmod>
+    <lastmod>2018-03-06T22:20:24.000Z</lastmod>
     <data>
         <display>
         <title>SOC: Mid-term Review</title>
@@ -122,7 +124,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2017/05/%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-02-23T22:41:05.203Z</lastmod>
+    <lastmod>2018-02-23T22:41:06.000Z</lastmod>
     <data>
         <display>
         <title>如何免费搭建个人博客</title>
@@ -141,7 +143,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2017/07/JavaScript-Introduction/</loc>
-    <lastmod>2018-02-23T22:40:50.162Z</lastmod>
+    <lastmod>2018-02-23T22:40:52.000Z</lastmod>
     <data>
         <display>
         <title>JavaScript Re-Introduction</title>
@@ -158,7 +160,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2017/05/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E5%92%8CMarkdown%E7%9A%84%E7%BB%93%E5%90%88/</loc>
-    <lastmod>2018-02-23T22:40:34.363Z</lastmod>
+    <lastmod>2018-02-23T22:40:36.000Z</lastmod>
     <data>
         <display>
         <title>数学公式和Markdown的结合</title>
@@ -177,7 +179,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2017/04/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B9%B3%E5%8F%B0%EF%BC%9APython-Keras-TensorFlow/</loc>
-    <lastmod>2018-02-23T22:39:55.908Z</lastmod>
+    <lastmod>2018-02-23T22:39:56.000Z</lastmod>
     <data>
         <display>
         <title>如何搭建深度学习平台：Python, TensorFlow</title>
@@ -196,7 +198,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2017/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E7%9F%A5%E8%AF%86-%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2018-02-23T22:39:43.397Z</lastmod>
+    <lastmod>2018-02-23T22:39:44.000Z</lastmod>
     <data>
         <display>
         <title>机器学习：一些需要知道的知识-论文翻译</title>
@@ -217,7 +219,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2017/05/%E9%87%8D%E7%BD%AEAndroid%20Studio/</loc>
-    <lastmod>2018-02-23T22:39:23.131Z</lastmod>
+    <lastmod>2018-02-23T22:39:24.000Z</lastmod>
     <data>
         <display>
         <title>使用命令行删除Android Studio（Mac）</title>
@@ -236,7 +238,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/01/Github%20Open%20Source%20for%20Android%20Dev/</loc>
-    <lastmod>2018-02-23T22:38:14.820Z</lastmod>
+    <lastmod>2018-02-23T22:38:16.000Z</lastmod>
     <data>
         <display>
         <title>Open Source for Android Dev (Part I)</title>
@@ -253,7 +255,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2017/11/C-Language-Learning/</loc>
-    <lastmod>2018-02-23T22:37:38.343Z</lastmod>
+    <lastmod>2018-02-23T22:37:40.000Z</lastmod>
     <data>
         <display>
         <title>C Language Learning</title>
@@ -270,7 +272,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2016/07/%E6%8E%A8%E8%8D%90%E7%BD%91%E9%A1%B5/</loc>
-    <lastmod>2017-11-26T19:25:15.000Z</lastmod>
+    <lastmod>2017-11-26T19:25:16.000Z</lastmod>
     <data>
         <display>
         <title>推荐网页</title>
