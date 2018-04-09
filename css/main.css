@@ -186,7 +186,7 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.8;
   color: #555;
   background: #eee;
@@ -203,7 +203,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 18px;
+    font-size: 19px;
   }
 }
 h1,
@@ -218,12 +218,13 @@ h6 {
   line-height: 1.5;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 20px 0 15px;
+  margin: 10px 0 15px;
 }
 h1 {
   font-size: 22px;
@@ -1231,7 +1232,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1289,7 +1290,7 @@ pre .javascript .function {
 .posts-expand .post-body h4,
 .posts-expand .post-body h5,
 .posts-expand .post-body h6 {
-  padding-top: 10px;
+  padding-top: 1px;
 }
 .posts-expand .post-body h2 .header-anchor,
 .posts-expand .post-body h3 .header-anchor,
@@ -1820,7 +1821,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a3f61c;
+  background: #33472f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2346,7 +2347,7 @@ ul.breadcrumb {
   margin: 1em 0;
   padding: 0 2em;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
 }
 ul.breadcrumb li {
   display: inline;
@@ -2844,25 +2845,25 @@ ul.breadcrumb li+li:last-child {
   font-size: 1.7em;
 }
 .post-body h1 {
-  font-size: 1.6em;
+  font-size: 1.8em;
   border-bottom: 1px solid #eee;
 }
 .post-body h2 {
-  font-size: 1.45em;
+  font-size: 1.6em;
   border-bottom: 1px solid #eee;
 }
 .post-body h3 {
-  font-size: 1.3em;
+  font-size: 1.4em;
   border-bottom: 1px dotted #eee;
 }
 .post-body h4 {
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 .post-body h5 {
-  font-size: 1.07em;
+  font-size: 1.2em;
 }
 .post-body h6 {
-  font-size: 1.03em;
+  font-size: 1.13em;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
