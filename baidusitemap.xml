@@ -4,12 +4,31 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA02-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F/</loc>
-    <lastmod>2018-04-10T07:04:45.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA03-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/</loc>
+    <lastmod>2018-04-10T07:26:40.000Z</lastmod>
     <data>
         <display>
-        <title>概率论02：随机变量</title>
-        <pubTime>2018-04-08T18:11:34.000Z</pubTime>
+        <title>概率论03：随机变量的数字特征</title>
+        <pubTime>2018-04-10T19:17:34.000Z</pubTime>
+        
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA-Probability-%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7/</loc>
+    <lastmod>2018-04-10T07:22:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>概率论(Probability)中英文对照</title>
+        <pubTime>2018-04-10T07:19:41.000Z</pubTime>
         
         <tag>statistic</tag>
          
@@ -24,11 +43,30 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA01-%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87/</loc>
-    <lastmod>2018-04-08T18:28:49.000Z</lastmod>
+    <lastmod>2018-04-10T07:21:23.000Z</lastmod>
     <data>
         <display>
         <title>概率论01：事件的概率</title>
         <pubTime>2018-04-08T05:48:46.000Z</pubTime>
+        
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA02-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F/</loc>
+    <lastmod>2018-04-10T07:21:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>概率论02：随机变量</title>
+        <pubTime>2018-04-08T18:11:34.000Z</pubTime>
         
         <tag>statistic</tag>
          
