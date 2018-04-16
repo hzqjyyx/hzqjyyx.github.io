@@ -4,65 +4,8 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA03-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/</loc>
-    <lastmod>2018-04-10T07:26:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>概率论03：随机变量的数字特征</title>
-        <pubTime>2018-04-10T19:17:34.000Z</pubTime>
-        
-        <tag>statistic</tag>
-         
-        <tag>概率</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA-Probability-%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7/</loc>
-    <lastmod>2018-04-10T07:22:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>概率论(Probability)中英文对照</title>
-        <pubTime>2018-04-10T07:19:41.000Z</pubTime>
-        
-        <tag>statistic</tag>
-         
-        <tag>概率</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA01-%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87/</loc>
-    <lastmod>2018-04-10T07:21:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>概率论01：事件的概率</title>
-        <pubTime>2018-04-08T05:48:46.000Z</pubTime>
-        
-        <tag>statistic</tag>
-         
-        <tag>概率</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA02-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F/</loc>
-    <lastmod>2018-04-10T07:21:17.000Z</lastmod>
+    <lastmod>2018-04-16T18:07:25.000Z</lastmod>
     <data>
         <display>
         <title>概率论02：随机变量</title>
@@ -74,140 +17,183 @@
          
          
            
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/03/DL-RNN-Sequence-to-Sequence/</loc>
-    <lastmod>2018-03-18T21:07:43.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA-%E5%B8%B8%E8%A7%81%E5%88%86%E5%B8%83/</loc>
+    <lastmod>2018-04-16T18:03:23.000Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning: RNN-Sequence to Sequence</title>
-        <pubTime>2018-03-16T17:59:41.000Z</pubTime>
+        <title>概率论：常见分布</title>
+        <pubTime>2018-04-16T16:21:43.000Z</pubTime>
         
-        <tag>deeplearning</tag>
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
          
          
            
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/03/DL-Translate/</loc>
-    <lastmod>2018-03-18T03:58:12.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA01-%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87/</loc>
+    <lastmod>2018-04-16T16:33:43.000Z</lastmod>
     <data>
         <display>
-        <title>DL: Translate</title>
-        <pubTime>2018-03-18T03:57:54.000Z</pubTime>
+        <title>概率论01：事件的概率</title>
+        <pubTime>2018-04-08T05:48:46.000Z</pubTime>
         
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
+         
          
            
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/03/DL-Represent-Network/</loc>
-    <lastmod>2018-03-17T17:15:00.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA-Probability-%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7/</loc>
+    <lastmod>2018-04-16T16:32:57.000Z</lastmod>
     <data>
         <display>
-        <title>DL: Represent Network</title>
-        <pubTime>2018-03-17T16:52:08.000Z</pubTime>
+        <title>概率论(Probability)中英文对照</title>
+        <pubTime>2018-04-10T07:19:41.000Z</pubTime>
         
-        <tag>deeplearning</tag>
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
          
          
            
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/03/DL-RNN/</loc>
-    <lastmod>2018-03-17T16:33:22.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA06-%E5%9B%9E%E5%BD%92%EF%BC%8C%E7%9B%B8%E5%85%B3%E4%B8%8E%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-04-16T16:32:45.000Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning: RNN</title>
-        <pubTime>2018-03-14T23:52:38.000Z</pubTime>
+        <title>概率论06：回归，相关与方差分析</title>
+        <pubTime>2018-04-16T16:24:36.000Z</pubTime>
         
-        <tag>deeplearning</tag>
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
          
          
            
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/03/DL-CNN/</loc>
-    <lastmod>2018-03-12T18:06:40.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA05-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/</loc>
+    <lastmod>2018-04-16T16:32:39.000Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning: CNN</title>
-        <pubTime>2018-03-12T18:04:38.000Z</pubTime>
+        <title>概率论05：假设检验</title>
+        <pubTime>2018-04-16T16:24:03.000Z</pubTime>
         
-        <tag>deeplearning</tag>
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
          
          
            
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/02/DL-Optimization/</loc>
-    <lastmod>2018-03-12T17:55:04.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA04-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/</loc>
+    <lastmod>2018-04-16T16:32:28.000Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning: Optimization</title>
-        <pubTime>2018-02-25T01:27:36.000Z</pubTime>
+        <title>概率论04：参数估计</title>
+        <pubTime>2018-04-16T16:23:46.000Z</pubTime>
         
-        <tag>deeplearning</tag>
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
          
          
            
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/02/DL-Learning%20the%20network/</loc>
-    <lastmod>2018-03-12T17:08:04.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA03-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/</loc>
+    <lastmod>2018-04-16T16:30:35.000Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning: Learning the network</title>
-        <pubTime>2018-02-24T00:27:36.000Z</pubTime>
+        <title>概率论03：随机变量的数字特征</title>
+        <pubTime>2018-04-10T19:17:34.000Z</pubTime>
         
-        <tag>deeplearning</tag>
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
          
          
            
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/02/DL-Introduction/</loc>
-    <lastmod>2018-03-11T18:57:26.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/03/SOC-Mid-term-Review/</loc>
+    <lastmod>2018-04-16T16:20:29.000Z</lastmod>
     <data>
         <display>
-        <title>Deep Learning: Introduction</title>
-        <pubTime>2018-02-23T20:49:36.000Z</pubTime>
+        <title>SOC: Mid-term Review</title>
+        <pubTime>2018-03-05T06:18:15.000Z</pubTime>
         
-        <tag>deeplearning</tag>
+        <tag>review</tag>
          
          
            
+             
+              <breadCrumb title="reviews" url="https://hzqjyyx.github.io/categories/reviews/"/>
+          
         </display>
     </data>
     </url>
@@ -215,7 +201,7 @@
     
   <url>
     <loc>https://hzqjyyx.github.io/2018/03/SAD-Mid-term-Review/</loc>
-    <lastmod>2018-03-06T22:20:32.000Z</lastmod>
+    <lastmod>2018-04-16T16:20:21.000Z</lastmod>
     <data>
         <display>
         <title>SAD: Mid-term Review</title>
@@ -225,21 +211,172 @@
          
          
            
+             
+              <breadCrumb title="reviews" url="https://hzqjyyx.github.io/categories/reviews/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/03/SOC-Mid-term-Review/</loc>
-    <lastmod>2018-03-06T22:20:24.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/03/DL-RNN-Sequence-to-Sequence/</loc>
+    <lastmod>2018-04-16T16:19:54.000Z</lastmod>
     <data>
         <display>
-        <title>SOC: Mid-term Review</title>
-        <pubTime>2018-03-05T06:18:15.000Z</pubTime>
+        <title>Deep Learning: RNN-Sequence to Sequence</title>
+        <pubTime>2018-03-16T17:59:41.000Z</pubTime>
         
-        <tag>review</tag>
+        <tag>deeplearning</tag>
          
+         
+           
+             
+              <breadCrumb title="deep learning" url="https://hzqjyyx.github.io/categories/deep-learning/"/>
+          
+             
+              <breadCrumb title="rnn" url="https://hzqjyyx.github.io/categories/deep-learning/rnn/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/03/DL-RNN/</loc>
+    <lastmod>2018-04-16T16:19:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Deep Learning: RNN</title>
+        <pubTime>2018-03-14T23:52:38.000Z</pubTime>
+        
+        <tag>deeplearning</tag>
+         
+         
+           
+             
+              <breadCrumb title="deep learning" url="https://hzqjyyx.github.io/categories/deep-learning/"/>
+          
+             
+              <breadCrumb title="rnn" url="https://hzqjyyx.github.io/categories/deep-learning/rnn/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/03/DL-Represent-Network/</loc>
+    <lastmod>2018-04-16T16:19:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>DL: Represent Network</title>
+        <pubTime>2018-03-17T16:52:08.000Z</pubTime>
+        
+        <tag>deeplearning</tag>
+         
+         
+           
+             
+              <breadCrumb title="deep learning" url="https://hzqjyyx.github.io/categories/deep-learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/02/DL-Optimization/</loc>
+    <lastmod>2018-04-16T16:19:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>Deep Learning: Optimization</title>
+        <pubTime>2018-02-25T01:27:36.000Z</pubTime>
+        
+        <tag>deeplearning</tag>
+         
+         
+           
+             
+              <breadCrumb title="deep learning" url="https://hzqjyyx.github.io/categories/deep-learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/02/DL-Learning%20the%20network/</loc>
+    <lastmod>2018-04-16T16:19:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>Deep Learning: Learning the network</title>
+        <pubTime>2018-02-24T00:27:36.000Z</pubTime>
+        
+        <tag>deeplearning</tag>
+         
+         
+           
+             
+              <breadCrumb title="deep learning" url="https://hzqjyyx.github.io/categories/deep-learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/02/DL-Introduction/</loc>
+    <lastmod>2018-04-16T16:18:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>Deep Learning: Introduction</title>
+        <pubTime>2018-02-23T20:49:36.000Z</pubTime>
+        
+        <tag>deeplearning</tag>
+         
+         
+           
+             
+              <breadCrumb title="deep learning" url="https://hzqjyyx.github.io/categories/deep-learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/03/DL-CNN/</loc>
+    <lastmod>2018-04-16T16:18:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>Deep Learning: CNN</title>
+        <pubTime>2018-03-12T18:04:38.000Z</pubTime>
+        
+        <tag>deeplearning</tag>
+         
+         
+           
+             
+              <breadCrumb title="deep learning" url="https://hzqjyyx.github.io/categories/deep-learning/"/>
+          
+             
+              <breadCrumb title="cnn" url="https://hzqjyyx.github.io/categories/deep-learning/cnn/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/03/DL-Translate/</loc>
+    <lastmod>2018-03-18T03:58:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>DL: Translate</title>
+        <pubTime>2018-03-18T03:57:54.000Z</pubTime>
+        
          
            
         </display>
