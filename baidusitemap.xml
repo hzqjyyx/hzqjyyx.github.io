@@ -4,8 +4,47 @@
 
     
   <url>
+    <loc>https://hzqjyyx.github.io/2018/05/SAD-Final-Review/</loc>
+    <lastmod>2018-05-10T06:31:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>SAD: Final Review</title>
+        <pubTime>2018-05-10T03:05:30.000Z</pubTime>
+        
+        <tag>review</tag>
+         
+         
+           
+             
+              <breadCrumb title="reviews" url="https://hzqjyyx.github.io/categories/reviews/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2017/05/%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2018-05-09T18:33:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何免费搭建个人博客</title>
+        <pubTime>2017-05-08T01:38:15.000Z</pubTime>
+        
+        <tag>github pages</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hzqjyyx.github.io/2018/05/SOC-Final-Review/</loc>
-    <lastmod>2018-05-08T15:38:52.000Z</lastmod>
+    <lastmod>2018-05-08T15:53:18.000Z</lastmod>
     <data>
         <display>
         <title>SOC: Final Review</title>
@@ -397,25 +436,6 @@
         <title>DL: Translate</title>
         <pubTime>2018-03-18T03:57:54.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2017/05/%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-02-23T22:41:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何免费搭建个人博客</title>
-        <pubTime>2017-05-08T01:38:15.000Z</pubTime>
-        
-        <tag>github pages</tag>
-         
-        <tag>hexo</tag>
-         
          
            
         </display>
