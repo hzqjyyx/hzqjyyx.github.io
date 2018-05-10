@@ -103,13 +103,13 @@
   <meta name="keywords" content="review," />
 
 
-<meta name="description" content="Basic Idea  4+1 View  Logical View  Functions   Development View  Configuration/ Build   Process View  Sequence Communication   Physical View  Install Delivery">
+<meta name="description" content="Basic Idea  4+1 view macro patterns microservices">
 <meta name="keywords" content="review">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SAD: Final Review">
 <meta property="og:url" content="https://hzqjyyx.github.io/2018/05/SAD-Final-Review/index.html">
 <meta property="og:site_name" content="泽强的工作台">
-<meta property="og:description" content="Basic Idea  4+1 View  Logical View  Functions   Development View  Configuration/ Build   Process View  Sequence Communication   Physical View  Install Delivery">
+<meta property="og:description" content="Basic Idea  4+1 view macro patterns microservices">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20180509/200936171.png?imageslim">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fr65yuzfy3j30iy0cuta7.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fr65hcztu3j30oi0gadhc.jpg">
@@ -118,10 +118,10 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fr67d777duj30fg0bpgm7.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr67ehuu5bj30a60evwel.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr67ghkfusj30o50e0n0l.jpg">
-<meta property="og:updated_time" content="2018-05-10T06:31:06.000Z">
+<meta property="og:updated_time" content="2018-05-10T07:34:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SAD: Final Review">
-<meta name="twitter:description" content="Basic Idea  4+1 View  Logical View  Functions   Development View  Configuration/ Build   Process View  Sequence Communication   Physical View  Install Delivery">
+<meta name="twitter:description" content="Basic Idea  4+1 view macro patterns microservices">
 <meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20180509/200936171.png?imageslim">
 
 
@@ -417,8 +417,15 @@
 
       
         <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<ul>
+<li>4+1 view</li>
+<li>macro patterns</li>
+<li>microservices</li>
+</ul>
+<a id="more"></a>
 <h1 id="41-view"><a class="markdownIt-Anchor" href="#41-view"></a> 4+1 View</h1>
 <ul>
+<li>Scenario</li>
 <li>Logical View
 <ul>
 <li>Functions</li>
@@ -442,7 +449,6 @@
 </ul>
 </li>
 </ul>
-<a id="more"></a>
 <h1 id="view-model"><a class="markdownIt-Anchor" href="#view-model"></a> View Model</h1>
 <p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20180509/200936171.png?imageslim" alt="mark"></p>
 <ul>
@@ -524,8 +530,97 @@ Components operating on the blackboard</p>
 <strong>Connectors</strong>: Network protocols and elements for packaging code and data for transmission.</p>
 <p><u>MapReduce</u></p>
 <h2 id="implicit-invocation-style"><a class="markdownIt-Anchor" href="#implicit-invocation-style"></a> Implicit Invocation Style</h2>
+<p>Event announcement instead of method invocation<br>
+“Listeners” register interest in and associate methods with events.<br>
+System invokes all registered method simplicitly</p>
+<p>No assumption about processing in response to events</p>
 <h2 id="publish-subscribe"><a class="markdownIt-Anchor" href="#publish-subscribe"></a> Publish-Subscribe</h2>
+<p>Subscribers register/deregister to receive specific messages or specific content. Publishers broadcast messages to subscribers either synchronously or asynchronously.</p>
+<p><strong>Components</strong>: Publishers, subscribers, proxies for managing distribution<br>
+<strong>Connectors</strong>: Typically a network protocol is required.</p>
 <h2 id="event-based-style"><a class="markdownIt-Anchor" href="#event-based-style"></a> Event-Based Style</h2>
+<p>Independent components asynchronously emit and receive events communicated over event buses.</p>
+<p><strong>Components</strong>: Independent, concurrent event generators and/or consumers<br>
+<strong>Connectors</strong>: Event buses (at least one)</p>
+<p>#ATAM</p>
+<p>To assess the consequences of architectural decisions in light of quality attribute requirements.<br>
+Human-centric process for identifying risks early on in software design.</p>
+<ul>
+<li>Scenario – A scenario is a short statement describing an interaction of one of the stakeholders with the system</li>
+<li>Stakeholder – An individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system</li>
+<li>Architectural view – A representation of a whole system from the perspective of a related set of concerns</li>
+<li>Functional requirements - specify what software has to do.</li>
+<li>Non-functional requirements specify how well it should be done.</li>
+</ul>
+<h1 id="microservice"><a class="markdownIt-Anchor" href="#microservice"></a> Microservice</h1>
+<p><strong>Problems of Software Monoliths</strong></p>
+<p><u>A Software Monolith is One build and deployment unit, One codebase, One technology stack</u><br>
+Huge and intimidating code base for developers</p>
+<ul>
+<li><u>Development</u> tools get overburdened
+<ul>
+<li>refactoring take minutes</li>
+<li>builds take hours</li>
+<li>testing in continuous integration takes days</li>
+</ul>
+</li>
+<li><u>Scaling</u> is limited
+<ul>
+<li>Running a copy of the whole system is resource-intense</li>
+<li>It doesn’t scale with the data volume out-of-the-box</li>
+</ul>
+</li>
+<li><u>Deployment frequency</u> is limited
+<ul>
+<li>Re-deploying means halting the whole system</li>
+<li>Re-deployments will fail and increase the perceived risk of deployment</li>
+</ul>
+</li>
+</ul>
+<p><strong>Principles of Microservices</strong></p>
+<ul>
+<li>Rely only on the public API</li>
+<li>Use the right tool for the job</li>
+<li>Secure your services</li>
+<li>Be a good citizen within the ecosystem</li>
+<li>More than just technology transformation</li>
+<li>Automate everything</li>
+</ul>
+<p><strong>What is microservice? Why popular now? Comparison with SOA?</strong></p>
+<p>A microservice architecture puts each element of functionality into a <u>separate</u> service…</p>
+<p>SOA systems also focus on functional decomposition,but</p>
+<ul>
+<li>services are not required to be self-contained with data and UI, most of the time the contrary is pictured.</li>
+<li>It is often thought as decomposition within tiers, and introducing another tier – the service orchestration tier</li>
+</ul>
+<p>In comparison to microservice</p>
+<ul>
+<li>SOA is focused on enabling <u>business-level programming</u> through business processing engines and languages  such as BPEL and BPMN</li>
+<li>SOA does not focus on independent <u>deployment</u> units and its consequences</li>
+<li>Microservice can be seen as “<u>SOA –the good parts”</u></li>
+</ul>
+<p><strong>What is devOps</strong></p>
+<p>software development method that stresses communication, collaboration and integration between software developers and information technology(IT).</p>
+<p>software developers manage code, information technology manage machine.</p>
+<p><strong>Principles of DevOps</strong></p>
+<p>Develop and test in an environment similar to production<br>
+Deploy builds frequently<br>
+Validate operation quality continuously</p>
+<h1 id="team"><a class="markdownIt-Anchor" href="#team"></a> Team</h1>
+<p><strong>Desired Skill Set</strong></p>
+<ul>
+<li>Software development expertise</li>
+<li>Domain expertise</li>
+<li>Communicator</li>
+<li>Strategist</li>
+<li>Consultant</li>
+<li>Leader</li>
+<li>Technologist</li>
+<li>Cost estimator</li>
+<li>Cheerleader</li>
+<li>Politician</li>
+<li>Salesperson</li>
+</ul>
 
       
     </div>
@@ -766,7 +861,7 @@ Components operating on the blackboard</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#41-view"><span class="nav-number">2.</span> <span class="nav-text"> 4+1 View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#view-model"><span class="nav-number">3.</span> <span class="nav-text"> View Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#architecutural-style"><span class="nav-number">4.</span> <span class="nav-text"> Architecutural Style</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#object-oriented-style"><span class="nav-number">4.1.</span> <span class="nav-text"> Object-Oriented Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layered-style"><span class="nav-number">4.2.</span> <span class="nav-text"> Layered Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-server-style"><span class="nav-number">4.3.</span> <span class="nav-text"> Client-Server Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-tier"><span class="nav-number">4.4.</span> <span class="nav-text"> 3-Tier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peer-to-peer-style"><span class="nav-number">4.5.</span> <span class="nav-text"> Peer-to-Peer Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#batch-sequential-style"><span class="nav-number">4.6.</span> <span class="nav-text"> Batch Sequential Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pipe-and-filter-style"><span class="nav-number">4.7.</span> <span class="nav-text"> Pipe and Filter Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blockboard-style"><span class="nav-number">4.8.</span> <span class="nav-text"> Blockboard Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rule-based-style"><span class="nav-number">4.9.</span> <span class="nav-text"> Rule-Based Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interpreter-style"><span class="nav-number">4.10.</span> <span class="nav-text"> Interpreter Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mobile-code-style"><span class="nav-number">4.11.</span> <span class="nav-text"> Mobile-Code Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implicit-invocation-style"><span class="nav-number">4.12.</span> <span class="nav-text"> Implicit Invocation Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#publish-subscribe"><span class="nav-number">4.13.</span> <span class="nav-text"> Publish-Subscribe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event-based-style"><span class="nav-number">4.14.</span> <span class="nav-text"> Event-Based Style</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#41-view"><span class="nav-number">2.</span> <span class="nav-text"> 4+1 View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#view-model"><span class="nav-number">3.</span> <span class="nav-text"> View Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#architecutural-style"><span class="nav-number">4.</span> <span class="nav-text"> Architecutural Style</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#object-oriented-style"><span class="nav-number">4.1.</span> <span class="nav-text"> Object-Oriented Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layered-style"><span class="nav-number">4.2.</span> <span class="nav-text"> Layered Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-server-style"><span class="nav-number">4.3.</span> <span class="nav-text"> Client-Server Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-tier"><span class="nav-number">4.4.</span> <span class="nav-text"> 3-Tier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peer-to-peer-style"><span class="nav-number">4.5.</span> <span class="nav-text"> Peer-to-Peer Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#batch-sequential-style"><span class="nav-number">4.6.</span> <span class="nav-text"> Batch Sequential Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pipe-and-filter-style"><span class="nav-number">4.7.</span> <span class="nav-text"> Pipe and Filter Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blockboard-style"><span class="nav-number">4.8.</span> <span class="nav-text"> Blockboard Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rule-based-style"><span class="nav-number">4.9.</span> <span class="nav-text"> Rule-Based Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interpreter-style"><span class="nav-number">4.10.</span> <span class="nav-text"> Interpreter Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mobile-code-style"><span class="nav-number">4.11.</span> <span class="nav-text"> Mobile-Code Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implicit-invocation-style"><span class="nav-number">4.12.</span> <span class="nav-text"> Implicit Invocation Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#publish-subscribe"><span class="nav-number">4.13.</span> <span class="nav-text"> Publish-Subscribe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event-based-style"><span class="nav-number">4.14.</span> <span class="nav-text"> Event-Based Style</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#microservice"><span class="nav-number">5.</span> <span class="nav-text"> Microservice</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#team"><span class="nav-number">6.</span> <span class="nav-text"> Team</span></a></li></ol></div>
             
           </div>
 
