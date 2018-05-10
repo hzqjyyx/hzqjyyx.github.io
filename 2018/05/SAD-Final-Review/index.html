@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fr67d777duj30fg0bpgm7.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr67ehuu5bj30a60evwel.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr67ghkfusj30o50e0n0l.jpg">
-<meta property="og:updated_time" content="2018-05-10T07:34:49.000Z">
+<meta property="og:updated_time" content="2018-05-10T07:50:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SAD: Final Review">
 <meta name="twitter:description" content="Basic Idea  4+1 view macro patterns microservices">
@@ -546,12 +546,38 @@ System invokes all registered method simplicitly</p>
 <p>To assess the consequences of architectural decisions in light of quality attribute requirements.<br>
 Human-centric process for identifying risks early on in software design.</p>
 <ul>
-<li>Scenario – A scenario is a short statement describing an interaction of one of the stakeholders with the system</li>
-<li>Stakeholder – An individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system</li>
-<li>Architectural view – A representation of a whole system from the perspective of a related set of concerns</li>
-<li>Functional requirements - specify what software has to do.</li>
-<li>Non-functional requirements specify how well it should be done.</li>
+<li><strong>Scenario</strong> – A scenario is a short statement describing an interaction of one of the stakeholders with the system</li>
+<li><strong>Stakeholder</strong> – An individual, team, or organization (or classes thereof) with interests in, or concerns relative to, a system</li>
+<li><strong>Architectural view</strong> – A representation of a whole system from the perspective of a related set of concerns</li>
+<li><strong>Functional requirements</strong> - specify what software has to do.</li>
+<li><strong>Non-functional requirement</strong>s specify how well it should be done.</li>
 </ul>
+<h2 id="atam-business-drivers"><a class="markdownIt-Anchor" href="#atam-business-drivers"></a> ATAM Business Drivers</h2>
+<p>The system’s critical functionality<br>
+Any technical, managerial, economic, or political constraints<br>
+The project’s business goals and context<br>
+The principal quality attribute (NFP) goals</p>
+<h2 id="atam-scenarios"><a class="markdownIt-Anchor" href="#atam-scenarios"></a> ATAM Scenarios</h2>
+<ul>
+<li>Use-case scenarios : Describe how the system is envisioned by the stakeholders to be used</li>
+<li>Growth scenarios : Describe planned and envisioned modifications to the architecture</li>
+<li>Exploratory scenarios  : Try to establish the limits of architecture’s adaptability</li>
+</ul>
+<h2 id="atam-analysis"><a class="markdownIt-Anchor" href="#atam-analysis"></a> ATAM Analysis</h2>
+<p>Objective is to establish relationship between architectural approaches and quality attributes</p>
+<p>System architects and ATAM evaluation team work together to answer these questions and identify</p>
+<ul>
+<li>Risks</li>
+<li>Non-Risks</li>
+<li>Sensitivity points</li>
+<li>Trade-off points</li>
+</ul>
+<h2 id="steps"><a class="markdownIt-Anchor" href="#steps"></a> Steps</h2>
+<ol>
+<li>Present ATAM (Overview)</li>
+<li>Present Business Drivers</li>
+<li></li>
+</ol>
 <h1 id="microservice"><a class="markdownIt-Anchor" href="#microservice"></a> Microservice</h1>
 <p><strong>Problems of Software Monoliths</strong></p>
 <p><u>A Software Monolith is One build and deployment unit, One codebase, One technology stack</u><br>
@@ -861,7 +887,7 @@ Validate operation quality continuously</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#41-view"><span class="nav-number">2.</span> <span class="nav-text"> 4+1 View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#view-model"><span class="nav-number">3.</span> <span class="nav-text"> View Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#architecutural-style"><span class="nav-number">4.</span> <span class="nav-text"> Architecutural Style</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#object-oriented-style"><span class="nav-number">4.1.</span> <span class="nav-text"> Object-Oriented Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layered-style"><span class="nav-number">4.2.</span> <span class="nav-text"> Layered Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-server-style"><span class="nav-number">4.3.</span> <span class="nav-text"> Client-Server Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-tier"><span class="nav-number">4.4.</span> <span class="nav-text"> 3-Tier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peer-to-peer-style"><span class="nav-number">4.5.</span> <span class="nav-text"> Peer-to-Peer Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#batch-sequential-style"><span class="nav-number">4.6.</span> <span class="nav-text"> Batch Sequential Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pipe-and-filter-style"><span class="nav-number">4.7.</span> <span class="nav-text"> Pipe and Filter Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blockboard-style"><span class="nav-number">4.8.</span> <span class="nav-text"> Blockboard Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rule-based-style"><span class="nav-number">4.9.</span> <span class="nav-text"> Rule-Based Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interpreter-style"><span class="nav-number">4.10.</span> <span class="nav-text"> Interpreter Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mobile-code-style"><span class="nav-number">4.11.</span> <span class="nav-text"> Mobile-Code Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implicit-invocation-style"><span class="nav-number">4.12.</span> <span class="nav-text"> Implicit Invocation Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#publish-subscribe"><span class="nav-number">4.13.</span> <span class="nav-text"> Publish-Subscribe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event-based-style"><span class="nav-number">4.14.</span> <span class="nav-text"> Event-Based Style</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#microservice"><span class="nav-number">5.</span> <span class="nav-text"> Microservice</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#team"><span class="nav-number">6.</span> <span class="nav-text"> Team</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#41-view"><span class="nav-number">2.</span> <span class="nav-text"> 4+1 View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#view-model"><span class="nav-number">3.</span> <span class="nav-text"> View Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#architecutural-style"><span class="nav-number">4.</span> <span class="nav-text"> Architecutural Style</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#object-oriented-style"><span class="nav-number">4.1.</span> <span class="nav-text"> Object-Oriented Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layered-style"><span class="nav-number">4.2.</span> <span class="nav-text"> Layered Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-server-style"><span class="nav-number">4.3.</span> <span class="nav-text"> Client-Server Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-tier"><span class="nav-number">4.4.</span> <span class="nav-text"> 3-Tier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peer-to-peer-style"><span class="nav-number">4.5.</span> <span class="nav-text"> Peer-to-Peer Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#batch-sequential-style"><span class="nav-number">4.6.</span> <span class="nav-text"> Batch Sequential Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pipe-and-filter-style"><span class="nav-number">4.7.</span> <span class="nav-text"> Pipe and Filter Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blockboard-style"><span class="nav-number">4.8.</span> <span class="nav-text"> Blockboard Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rule-based-style"><span class="nav-number">4.9.</span> <span class="nav-text"> Rule-Based Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interpreter-style"><span class="nav-number">4.10.</span> <span class="nav-text"> Interpreter Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mobile-code-style"><span class="nav-number">4.11.</span> <span class="nav-text"> Mobile-Code Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implicit-invocation-style"><span class="nav-number">4.12.</span> <span class="nav-text"> Implicit Invocation Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#publish-subscribe"><span class="nav-number">4.13.</span> <span class="nav-text"> Publish-Subscribe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event-based-style"><span class="nav-number">4.14.</span> <span class="nav-text"> Event-Based Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#atam-business-drivers"><span class="nav-number">4.15.</span> <span class="nav-text"> ATAM Business Drivers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#atam-scenarios"><span class="nav-number">4.16.</span> <span class="nav-text"> ATAM Scenarios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#atam-analysis"><span class="nav-number">4.17.</span> <span class="nav-text"> ATAM Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#steps"><span class="nav-number">4.18.</span> <span class="nav-text"> Steps</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#microservice"><span class="nav-number">5.</span> <span class="nav-text"> Microservice</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#team"><span class="nav-number">6.</span> <span class="nav-text"> Team</span></a></li></ol></div>
             
           </div>
 
