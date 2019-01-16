@@ -26,126 +26,6 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2019/01/Machine-Learning-Algorithms/</loc>
-    <lastmod>2019-01-11T01:40:09.237Z</lastmod>
-    <data>
-        <display>
-        <title>Basic Machine Learning Algorithms</title>
-        <pubTime>2019-01-11T01:31:06.000Z</pubTime>
-        
-        <tag>todo</tag>
-         
-        <tag>machine learning</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2019/01/Distributed-System/</loc>
-    <lastmod>2019-01-11T01:30:44.271Z</lastmod>
-    <data>
-        <display>
-        <title>Distributed System</title>
-        <pubTime>2019-01-11T01:23:23.000Z</pubTime>
-        
-        <tag>todo</tag>
-         
-        <tag>distributed system</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/11/Cloud-Infrastructure/</loc>
-    <lastmod>2019-01-11T01:30:29.368Z</lastmod>
-    <data>
-        <display>
-        <title>Cloud Infrastructure</title>
-        <pubTime>2018-11-08T19:03:22.000Z</pubTime>
-        
-        <tag>todo</tag>
-         
-        <tag>cloud</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/11/Java-Interview-Review/</loc>
-    <lastmod>2019-01-11T01:30:19.553Z</lastmod>
-    <data>
-        <display>
-        <title>Java Interview Review</title>
-        <pubTime>2018-11-17T07:17:56.000Z</pubTime>
-        
-        <tag>todo</tag>
-         
-        <tag>interview</tag>
-         
-        <tag>java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2019/01/Networking-for-Interview/</loc>
-    <lastmod>2019-01-11T01:29:59.278Z</lastmod>
-    <data>
-        <display>
-        <title>Networking for Interview (TODO)</title>
-        <pubTime>2019-01-09T17:57:03.000Z</pubTime>
-        
-        <tag>todo</tag>
-         
-        <tag>interview</tag>
-         
-        <tag>network</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2019/01/Operating-System-for-Interview/</loc>
-    <lastmod>2019-01-11T01:29:53.741Z</lastmod>
-    <data>
-        <display>
-        <title>Operating System for Interview (TODO)</title>
-        <pubTime>2019-01-04T00:09:45.000Z</pubTime>
-        
-        <tag>todo</tag>
-         
-        <tag>interview</tag>
-         
-        <tag>os</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hzqjyyx.github.io/2017/07/Understanding-JavaScript/</loc>
     <lastmod>2019-01-11T01:29:35.609Z</lastmod>
     <data>
@@ -194,25 +74,6 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2019/01/System-Design/</loc>
-    <lastmod>2019-01-11T01:29:14.684Z</lastmod>
-    <data>
-        <display>
-        <title>System Design for Interview</title>
-        <pubTime>2019-01-11T01:23:31.000Z</pubTime>
-        
-        <tag>todo</tag>
-         
-        <tag>interview</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hzqjyyx.github.io/2018/07/Learn%20Kotlin-Basic/</loc>
     <lastmod>2019-01-11T01:27:45.956Z</lastmod>
     <data>
@@ -241,9 +102,9 @@
         <title>MySQL 必知必会笔记 (TODO)</title>
         <pubTime>2018-08-29T18:49:30.000Z</pubTime>
         
-        <tag>notes</tag>
-         
         <tag>todo</tag>
+         
+        <tag>notes</tag>
          
         <tag>mysql</tag>
          
@@ -296,154 +157,6 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2019/01/CSAPP/</loc>
-    <lastmod>2019-01-11T01:20:02.958Z</lastmod>
-    <data>
-        <display>
-        <title>Introduction of Computer System (TODO)</title>
-        <pubTime>2019-01-02T23:40:05.000Z</pubTime>
-        
-        <tag>fundamental</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2019/01/Interview-Questions/</loc>
-    <lastmod>2019-01-04T01:37:14.970Z</lastmod>
-    <data>
-        <display>
-        <title>Interview Questions</title>
-        <pubTime>2019-01-04T00:13:05.000Z</pubTime>
-        
-        <tag>interview</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/06/Algorithm-04-Graph/</loc>
-    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>Algorithm(04): Graph</title>
-        <pubTime>2018-06-14T21:44:27.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>notes</tag>
-         
-        <tag>graph</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
-          
-             
-              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/06/Algorithm-03-Tree/</loc>
-    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>Algorithm(03): Tree</title>
-        <pubTime>2018-06-14T01:57:13.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>notes</tag>
-         
-        <tag>tree</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
-          
-             
-              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/05/Algorithm-01-0-Concepts/</loc>
-    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>Algorithm(01): Concepts</title>
-        <pubTime>2018-05-31T17:35:24.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>notes</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
-          
-             
-              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/11/Leetcode-Part-2/</loc>
-    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>Leetcode Problem (Part 2)</title>
-        <pubTime>2018-11-12T03:53:11.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/03/SOC-Mid-term-Review/</loc>
-    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>SOC: Mid-term Review</title>
-        <pubTime>2018-03-05T06:18:15.000Z</pubTime>
-        
-        <tag>review</tag>
-         
-         
-           
-             
-              <breadCrumb title="reviews" url="https://hzqjyyx.github.io/categories/reviews/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hzqjyyx.github.io/2018/06/Algorithm-02-0-Sorting/</loc>
     <lastmod>2019-01-01T19:27:05.000Z</lastmod>
     <data>
@@ -456,83 +169,6 @@
         <tag>notes</tag>
          
         <tag>sort</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
-          
-             
-              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/06/Algorithm-02-1-Order-Statistic/</loc>
-    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>Algorithm(02-1): Order Statistic</title>
-        <pubTime>2018-06-07T16:59:28.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>notes</tag>
-         
-        <tag>select</tag>
-         
-        <tag>sort</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
-          
-             
-              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/11/LeetCode-Part-1/</loc>
-    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>LeetCode Problems (Part 1)</title>
-        <pubTime>2018-11-06T01:09:12.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>leetcode</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzqjyyx.github.io/2018/06/Algorithm-01-2-Greedy-Algorithm/</loc>
-    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>Algorithm(01-2): Greedy Algorithm</title>
-        <pubTime>2018-06-03T01:09:27.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-        <tag>notes</tag>
-         
-        <tag>greedy</tag>
-         
-        <tag>optimal substructure</tag>
          
          
            
@@ -577,21 +213,28 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA06-%E5%9B%9E%E5%BD%92%EF%BC%8C%E7%9B%B8%E5%85%B3%E4%B8%8E%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-09-01T04:11:13.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/06/Algorithm-02-1-Order-Statistic/</loc>
+    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
     <data>
         <display>
-        <title>概率论06：回归，相关与方差分析</title>
-        <pubTime>2018-04-16T16:24:36.000Z</pubTime>
+        <title>Algorithm(02-1): Order Statistic</title>
+        <pubTime>2018-06-07T16:59:28.000Z</pubTime>
         
-        <tag>statistic</tag>
+        <tag>algorithm</tag>
          
-        <tag>概率</tag>
+        <tag>notes</tag>
+         
+        <tag>select</tag>
+         
+        <tag>sort</tag>
          
          
            
              
-              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
+          
+             
+              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
           
         </display>
     </data>
@@ -599,19 +242,162 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2017/05/%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-09-01T04:11:13.000Z</lastmod>
+    <loc>https://hzqjyyx.github.io/2018/11/Leetcode-Part-2/</loc>
+    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
     <data>
         <display>
-        <title>如何免费搭建个人博客</title>
-        <pubTime>2017-05-08T01:38:15.000Z</pubTime>
+        <title>Leetcode Problem (Part 2)</title>
+        <pubTime>2018-11-12T03:53:11.000Z</pubTime>
         
-        <tag>hexo</tag>
          
-        <tag>github pages</tag>
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/11/LeetCode-Part-1/</loc>
+    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>LeetCode Problems (Part 1)</title>
+        <pubTime>2018-11-06T01:09:12.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>leetcode</tag>
          
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/03/SOC-Mid-term-Review/</loc>
+    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>SOC: Mid-term Review</title>
+        <pubTime>2018-03-05T06:18:15.000Z</pubTime>
+        
+        <tag>review</tag>
+         
+         
+           
+             
+              <breadCrumb title="reviews" url="https://hzqjyyx.github.io/categories/reviews/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/06/Algorithm-01-2-Greedy-Algorithm/</loc>
+    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>Algorithm(01-2): Greedy Algorithm</title>
+        <pubTime>2018-06-03T01:09:27.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>notes</tag>
+         
+        <tag>greedy</tag>
+         
+        <tag>optimal substructure</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
+          
+             
+              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/06/Algorithm-03-Tree/</loc>
+    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>Algorithm(03): Tree</title>
+        <pubTime>2018-06-14T01:57:13.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>notes</tag>
+         
+        <tag>tree</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
+          
+             
+              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/06/Algorithm-04-Graph/</loc>
+    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>Algorithm(04): Graph</title>
+        <pubTime>2018-06-14T21:44:27.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>notes</tag>
+         
+        <tag>graph</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
+          
+             
+              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/05/Algorithm-01-0-Concepts/</loc>
+    <lastmod>2019-01-01T19:27:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>Algorithm(01): Concepts</title>
+        <pubTime>2018-05-31T17:35:24.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+        <tag>notes</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://hzqjyyx.github.io/categories/algorithm/"/>
+          
+             
+              <breadCrumb title="book" url="https://hzqjyyx.github.io/categories/algorithm/book/"/>
+          
         </display>
     </data>
     </url>
@@ -637,28 +423,6 @@
 
     
   <url>
-    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA05-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/</loc>
-    <lastmod>2018-09-01T04:11:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>概率论05：假设检验</title>
-        <pubTime>2018-04-16T16:24:03.000Z</pubTime>
-        
-        <tag>statistic</tag>
-         
-        <tag>概率</tag>
-         
-         
-           
-             
-              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hzqjyyx.github.io/2018/06/Leetcode-Sort/</loc>
     <lastmod>2018-09-01T04:11:13.000Z</lastmod>
     <data>
@@ -678,12 +442,75 @@
 
     
   <url>
+    <loc>https://hzqjyyx.github.io/2017/05/%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2018-09-01T04:11:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何免费搭建个人博客</title>
+        <pubTime>2017-05-08T01:38:15.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>github pages</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA06-%E5%9B%9E%E5%BD%92%EF%BC%8C%E7%9B%B8%E5%85%B3%E4%B8%8E%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-09-01T04:11:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>概率论06：回归，相关与方差分析</title>
+        <pubTime>2018-04-16T16:24:36.000Z</pubTime>
+        
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
+         
+         
+           
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA04-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/</loc>
     <lastmod>2018-09-01T04:11:13.000Z</lastmod>
     <data>
         <display>
         <title>概率论04：参数估计</title>
         <pubTime>2018-04-16T16:23:46.000Z</pubTime>
+        
+        <tag>statistic</tag>
+         
+        <tag>概率</tag>
+         
+         
+           
+             
+              <breadCrumb title="概率论" url="https://hzqjyyx.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzqjyyx.github.io/2018/04/%E6%A6%82%E7%8E%87%E8%AE%BA05-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/</loc>
+    <lastmod>2018-09-01T04:11:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>概率论05：假设检验</title>
+        <pubTime>2018-04-16T16:24:03.000Z</pubTime>
         
         <tag>statistic</tag>
          
