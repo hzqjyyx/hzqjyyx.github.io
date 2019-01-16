@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="algorithm,notes,select,sort," />
+
+
+<meta name="description" content="Basic Idea  quick select order statistic tree">
+<meta name="keywords" content="algorithm,notes,select,sort">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithm(02-1): Order Statistic">
+<meta property="og:url" content="https://hzqjyyx.github.io/2018/06/Algorithm-02-1-Order-Statistic/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="Basic Idea  quick select order statistic tree">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180620/5C5EeLaKDD.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180620/Gl08j0593K.png?imageslim">
+<meta property="og:updated_time" content="2019-01-01T19:27:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algorithm(02-1): Order Statistic">
+<meta name="twitter:description" content="Basic Idea  quick select order statistic tree">
+<meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180620/5C5EeLaKDD.png?imageslim">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2018/06/Algorithm-02-1-Order-Statistic/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Algorithm(02-1): Order Statistic | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/06/Algorithm-02-1-Order-Statistic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Algorithm(02-1): Order Statistic</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-07T09:59:28-07:00">2018-06-07</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/Algorithm-02-1-Order-Statistic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/Algorithm-02-1-Order-Statistic/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<ul>
+<li>quick select</li>
+<li>order statistic tree</li>
+</ul>
+<a id="more"></a>
+<h1 id="order-statistics"><a class="markdownIt-Anchor" href="#order-statistics"></a> Order Statistics</h1>
+<p>Selecting the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">i</span></span></span></span>th order statistic from a set of n distinct numbers. Formally,</p>
+<p><strong>Input</strong>: A set A of n (distinct) numbers and an integer i, with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1\leq i \leq n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="base"><span class="mord">1</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">i</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">n</span></span></span></span>.<br>
+<strong>Output</strong>: The element <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">x \in A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="base"><span class="mord mathit">x</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">A</span></span></span></span> that is larger than exactly <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i -1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="base"><span class="mord mathit">i</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span></span> other elements of A.</p>
+<h1 id="quick-select"><a class="markdownIt-Anchor" href="#quick-select"></a> Quick Select</h1>
+<h2 id="pseudocode-and-detail"><a class="markdownIt-Anchor" href="#pseudocode-and-detail"></a> Pseudocode and Detail</h2>
+<p><strong>Time Complexity</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Θ</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\Theta(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">Θ</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> in average case and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Θ</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\Theta(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">Θ</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> in worst case.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">RANDOMIZED-SELECT(A, p, r, i)</span><br><span class="line"> if p==r</span><br><span class="line">   return A[p]</span><br><span class="line"> q = RANDOMIZED-PARTITION(A, p, r)</span><br><span class="line"> k = q-p+1</span><br><span class="line"> if i==k</span><br><span class="line">   return A[q]</span><br><span class="line"> else if i&lt;k</span><br><span class="line">   return RANDOMIZED-SELECT(A, p, q-1, i)</span><br><span class="line"> else return RANDOMIZED-SELECT(A, q+1, r, i-k)</span><br><span class="line"> </span><br><span class="line">// O(n), n is r-p+1</span><br><span class="line">PARTITION(A, p, r)</span><br><span class="line">  x = A[r]</span><br><span class="line">  i = p-1</span><br><span class="line">  for j=p to r-1</span><br><span class="line">    if A[j]&lt;=x</span><br><span class="line">    	i+=1</span><br><span class="line">  		exchange(A, i, j)</span><br><span class="line">  exchange(A, i+1, r)</span><br><span class="line">  return i+1</span><br></pre></td></tr></table></figure>
+<h1 id="min-heap"><a class="markdownIt-Anchor" href="#min-heap"></a> Min-heap</h1>
+<p>We can find k’th smallest element in time complexity better than O(nLogn). A simple optomization is to create a <a href="http://geeksquiz.com/binary-heap/" target="_blank" rel="noopener">Min Heap </a>of the given n elements and call extractMin() k times.</p>
+<h1 id="max-heap"><a class="markdownIt-Anchor" href="#max-heap"></a> Max-heap</h1>
+<p>We can also use Max Heap for finding the k’th smallest element. Following is algorithm.</p>
+<ol>
+<li>
+<p>Build a Max-Heap MH of the first k elements (arr[0] to arr[k-1]) of the given array. O(k)</p>
+</li>
+<li>
+<p>For each element, after the k’th element (arr[k] to arr[n-1]), compare it with root of MH.<br>
+……a) If the element is less than the root then make it root and call heapify for MH<br>
+……b) Else ignore it.<br>
+// The step 2 is O((n-k)*logk)</p>
+</li>
+<li>
+<p>Finally, root of the MH is the kth smallest element.</p>
+</li>
+</ol>
+<p>Time complexity of this solution is O(k + (n-k)*Logk)</p>
+<h1 id="red-black-tree-augmented-data-structure"><a class="markdownIt-Anchor" href="#red-black-tree-augmented-data-structure"></a> Red-Black Tree - Augmented Data Structure</h1>
+<p>An <strong>order-statistic tree</strong> T is simply a red-black tree with additional information stored in each node. Besides the usual attributes, we have <code>x.size</code>.  This attribute contains the number of (internal) nodes in the subtree rooted at x (including x itself), that is, the size of the subtree. If we deﬁne the sentinel’s size to be 0—that is, we set T.nil.size to be 0—then we have the identity:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi mathvariant="normal">.</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>=</mo><mi>x</mi><mi mathvariant="normal">.</mi><mi>l</mi><mi>e</mi><mi>f</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>+</mo><mi>x</mi><mi mathvariant="normal">.</mi><mi>r</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x.size=x.left.size+x.right.size+1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit">x</span><span class="mord">.</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mord mathit">e</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">x</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">t</span><span class="mord">.</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mord mathit">e</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit">x</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">h</span><span class="mord mathit">t</span><span class="mord">.</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mord mathit">e</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span></span></span></p>
+<p>We do not require keys to be distinct in an order-statistic tree. We remove this ambiguity for an order-statistic tree by deﬁning the rank of an element as the position at which it would be printed in an inorder walk of the tree.</p>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180620/5C5EeLaKDD.png?imageslim" alt="mark"></p>
+<h2 id="retrieve"><a class="markdownIt-Anchor" href="#retrieve"></a> Retrieve</h2>
+<p><code>OS-SELECT(x,i)</code> returns a pointer to the node containing the ith smallest key in the subtree rooted at x.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">OS-SELECT(x, i)</span><br><span class="line">  r = x.left.size + 1</span><br><span class="line">  if r == i</span><br><span class="line">    return x</span><br><span class="line">  else if r &lt; i</span><br><span class="line">    return OS-SELECT(x.left, i)</span><br><span class="line">  else return OS-SELECT(x.right, i-r)</span><br></pre></td></tr></table></figure>
+<p>We compute r, the rank of node x within the subtree rooted at x. The value of x.left.size is the number of nodes that come before x in an inorder tree walk of the subtree rooted at x. Thus, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi mathvariant="normal">.</mi><mi>l</mi><mi>e</mi><mi>f</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x.left.size + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit">x</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">t</span><span class="mord">.</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mord mathit">e</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span></span> is the rank of x within the subtree rooted at x.</p>
+<ul>
+<li>If <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>=</mo><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">i == r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">i</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span>, then node x is the ith smallest element, and so we return x in line 3.</li>
+<li>If <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>&lt;</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">i&lt;r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="base"><span class="mord mathit">i</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span>, then the ith smallest element resides in x’s left subtree, and so we recurse on x.left in line 5.</li>
+<li>If <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>&gt;</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">i&gt;r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="base"><span class="mord mathit">i</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span>, then the ith smallest element resides in x’s right subtree. Since the subtree rooted at x contains r elements that come before x’s right subtree in an inorder tree walk, the ith smallest element in the subtree rooted at x is the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>i</mi><mo>−</mo><mi>r</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(i -r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">i</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span>th smallest element in the subtree rooted at x.right. Line 6 determines this element recursively.</li>
+</ul>
+<p>Because each recursive call goes down one level in the order-statistic tree, the total time for <code>OS-SELECT</code> is at worst proportional to the height of the tree. Since the tree is a red-black tree, its height is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>lg</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\lg n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">l<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, where n is the number of nodes. Thus, the running time of OS-SELECT is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>lg</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\lg n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">l<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> for a dynamic set of n elements.</p>
+<h2 id="determine-the-rank-of-a-node"><a class="markdownIt-Anchor" href="#determine-the-rank-of-a-node"></a> Determine the rank of a node</h2>
+<p>Given a pointer to a node x in an order-statistic tree T, the procedure <code>OS-RANK</code> returns the position of x in the linear order determined by an inorder tree walk of T.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">OS-SELECT(T, x)</span><br><span class="line">  r = x.left.size + 1</span><br><span class="line">  y = x</span><br><span class="line">  while y != T.root</span><br><span class="line">    if y == y.p.right</span><br><span class="line">      r = y.p.left.size + 1 + r</span><br><span class="line">    y = y.p</span><br><span class="line">  return r</span><br></pre></td></tr></table></figure>
+<p>The procedure works as follows. We can think of node x’s rank as the number of nodes preceding x in an inorder tree walk, plus 1 for x itself. OS-RANK maintains the following <strong>loop invariant</strong>: At the start of each iteration of the while loop of lines 3–6, r is the rank of x.key in the subtree rooted at node y.</p>
+<h2 id="maintaining-the-subtree-size"><a class="markdownIt-Anchor" href="#maintaining-the-subtree-size"></a> Maintaining the subtree size</h2>
+<p>We shall now show how to maintain subtree sizes for both <strong>insertion</strong> and <strong>deletion</strong> without affecting the asymptotic running time of either operation.</p>
+<h3 id="insertion"><a class="markdownIt-Anchor" href="#insertion"></a> Insertion</h3>
+<p><a href="../Introduction-to-Algorithm-Binary-Tree#insertion">Insertion into a red-black tree</a> consists of two phases.</p>
+<ul>
+<li>
+<p>The ﬁrst phase goes down the tree from the root, inserting the new node as a child of an existing node.</p>
+<ul>
+<li>we simply increment x.size for each node x on the simple path traversed from the root down toward the leaves.</li>
+<li>The new node added gets a size of 1.</li>
+</ul>
+</li>
+<li>
+<p>The second phase goes up the tree, changing colors and performing rotations to maintain the red-black properties.</p>
+<ul>
+<li>
+<p>The only structural changes to the underlying red-black tree are caused by rotations, of which there are at most two.</p>
+</li>
+<li>
+<p>Moreover, a rotation is a local operation: only two nodes have their size attributes invalidated.</p>
+</li>
+<li>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180620/Gl08j0593K.png?imageslim" alt="mark"></p>
+</li>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">LEFT-ROTATE(T, x)</span><br><span class="line">  y = x.right</span><br><span class="line">  x.right = y.left</span><br><span class="line">  if y.left != T.nil</span><br><span class="line">    y.left.p = x</span><br><span class="line">    y.p = x.p</span><br><span class="line">  if x.p == T.nil</span><br><span class="line">    T.root = y</span><br><span class="line">  elseif x == x.p.left</span><br><span class="line">    x.p.left = y</span><br><span class="line">  else x.p.right = y</span><br><span class="line">    y.left = x</span><br><span class="line">    x.p = y</span><br><span class="line">y.size = x.size</span><br><span class="line">x.size = x.left.size + x.right.size + 1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="deletion"><a class="markdownIt-Anchor" href="#deletion"></a> Deletion</h3>
+<p><a href="../Introduction-to-Algorithm-Binary-Tree#deletion">Deletion from a red-black tree</a> also consists of two phases:</p>
+<ul>
+<li>the ﬁrst operates on the underlying search tree. The ﬁrst phase either removes one node y from the tree or moves upward it within the tree.
+<ul>
+<li>To update the subtree sizes, we simply traverse a simple path from node y (starting from its original position within the tree) up to the root, decrementing the size attribute of each node on the path.</li>
+</ul>
+</li>
+<li>the second causes at most three rotations and otherwise performs no structural changes.
+<ul>
+<li>We handle the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> rotations in the second phase of deletion in the same manner as for insertion.</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+            <a href="/tags/notes/" rel="tag"># notes</a>
+          
+            <a href="/tags/select/" rel="tag"># select</a>
+          
+            <a href="/tags/sort/" rel="tag"># sort</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/Algorithm-02-0-Sorting/" rel="next" title="Algorithm(02): Sorting">
+                <i class="fa fa-chevron-left"></i> Algorithm(02): Sorting
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/Leetcode-Sort/" rel="prev" title="Leetcode: Sort">
+                Leetcode: Sort <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          
+          <div id="toc-div" class="post-toc" style="display:block">
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#order-statistics"><span class="nav-number">2.</span> <span class="nav-text"> Order Statistics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#quick-select"><span class="nav-number">3.</span> <span class="nav-text"> Quick Select</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pseudocode-and-detail"><span class="nav-number">3.1.</span> <span class="nav-text"> Pseudocode and Detail</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#min-heap"><span class="nav-number">4.</span> <span class="nav-text"> Min-heap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#max-heap"><span class="nav-number">5.</span> <span class="nav-text"> Max-heap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#red-black-tree-augmented-data-structure"><span class="nav-number">6.</span> <span class="nav-text"> Red-Black Tree - Augmented Data Structure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#retrieve"><span class="nav-number">6.1.</span> <span class="nav-text"> Retrieve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#determine-the-rank-of-a-node"><span class="nav-number">6.2.</span> <span class="nav-text"> Determine the rank of a node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maintaining-the-subtree-size"><span class="nav-number">6.3.</span> <span class="nav-text"> Maintaining the subtree size</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion"><span class="nav-number">6.3.1.</span> <span class="nav-text"> Insertion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deletion"><span class="nav-number">6.3.2.</span> <span class="nav-text"> Deletion</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2018/06/Algorithm-02-1-Order-Statistic/';
+        this.page.identifier = '2018/06/Algorithm-02-1-Order-Statistic/';
+        this.page.title = 'Algorithm(02-1): Order Statistic';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" type="text/css">
+
+   
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

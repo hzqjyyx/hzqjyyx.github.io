@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="language,python," />
+
+
+<meta name="description" content="Basic Idea   Copied from Learn x in y minutes learn-python github Some python tips Python tips Python tutorials Programiz">
+<meta name="keywords" content="language,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Understanding Python">
+<meta property="og:url" content="https://hzqjyyx.github.io/2019/01/Understanding-Python/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="Basic Idea   Copied from Learn x in y minutes learn-python github Some python tips Python tips Python tutorials Programiz">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-01-12T02:13:57.416Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Understanding Python">
+<meta name="twitter:description" content="Basic Idea   Copied from Learn x in y minutes learn-python github Some python tips Python tips Python tutorials Programiz">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2019/01/Understanding-Python/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Understanding Python | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2019/01/Understanding-Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Understanding Python</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-10T10:29:46-08:00">2019-01-10</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/language/" itemprop="url" rel="index"><span itemprop="name">language</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/Understanding-Python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/01/Understanding-Python/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<blockquote>
+<ul>
+<li>Copied from <a href="https://learnxinyminutes.com/docs/python3/" target="_blank" rel="noopener">Learn x in y minutes</a></li>
+<li>learn-python <a href="https://github.com/trekhleb/learn-python" target="_blank" rel="noopener">github</a></li>
+<li>Some python tips <a href="http://book.pythontips.com/en/latest/lambdas.html" target="_blank" rel="noopener">Python tips</a></li>
+<li>Python tutorials <a href="https://www.programiz.com/python-programming/first-program" target="_blank" rel="noopener">Programiz</a></li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<h1 id="primitive-datatypes-and-operators"><a class="markdownIt-Anchor" href="#primitive-datatypes-and-operators"></a> Primitive Datatypes and Operators</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># You have numbers</span></span><br><span class="line"><span class="number">3</span>  <span class="comment"># =&gt; 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Math is what you would expect</span></span><br><span class="line"><span class="number">1</span> + <span class="number">1</span>   <span class="comment"># =&gt; 2</span></span><br><span class="line"><span class="number">8</span> - <span class="number">1</span>   <span class="comment"># =&gt; 7</span></span><br><span class="line"><span class="number">10</span> * <span class="number">2</span>  <span class="comment"># =&gt; 20</span></span><br><span class="line"><span class="number">35</span> / <span class="number">5</span>  <span class="comment"># =&gt; 7.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Result of integer division truncated down both for positive and negative.</span></span><br><span class="line"><span class="number">5</span> // <span class="number">3</span>       <span class="comment"># =&gt; 1</span></span><br><span class="line"><span class="number">5.0</span> // <span class="number">3.0</span>   <span class="comment"># =&gt; 1.0 # works on floats too</span></span><br><span class="line"><span class="number">-5</span> // <span class="number">3</span>      <span class="comment"># =&gt; -2</span></span><br><span class="line"><span class="number">-5.0</span> // <span class="number">3.0</span>  <span class="comment"># =&gt; -2.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The result of division is always a float</span></span><br><span class="line"><span class="number">10.0</span> / <span class="number">3</span>  <span class="comment"># =&gt; 3.3333333333333335</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Modulo operation</span></span><br><span class="line"><span class="number">7</span> % <span class="number">3</span>  <span class="comment"># =&gt; 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Exponentiation (x**y, x to the yth power)</span></span><br><span class="line"><span class="number">2</span>**<span class="number">3</span>  <span class="comment"># =&gt; 8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enforce precedence with parentheses</span></span><br><span class="line">(<span class="number">1</span> + <span class="number">3</span>) * <span class="number">2</span>  <span class="comment"># =&gt; 8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Boolean values are primitives (Note: the capitalization)</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># negate with not</span></span><br><span class="line"><span class="keyword">not</span> <span class="keyword">True</span>   <span class="comment"># =&gt; False</span></span><br><span class="line"><span class="keyword">not</span> <span class="keyword">False</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Boolean Operators</span></span><br><span class="line"><span class="comment"># Note "and" and "or" are case-sensitive</span></span><br><span class="line"><span class="keyword">True</span> <span class="keyword">and</span> <span class="keyword">False</span>  <span class="comment"># =&gt; False</span></span><br><span class="line"><span class="keyword">False</span> <span class="keyword">or</span> <span class="keyword">True</span>   <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Logical Operators</span></span><br><span class="line"><span class="number">1</span> ^ <span class="number">2</span> <span class="comment"># =&gt; 3</span></span><br><span class="line"><span class="number">1</span> &amp; <span class="number">2</span> <span class="comment"># =&gt; 0</span></span><br><span class="line"><span class="number">1</span> | <span class="number">2</span> <span class="comment"># =&gt; 3</span></span><br><span class="line">~<span class="number">0xF0</span> <span class="comment"># =&gt; 0x0F</span></span><br><span class="line"><span class="number">-4</span> &gt;&gt; <span class="number">1</span> <span class="comment"># =&gt; -2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># True and False are actually 1 and 0 but with different keywords</span></span><br><span class="line"><span class="keyword">True</span> + <span class="keyword">True</span> <span class="comment"># =&gt; 2</span></span><br><span class="line"><span class="keyword">True</span> * <span class="number">8</span>    <span class="comment"># =&gt; 8</span></span><br><span class="line"><span class="keyword">False</span> - <span class="number">5</span>   <span class="comment"># =&gt; -5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Comparison operators look at the numerical value of True and False</span></span><br><span class="line"><span class="number">0</span> == <span class="keyword">False</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">1</span> == <span class="keyword">True</span>   <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">2</span> == <span class="keyword">True</span>   <span class="comment"># =&gt; False</span></span><br><span class="line"><span class="number">-5</span> != <span class="keyword">False</span> <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Using boolean logical operators on ints casts them to booleans for evaluation, but their non-cast value is returned</span></span><br><span class="line"><span class="comment"># Don't mix up with bool(ints) and bitwise and/or (&amp;,|)</span></span><br><span class="line">bool(<span class="number">0</span>)     <span class="comment"># =&gt; False</span></span><br><span class="line">bool(<span class="number">4</span>)     <span class="comment"># =&gt; True</span></span><br><span class="line">bool(<span class="number">-6</span>)    <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="comment"># 0 --&gt; False, for and operator, the result can be decided,</span></span><br><span class="line"><span class="comment"># shortcut happens, then return the non-cast value of 0 (0)</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">and</span> <span class="number">2</span>     <span class="comment"># =&gt; 0</span></span><br><span class="line"><span class="comment"># 0 --&gt; False, for or operator, the result cannot be decided,</span></span><br><span class="line"><span class="comment"># evaluate -5, and return -5</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">or</span> <span class="number">-5</span>     <span class="comment"># =&gt; -5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Equality is ==</span></span><br><span class="line"><span class="number">1</span> == <span class="number">1</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">2</span> == <span class="number">1</span>  <span class="comment"># =&gt; False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Inequality is !=</span></span><br><span class="line"><span class="number">1</span> != <span class="number">1</span>  <span class="comment"># =&gt; False</span></span><br><span class="line"><span class="number">2</span> != <span class="number">1</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># More comparisons</span></span><br><span class="line"><span class="number">1</span> &lt; <span class="number">10</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">1</span> &gt; <span class="number">10</span>  <span class="comment"># =&gt; False</span></span><br><span class="line"><span class="number">2</span> &lt;= <span class="number">2</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">2</span> &gt;= <span class="number">2</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Seeing whether a value is in a range</span></span><br><span class="line"><span class="number">1</span> &lt; <span class="number">2</span> <span class="keyword">and</span> <span class="number">2</span> &lt; <span class="number">3</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">2</span> &lt; <span class="number">3</span> <span class="keyword">and</span> <span class="number">3</span> &lt; <span class="number">2</span>  <span class="comment"># =&gt; False</span></span><br><span class="line"><span class="comment"># Chaining makes this look nicer</span></span><br><span class="line"><span class="number">1</span> &lt; <span class="number">2</span> &lt; <span class="number">3</span>  <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">2</span> &lt; <span class="number">3</span> &lt; <span class="number">2</span>  <span class="comment"># =&gt; False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (is vs. ==) is checks if two variables refer to the same object, but == checks</span></span><br><span class="line"><span class="comment"># if the objects pointed to have the same values.</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]  <span class="comment"># Point a at a new list, [1, 2, 3, 4]</span></span><br><span class="line">b = a             <span class="comment"># Point b at what a is pointing to</span></span><br><span class="line">b <span class="keyword">is</span> a            <span class="comment"># =&gt; True, a and b refer to the same object</span></span><br><span class="line">b == a            <span class="comment"># =&gt; True, a's and b's objects are equal</span></span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]  <span class="comment"># Point b at a new list, [1, 2, 3, 4]</span></span><br><span class="line">b <span class="keyword">is</span> a            <span class="comment"># =&gt; False, a and b do not refer to the same object</span></span><br><span class="line">b == a            <span class="comment"># =&gt; True, a's and b's objects are equal</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Strings are created with " or '</span></span><br><span class="line"><span class="string">"This is a string."</span></span><br><span class="line"><span class="string">'This is also a string.'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Strings can be added too! But try not to do this.</span></span><br><span class="line"><span class="string">"Hello "</span> + <span class="string">"world!"</span>  <span class="comment"># =&gt; "Hello world!"</span></span><br><span class="line"><span class="comment"># String literals (but not variables) can be concatenated without using '+'</span></span><br><span class="line"><span class="string">"Hello "</span> <span class="string">"world!"</span>    <span class="comment"># =&gt; "Hello world!"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A string can be treated like a list of characters</span></span><br><span class="line"><span class="string">"This is a string"</span>[<span class="number">0</span>]  <span class="comment"># =&gt; 'T'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can find the length of a string</span></span><br><span class="line">len(<span class="string">"This is a string"</span>)  <span class="comment"># =&gt; 16</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># .format can be used to format strings, like this:</span></span><br><span class="line"><span class="string">"&#123;&#125; can be &#123;&#125;"</span>.format(<span class="string">"Strings"</span>, <span class="string">"interpolated"</span>)  <span class="comment"># =&gt; "Strings can be interpolated"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can repeat the formatting arguments to save some typing.</span></span><br><span class="line"><span class="string">"&#123;0&#125; be nimble, &#123;0&#125; be quick, &#123;0&#125; jump over the &#123;1&#125;"</span>.format(<span class="string">"Jack"</span>, <span class="string">"candle stick"</span>)</span><br><span class="line"><span class="comment"># =&gt; "Jack be nimble, Jack be quick, Jack jump over the candle stick"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can use keywords if you don't want to count.</span></span><br><span class="line"><span class="string">"&#123;name&#125; wants to eat &#123;food&#125;"</span>.format(name=<span class="string">"Bob"</span>, food=<span class="string">"lasagna"</span>)  <span class="comment"># =&gt; "Bob wants to eat lasagna"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># If your Python 3 code also needs to run on Python 2.5 and below, you can also</span></span><br><span class="line"><span class="comment"># still use the old style of formatting:</span></span><br><span class="line"><span class="string">"%s can be %s the %s way"</span> % (<span class="string">"Strings"</span>, <span class="string">"interpolated"</span>, <span class="string">"old"</span>)  <span class="comment"># =&gt; "Strings can be interpolated the old way"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can also format using f-strings or formatted string literals (in Python 3.6+)</span></span><br><span class="line">name = <span class="string">"Reiko"</span></span><br><span class="line"><span class="string">f"She said her name is <span class="subst">&#123;name&#125;</span>."</span> <span class="comment"># =&gt; "She said her name is Reiko"</span></span><br><span class="line"><span class="comment"># You can basically put any Python statement inside the braces and it will be output in the string.</span></span><br><span class="line"><span class="string">f"<span class="subst">&#123;name&#125;</span> is <span class="subst">&#123;len(name)&#125;</span> characters long."</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># None is an object</span></span><br><span class="line"><span class="keyword">None</span>  <span class="comment"># =&gt; None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Don't use the equality "==" symbol to compare objects to None</span></span><br><span class="line"><span class="comment"># Use "is" instead. This checks for equality of object identity.</span></span><br><span class="line"><span class="comment"># see the link for detailed explaination https://stackoverflow.com/questions/14247373/python-none-comparison-should-i-use-is-or</span></span><br><span class="line"><span class="string">"etc"</span> <span class="keyword">is</span> <span class="keyword">None</span>  <span class="comment"># =&gt; False</span></span><br><span class="line"><span class="keyword">None</span> <span class="keyword">is</span> <span class="keyword">None</span>   <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># None, 0, and empty strings/lists/dicts/tuples all evaluate to False.</span></span><br><span class="line"><span class="comment"># All other values are True</span></span><br><span class="line">bool(<span class="number">0</span>)   <span class="comment"># =&gt; False</span></span><br><span class="line">bool(<span class="string">""</span>)  <span class="comment"># =&gt; False</span></span><br><span class="line">bool([])  <span class="comment"># =&gt; False</span></span><br><span class="line">bool(&#123;&#125;)  <span class="comment"># =&gt; False</span></span><br><span class="line">bool(())  <span class="comment"># =&gt; False</span></span><br></pre></td></tr></table></figure>
+<h1 id="variables-and-collections"><a class="markdownIt-Anchor" href="#variables-and-collections"></a> Variables and Collections</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python has a print function</span></span><br><span class="line">print(<span class="string">"I'm Python. Nice to meet you!"</span>)  <span class="comment"># =&gt; I'm Python. Nice to meet you!</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># By default the print function also prints out a newline at the end.</span></span><br><span class="line"><span class="comment"># Use the optional argument end to change the end string.</span></span><br><span class="line">print(<span class="string">"Hello, World"</span>, end=<span class="string">"!"</span>)  <span class="comment"># =&gt; Hello, World!</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Simple way to get input data from console</span></span><br><span class="line">input_string_var = input(<span class="string">"Enter some data: "</span>) <span class="comment"># Returns the data as a string</span></span><br><span class="line"><span class="comment"># Note: In earlier versions of Python, input() method was named as raw_input()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># There are no declarations, only assignments.</span></span><br><span class="line"><span class="comment"># Convention is to use lower_case_with_underscores</span></span><br><span class="line">some_var = <span class="number">5</span></span><br><span class="line">some_var  <span class="comment"># =&gt; 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Accessing a previously unassigned variable is an exception.</span></span><br><span class="line"><span class="comment"># See Control Flow to learn more about exception handling.</span></span><br><span class="line">some_unknown_var  <span class="comment"># Raises a NameError</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># if can be used as an expression</span></span><br><span class="line"><span class="comment"># Equivalent of C's '?:' ternary operator</span></span><br><span class="line"><span class="string">"yahoo!"</span> <span class="keyword">if</span> <span class="number">3</span> &gt; <span class="number">2</span> <span class="keyword">else</span> <span class="number">2</span>  <span class="comment"># =&gt; "yahoo!"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Lists store sequences</span></span><br><span class="line">li = []</span><br><span class="line"><span class="comment"># You can start with a prefilled list</span></span><br><span class="line">other_li = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add stuff to the end of a list with append</span></span><br><span class="line">li.append(<span class="number">1</span>)    <span class="comment"># li is now [1]</span></span><br><span class="line">li.append(<span class="number">2</span>)    <span class="comment"># li is now [1, 2]</span></span><br><span class="line">li.append(<span class="number">4</span>)    <span class="comment"># li is now [1, 2, 4]</span></span><br><span class="line">li.append(<span class="number">3</span>)    <span class="comment"># li is now [1, 2, 4, 3]</span></span><br><span class="line"><span class="comment"># Remove from the end with pop</span></span><br><span class="line">li.pop()        <span class="comment"># =&gt; 3 and li is now [1, 2, 4]</span></span><br><span class="line"><span class="comment"># Let's put it back</span></span><br><span class="line">li.append(<span class="number">3</span>)    <span class="comment"># li is now [1, 2, 4, 3] again.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Access a list like you would any array</span></span><br><span class="line">li[<span class="number">0</span>]   <span class="comment"># =&gt; 1</span></span><br><span class="line"><span class="comment"># Look at the last element</span></span><br><span class="line">li[<span class="number">-1</span>]  <span class="comment"># =&gt; 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Looking out of bounds is an IndexError</span></span><br><span class="line">li[<span class="number">4</span>]  <span class="comment"># Raises an IndexError</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can look at ranges with slice syntax.</span></span><br><span class="line"><span class="comment"># The start index is included, the end index is not</span></span><br><span class="line"><span class="comment"># (It's a closed/open range for you mathy types.)</span></span><br><span class="line">li[<span class="number">1</span>:<span class="number">3</span>]   <span class="comment"># =&gt; [2, 4]</span></span><br><span class="line"><span class="comment"># Omit the beginning and return the list</span></span><br><span class="line">li[<span class="number">2</span>:]    <span class="comment"># =&gt; [4, 3]</span></span><br><span class="line"><span class="comment"># Omit the end and return the list</span></span><br><span class="line">li[:<span class="number">3</span>]    <span class="comment"># =&gt; [1, 2, 4]</span></span><br><span class="line"><span class="comment"># Select every second entry</span></span><br><span class="line">li[::<span class="number">2</span>]   <span class="comment"># =&gt;[1, 4]</span></span><br><span class="line"><span class="comment"># Return a reversed copy of the list</span></span><br><span class="line">li[::<span class="number">-1</span>]  <span class="comment"># =&gt; [3, 4, 2, 1]</span></span><br><span class="line"><span class="comment"># Use any combination of these to make advanced slices</span></span><br><span class="line"><span class="comment"># li[start:end:step]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Make a one layer deep copy using slices</span></span><br><span class="line">li2 = li[:]  <span class="comment"># =&gt; li2 = [1, 2, 4, 3] but (li2 is li) will result in false.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Remove arbitrary elements from a list with "del"</span></span><br><span class="line"><span class="keyword">del</span> li[<span class="number">2</span>]  <span class="comment"># li is now [1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Remove first occurrence of a value</span></span><br><span class="line">li.remove(<span class="number">2</span>)  <span class="comment"># li is now [1, 3]</span></span><br><span class="line">li.remove(<span class="number">2</span>)  <span class="comment"># Raises a ValueError as 2 is not in the list</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Insert an element at a specific index</span></span><br><span class="line">li.insert(<span class="number">1</span>, <span class="number">2</span>)  <span class="comment"># li is now [1, 2, 3] again</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the index of the first item found matching the argument</span></span><br><span class="line">li.index(<span class="number">2</span>)  <span class="comment"># =&gt; 1</span></span><br><span class="line">li.index(<span class="number">2</span>, <span class="number">3</span>) <span class="comment"># start from index 3 Raises a ValueError</span></span><br><span class="line">li.index(<span class="number">4</span>)  <span class="comment"># Raises a ValueError as 4 is not in the list</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sort list</span></span><br><span class="line">li.sort(key=<span class="keyword">lambda</span> x: x) <span class="comment"># in-place, change original list</span></span><br><span class="line">li2 = sorted(l1, key=<span class="keyword">lambda</span> x: x) <span class="comment"># return new list</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># reverse list</span></span><br><span class="line">li.reverse()</span><br><span class="line"></span><br><span class="line"><span class="comment"># count elements</span></span><br><span class="line">li.count(<span class="number">1</span>) <span class="comment"># =&gt; 1</span></span><br><span class="line">li.count(<span class="string">'x'</span>) <span class="comment"># =&gt; 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can add lists</span></span><br><span class="line"><span class="comment"># Note: values for li and for other_li are not modified.</span></span><br><span class="line">li + other_li  <span class="comment"># =&gt; [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Concatenate lists with "extend()"</span></span><br><span class="line">li.extend(other_li)  <span class="comment"># Now li is [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check for existence in a list with "in"</span></span><br><span class="line"><span class="number">1</span> <span class="keyword">in</span> li  <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Examine the length with "len()"</span></span><br><span class="line">len(li)  <span class="comment"># =&gt; 6</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Tuples are like lists but are immutable.</span></span><br><span class="line">tup = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">tup[<span class="number">0</span>]      <span class="comment"># =&gt; 1</span></span><br><span class="line">tup[<span class="number">0</span>] = <span class="number">3</span>  <span class="comment"># Raises a TypeError</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Note that a tuple of length one has to have a comma after the last element but</span></span><br><span class="line"><span class="comment"># tuples of other lengths, even zero, do not.</span></span><br><span class="line">type((<span class="number">1</span>))   <span class="comment"># =&gt; &lt;class 'int'&gt;</span></span><br><span class="line">type((<span class="number">1</span>,))  <span class="comment"># =&gt; &lt;class 'tuple'&gt;</span></span><br><span class="line">type(())    <span class="comment"># =&gt; &lt;class 'tuple'&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can do most of the list operations on tuples too</span></span><br><span class="line">len(tup)         <span class="comment"># =&gt; 3</span></span><br><span class="line">tup + (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)  <span class="comment"># =&gt; (1, 2, 3, 4, 5, 6)</span></span><br><span class="line">tup[:<span class="number">2</span>]          <span class="comment"># =&gt; (1, 2)</span></span><br><span class="line"><span class="number">2</span> <span class="keyword">in</span> tup         <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can unpack tuples (or lists) into variables</span></span><br><span class="line">a, b, c = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)  <span class="comment"># a is now 1, b is now 2 and c is now 3</span></span><br><span class="line"><span class="comment"># You can also do extended unpacking</span></span><br><span class="line">a, *b, c = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)  <span class="comment"># a is now 1, b is now [2, 3] and c is now 4</span></span><br><span class="line"><span class="comment"># Tuples are created by default if you leave out the parentheses</span></span><br><span class="line">d, e, f = <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>  <span class="comment"># tuple 4, 5, 6 is unpacked into variables d, e and f</span></span><br><span class="line"><span class="comment"># respectively such that d = 4, e = 5 and f = 6</span></span><br><span class="line"><span class="comment"># Now look how easy it is to swap two values</span></span><br><span class="line">e, d = d, e  <span class="comment"># d is now 5 and e is now 4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dictionaries store mappings from keys to values</span></span><br><span class="line">empty_dict = &#123;&#125;</span><br><span class="line"><span class="comment"># Here is a prefilled dictionary</span></span><br><span class="line">filled_dict = &#123;<span class="string">"one"</span>: <span class="number">1</span>, <span class="string">"two"</span>: <span class="number">2</span>, <span class="string">"three"</span>: <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note keys for dictionaries have to be immutable types. This is to ensure that</span></span><br><span class="line"><span class="comment"># the key can be converted to a constant hash value for quick look-ups.</span></span><br><span class="line"><span class="comment"># Immutable types include ints, floats, strings, tuples.</span></span><br><span class="line">invalid_dict = &#123;[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]: <span class="string">"123"</span>&#125;  <span class="comment"># =&gt; Raises a TypeError: unhashable type: 'list'</span></span><br><span class="line">valid_dict = &#123;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>):[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]&#125;   <span class="comment"># Values can be of any type, however.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Look up values with []</span></span><br><span class="line">filled_dict[<span class="string">"one"</span>]  <span class="comment"># =&gt; 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get all keys as an iterable with "keys()". We need to wrap the call in list()</span></span><br><span class="line"><span class="comment"># to turn it into a list. We'll talk about those later.  Note - for Python</span></span><br><span class="line"><span class="comment"># versions &lt;3.7, dictionary key ordering is not guaranteed. Your results might</span></span><br><span class="line"><span class="comment"># not match the example below exactly. However, as of Python 3.7, dictionary</span></span><br><span class="line"><span class="comment"># items maintain the order at which they are inserted into the dictionary.</span></span><br><span class="line">list(filled_dict.keys())  <span class="comment"># =&gt; ["three", "two", "one"] in Python &lt;3.7</span></span><br><span class="line">list(filled_dict.keys())  <span class="comment"># =&gt; ["one", "two", "three"] in Python 3.7+</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get all values as an iterable with "values()". Once again we need to wrap it</span></span><br><span class="line"><span class="comment"># in list() to get it out of the iterable. Note - Same as above regarding key</span></span><br><span class="line"><span class="comment"># ordering.</span></span><br><span class="line">list(filled_dict.values())  <span class="comment"># =&gt; [3, 2, 1]  in Python &lt;3.7</span></span><br><span class="line">list(filled_dict.values())  <span class="comment"># =&gt; [1, 2, 3] in Python 3.7+</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check for existence of keys in a dictionary with "in"</span></span><br><span class="line"><span class="string">"one"</span> <span class="keyword">in</span> filled_dict  <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">1</span> <span class="keyword">in</span> filled_dict      <span class="comment"># =&gt; False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Looking up a non-existing key is a KeyError</span></span><br><span class="line">filled_dict[<span class="string">"four"</span>]  <span class="comment"># KeyError</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use "get()" method to avoid the KeyError</span></span><br><span class="line">filled_dict.get(<span class="string">"one"</span>)      <span class="comment"># =&gt; 1</span></span><br><span class="line">filled_dict.get(<span class="string">"four"</span>)     <span class="comment"># =&gt; None</span></span><br><span class="line"><span class="comment"># The get method supports a default argument when the value is missing</span></span><br><span class="line">filled_dict.get(<span class="string">"one"</span>, <span class="number">4</span>)   <span class="comment"># =&gt; 1</span></span><br><span class="line">filled_dict.get(<span class="string">"four"</span>, <span class="number">4</span>)  <span class="comment"># =&gt; 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># "setdefault()" inserts into a dictionary only if the given key isn't present</span></span><br><span class="line">filled_dict.setdefault(<span class="string">"five"</span>, <span class="number">5</span>)  <span class="comment"># filled_dict["five"] is set to 5</span></span><br><span class="line">filled_dict.setdefault(<span class="string">"five"</span>, <span class="number">6</span>)  <span class="comment"># filled_dict["five"] is still 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Adding to a dictionary</span></span><br><span class="line">filled_dict.update(&#123;<span class="string">"four"</span>:<span class="number">4</span>&#125;)  <span class="comment"># =&gt; &#123;"one": 1, "two": 2, "three": 3, "four": 4&#125;</span></span><br><span class="line">filled_dict[<span class="string">"four"</span>] = <span class="number">4</span>         <span class="comment"># another way to add to dict</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Remove keys from a dictionary with del</span></span><br><span class="line"><span class="keyword">del</span> filled_dict[<span class="string">"one"</span>]  <span class="comment"># Removes the key "one" from filled dict</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># From Python 3.5 you can also use the additional unpacking options</span></span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">1</span>, **&#123;<span class="string">'b'</span>: <span class="number">2</span>&#125;&#125;  <span class="comment"># =&gt; &#123;'a': 1, 'b': 2&#125;</span></span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">1</span>, **&#123;<span class="string">'a'</span>: <span class="number">2</span>&#125;&#125;  <span class="comment"># =&gt; &#123;'a': 2&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sets store ... well sets</span></span><br><span class="line">empty_set = set()</span><br><span class="line"><span class="comment"># Initialize a set with a bunch of values. Yeah, it looks a bit like a dict. Sorry.</span></span><br><span class="line">some_set = &#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;  <span class="comment"># some_set is now &#123;1, 2, 3, 4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Similar to keys of a dictionary, elements of a set have to be immutable.</span></span><br><span class="line">invalid_set = &#123;[<span class="number">1</span>], <span class="number">1</span>&#125;  <span class="comment"># =&gt; Raises a TypeError: unhashable type: 'list'</span></span><br><span class="line">valid_set = &#123;(<span class="number">1</span>,), <span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add one more item to the set</span></span><br><span class="line">filled_set = some_set</span><br><span class="line">filled_set.add(<span class="number">5</span>)  <span class="comment"># filled_set is now &#123;1, 2, 3, 4, 5&#125;</span></span><br><span class="line"><span class="comment"># Sets do not have duplicate elements</span></span><br><span class="line">filled_set.add(<span class="number">5</span>)  <span class="comment"># it remains as before &#123;1, 2, 3, 4, 5&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Remove an element</span></span><br><span class="line">filled_set.remove(<span class="number">5</span>) <span class="comment"># filled_set is now &#123;1, 2, 3, 4&#125;</span></span><br><span class="line">filled_set.remove(<span class="number">5</span>) <span class="comment"># raise error</span></span><br><span class="line">filled_set.discard(<span class="number">5</span>) <span class="comment"># only remove element if present</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Do set intersection with &amp;</span></span><br><span class="line">other_set = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">filled_set &amp; other_set  <span class="comment"># =&gt; &#123;3, 4, 5&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Do set union with |</span></span><br><span class="line">filled_set | other_set  <span class="comment"># =&gt; &#123;1, 2, 3, 4, 5, 6&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Do set difference with -</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125; - &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>&#125;  <span class="comment"># =&gt; &#123;1, 4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Do set symmetric difference with ^</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125; ^ &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>&#125;  <span class="comment"># =&gt; &#123;1, 4, 5&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check if set on the left is a superset of set on the right</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>&#125; &gt;= &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125; <span class="comment"># =&gt; False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check if set on the left is a subset of set on the right</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>&#125; &lt;= &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125; <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check for existence in a set with in</span></span><br><span class="line"><span class="number">2</span> <span class="keyword">in</span> filled_set   <span class="comment"># =&gt; True</span></span><br><span class="line"><span class="number">10</span> <span class="keyword">in</span> filled_set  <span class="comment"># =&gt; False</span></span><br></pre></td></tr></table></figure>
+<h1 id="control-flow-and-iterables"><a class="markdownIt-Anchor" href="#control-flow-and-iterables"></a> Control Flow and Iterables</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Let's just make a variable</span></span><br><span class="line">some_var = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Here is an if statement. Indentation is significant in Python!</span></span><br><span class="line"><span class="comment"># Convention is to use four spaces, not tabs.</span></span><br><span class="line"><span class="comment"># This prints "some_var is smaller than 10"</span></span><br><span class="line"><span class="keyword">if</span> some_var &gt; <span class="number">10</span>:</span><br><span class="line">    print(<span class="string">"some_var is totally bigger than 10."</span>)</span><br><span class="line"><span class="keyword">elif</span> some_var &lt; <span class="number">10</span>:    <span class="comment"># This elif clause is optional.</span></span><br><span class="line">    print(<span class="string">"some_var is smaller than 10."</span>)</span><br><span class="line"><span class="keyword">else</span>:                  <span class="comment"># This is optional too.</span></span><br><span class="line">    print(<span class="string">"some_var is indeed 10."</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">For loops iterate over lists</span></span><br><span class="line"><span class="string">prints:</span></span><br><span class="line"><span class="string">    dog is a mammal</span></span><br><span class="line"><span class="string">    cat is a mammal</span></span><br><span class="line"><span class="string">    mouse is a mammal</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">for</span> animal <span class="keyword">in</span> [<span class="string">"dog"</span>, <span class="string">"cat"</span>, <span class="string">"mouse"</span>]:</span><br><span class="line">    <span class="comment"># You can use format() to interpolate formatted strings</span></span><br><span class="line">    print(<span class="string">"&#123;&#125; is a mammal"</span>.format(animal))</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">"range(number)" returns an iterable of numbers</span></span><br><span class="line"><span class="string">from zero to the given number</span></span><br><span class="line"><span class="string">prints:</span></span><br><span class="line"><span class="string">    0</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    3</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">"range(lower, upper)" returns an iterable of numbers</span></span><br><span class="line"><span class="string">from the lower number to the upper number</span></span><br><span class="line"><span class="string">prints:</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    5</span></span><br><span class="line"><span class="string">    6</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>, <span class="number">8</span>):</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">"range(lower, upper, step)" returns an iterable of numbers</span></span><br><span class="line"><span class="string">from the lower number to the upper number, while incrementing</span></span><br><span class="line"><span class="string">by step. If step is not indicated, the default value is 1.</span></span><br><span class="line"><span class="string">prints:</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    6</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>, <span class="number">8</span>, <span class="number">2</span>):</span><br><span class="line">    print(i)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">While loops go until a condition is no longer met.</span></span><br><span class="line"><span class="string">prints:</span></span><br><span class="line"><span class="string">    0</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    3</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">x = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> x &lt; <span class="number">4</span>:</span><br><span class="line">    print(x)</span><br><span class="line">    x += <span class="number">1</span>  <span class="comment"># Shorthand for x = x + 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Handle exceptions with a try/except block</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># Use "raise" to raise an error</span></span><br><span class="line">    <span class="keyword">raise</span> IndexError(<span class="string">"This is an index error"</span>)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">pass</span>                 <span class="comment"># Pass is just a no-op. Usually you would do recovery here.</span></span><br><span class="line"><span class="keyword">except</span> (TypeError, NameError):</span><br><span class="line">    <span class="keyword">pass</span>                 <span class="comment"># Multiple exceptions can be handled together, if required.</span></span><br><span class="line"><span class="keyword">else</span>:                    <span class="comment"># Optional clause to the try/except block. Must follow all except blocks</span></span><br><span class="line">    print(<span class="string">"All good!"</span>)   <span class="comment"># Runs only if the code in try raises no exceptions</span></span><br><span class="line"><span class="keyword">finally</span>:                 <span class="comment">#  Execute under all circumstances</span></span><br><span class="line">    print(<span class="string">"We can clean up resources here"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Instead of try/finally to cleanup resources you can use a with statement</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"myfile.txt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        print(line)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Python offers a fundamental abstraction called the Iterable.</span></span><br><span class="line"><span class="comment"># An iterable is an object that can be treated as a sequence.</span></span><br><span class="line"><span class="comment"># The object returned by the range function, is an iterable.</span></span><br><span class="line"></span><br><span class="line">filled_dict = &#123;<span class="string">"one"</span>: <span class="number">1</span>, <span class="string">"two"</span>: <span class="number">2</span>, <span class="string">"three"</span>: <span class="number">3</span>&#125;</span><br><span class="line">our_iterable = filled_dict.keys()</span><br><span class="line">print(our_iterable)  <span class="comment"># =&gt; dict_keys(['one', 'two', 'three']). This is an object that implements our Iterable interface.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># We can loop over it.</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> our_iterable:</span><br><span class="line">    print(i)  <span class="comment"># Prints one, two, three</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># However we cannot address elements by index.</span></span><br><span class="line">our_iterable[<span class="number">1</span>]  <span class="comment"># Raises a TypeError</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># An iterable is an object that knows how to create an iterator.</span></span><br><span class="line">our_iterator = iter(our_iterable)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Our iterator is an object that can remember the state as we traverse through it.</span></span><br><span class="line"><span class="comment"># We get the next object with "next()".</span></span><br><span class="line">next(our_iterator)  <span class="comment"># =&gt; "one"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># It maintains state as we iterate.</span></span><br><span class="line">next(our_iterator)  <span class="comment"># =&gt; "two"</span></span><br><span class="line">next(our_iterator)  <span class="comment"># =&gt; "three"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># After the iterator has returned all of its data, it raises a StopIteration exception</span></span><br><span class="line">next(our_iterator)  <span class="comment"># Raises StopIteration</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># create an iterator</span></span><br><span class="line"><span class="comment"># implement the methods __iter__() and __next__()</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyNumbers</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="comment"># always return the iterator object itself.</span></span><br><span class="line">    self.a = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__next__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="comment"># return the next item in the sequence.</span></span><br><span class="line">    x = self.a</span><br><span class="line">    self.a += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can grab all the elements of an iterator by calling list() on it.</span></span><br><span class="line">list(filled_dict.keys())  <span class="comment"># =&gt; Returns ["one", "two", "three"]</span></span><br></pre></td></tr></table></figure>
+<h1 id="functions"><a class="markdownIt-Anchor" href="#functions"></a> Functions</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use "def" to create new functions</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    print(<span class="string">"x is &#123;&#125; and y is &#123;&#125;"</span>.format(x, y))</span><br><span class="line">    <span class="keyword">return</span> x + y  <span class="comment"># Return values with a return statement</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Calling functions with parameters</span></span><br><span class="line">add(<span class="number">5</span>, <span class="number">6</span>)  <span class="comment"># =&gt; prints out "x is 5 and y is 6" and returns 11</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Another way to call functions is with keyword arguments</span></span><br><span class="line">add(y=<span class="number">6</span>, x=<span class="number">5</span>)  <span class="comment"># Keyword arguments can arrive in any order.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can define functions that take a variable number of</span></span><br><span class="line"><span class="comment"># positional arguments</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">varargs</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> args</span><br><span class="line"></span><br><span class="line">varargs(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)  <span class="comment"># =&gt; (1, 2, 3)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can define functions that take a variable number of</span></span><br><span class="line"><span class="comment"># keyword arguments, as well</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">keyword_args</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> kwargs</span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's call it to see what happens</span></span><br><span class="line">keyword_args(big=<span class="string">"foot"</span>, loch=<span class="string">"ness"</span>)  <span class="comment"># =&gt; &#123;"big": "foot", "loch": "ness"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python cannot overload functions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can do both at once, if you like</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">all_the_args</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">all_the_args(1, 2, a=3, b=4) prints:</span></span><br><span class="line"><span class="string">    (1, 2)</span></span><br><span class="line"><span class="string">    &#123;"a": 3, "b": 4&#125;</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># When calling functions, you can do the opposite of args/kwargs!</span></span><br><span class="line"><span class="comment"># Use * to expand tuples and use ** to expand kwargs.</span></span><br><span class="line">args = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">kwargs = &#123;<span class="string">"a"</span>: <span class="number">3</span>, <span class="string">"b"</span>: <span class="number">4</span>&#125;</span><br><span class="line">all_the_args(*args)            <span class="comment"># equivalent to all_the_args(1, 2, 3, 4)</span></span><br><span class="line">all_the_args(**kwargs)         <span class="comment"># equivalent to all_the_args(a=3, b=4)</span></span><br><span class="line">all_the_args(*args, **kwargs)  <span class="comment"># equivalent to all_the_args(1, 2, 3, 4, a=3, b=4)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Returning multiple values (with tuple assignments)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">swap</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> y, x  <span class="comment"># Return multiple values as a tuple without the parenthesis.</span></span><br><span class="line">                 <span class="comment"># (Note: parenthesis have been excluded but can be included)</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line">y = <span class="number">2</span></span><br><span class="line">x, y = swap(x, y)     <span class="comment"># =&gt; x = 2, y = 1</span></span><br><span class="line"><span class="comment"># (x, y) = swap(x,y)  # Again parenthesis have been excluded but can be included.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Function Scope</span></span><br><span class="line">x = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_x</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="comment"># Local var x not the same as global variable x</span></span><br><span class="line">    x = num    <span class="comment"># =&gt; 43</span></span><br><span class="line">    print(x)   <span class="comment"># =&gt; 43</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_global_x</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> x</span><br><span class="line">    print(x)   <span class="comment"># =&gt; 5</span></span><br><span class="line">    x = num    <span class="comment"># global var x is now set to 6</span></span><br><span class="line">    print(x)   <span class="comment"># =&gt; 6</span></span><br><span class="line"></span><br><span class="line">set_x(<span class="number">43</span>)</span><br><span class="line">set_global_x(<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Python has first class functions</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_adder</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">adder</span><span class="params">(y)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> x + y</span><br><span class="line">    <span class="keyword">return</span> adder</span><br><span class="line"></span><br><span class="line">add_10 = create_adder(<span class="number">10</span>)</span><br><span class="line">add_10(<span class="number">3</span>)   <span class="comment"># =&gt; 13</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># There are also anonymous functions</span></span><br><span class="line">(<span class="keyword">lambda</span> x: x &gt; <span class="number">2</span>)(<span class="number">3</span>)                  <span class="comment"># =&gt; True</span></span><br><span class="line">(<span class="keyword">lambda</span> x, y: x ** <span class="number">2</span> + y ** <span class="number">2</span>)(<span class="number">2</span>, <span class="number">1</span>)  <span class="comment"># =&gt; 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># There are built-in higher order functions</span></span><br><span class="line"><span class="comment"># 1. map</span></span><br><span class="line"><span class="comment"># Return an iterator that applies function to every item of iterable, yielding the results. </span></span><br><span class="line"><span class="comment"># If additional iterable arguments are passed, function must take that many arguments and is applied to the items from all iterables in parallel. </span></span><br><span class="line"><span class="comment"># With multiple iterables, the iterator stops when the shortest iterable is exhausted. </span></span><br><span class="line">list(map(add_10, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]))              <span class="comment"># =&gt; [11, 12, 13]</span></span><br><span class="line">list(map(<span class="keyword">lambda</span> x,y: x+y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">3</span>,<span class="number">5</span>])) <span class="comment"># =&gt; [4,7]</span></span><br><span class="line">list(map(max, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>]))      <span class="comment"># =&gt; [4, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. filter </span></span><br><span class="line"><span class="comment"># creates a list of elements for which a function returns true.</span></span><br><span class="line">list(filter(<span class="keyword">lambda</span> x: x &gt; <span class="number">5</span>, [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]))  <span class="comment"># =&gt; [6, 7]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. reduce</span></span><br><span class="line"><span class="comment"># It applies a computation to sequential pairs of values in a list one by one</span></span><br><span class="line">reduce((<span class="keyword">lambda</span> x, y: x * y), [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># We can use list comprehensions for nice maps and filters</span></span><br><span class="line"><span class="comment"># List comprehension stores the output as a list which can itself be a nested list</span></span><br><span class="line">[add_10(i) <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]         <span class="comment"># =&gt; [11, 12, 13]</span></span><br><span class="line">[x <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>] <span class="keyword">if</span> x &gt; <span class="number">5</span>]  <span class="comment"># =&gt; [6, 7]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can construct set and dict comprehensions as well.</span></span><br><span class="line">&#123;x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">'abcddeef'</span> <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> <span class="string">'abc'</span>&#125;  <span class="comment"># =&gt; &#123;'d', 'e', 'f'&#125;</span></span><br><span class="line">&#123;x: x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>)&#125;  <span class="comment"># =&gt; &#123;0: 0, 1: 1, 2: 4, 3: 9, 4: 16&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="modules"><a class="markdownIt-Anchor" href="#modules"></a> Modules</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># You can import modules</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line">print(math.sqrt(<span class="number">16</span>))  <span class="comment"># =&gt; 4.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can get specific functions from a module</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> ceil, floor</span><br><span class="line">print(ceil(<span class="number">3.7</span>))   <span class="comment"># =&gt; 4.0</span></span><br><span class="line">print(floor(<span class="number">3.7</span>))  <span class="comment"># =&gt; 3.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can import all functions from a module.</span></span><br><span class="line"><span class="comment"># Warning: this is not recommended</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can shorten module names</span></span><br><span class="line"><span class="keyword">import</span> math <span class="keyword">as</span> m</span><br><span class="line">math.sqrt(<span class="number">16</span>) == m.sqrt(<span class="number">16</span>)  <span class="comment"># =&gt; True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Python modules are just ordinary Python files. You</span></span><br><span class="line"><span class="comment"># can write your own, and import them. The name of the</span></span><br><span class="line"><span class="comment"># module is the same as the name of the file.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can find out which functions and attributes</span></span><br><span class="line"><span class="comment"># are defined in a module.</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line">dir(math)</span><br><span class="line"></span><br><span class="line"><span class="comment"># If you have a Python script named math.py in the same</span></span><br><span class="line"><span class="comment"># folder as your current script, the file math.py will</span></span><br><span class="line"><span class="comment"># be loaded instead of the built-in Python module.</span></span><br><span class="line"><span class="comment"># This happens because the local folder has priority</span></span><br><span class="line"><span class="comment"># over Python's built-in libraries.</span></span><br></pre></td></tr></table></figure>
+<h1 id="classes"><a class="markdownIt-Anchor" href="#classes"></a> Classes</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># We use the "class" statement to create a class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># A class attribute. It is shared by all instances of this class</span></span><br><span class="line">    species = <span class="string">"H. sapiens"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Basic initializer, this is called when this class is instantiated.</span></span><br><span class="line">    <span class="comment"># Note that the double leading and trailing underscores denote objects</span></span><br><span class="line">    <span class="comment"># or attributes that are used by Python but that live in user-controlled</span></span><br><span class="line">    <span class="comment"># namespaces. Methods(or objects or attributes) like: __init__, __str__,</span></span><br><span class="line">    <span class="comment"># __repr__ etc. are called special methods (or sometimes called dunder methods)</span></span><br><span class="line">    <span class="comment"># You should not invent such names on your own.</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="comment"># Assign the argument to the instance's name attribute</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Initialize property</span></span><br><span class="line">        self._age = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># An instance method. All methods take "self" as the first argument</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self, msg)</span>:</span></span><br><span class="line">        print(<span class="string">"&#123;name&#125;: &#123;message&#125;"</span>.format(name=self.name, message=msg))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Another instance method</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sing</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'yo... yo... microphone check... one two... one two...'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># A class method is shared among all instances</span></span><br><span class="line">    <span class="comment"># A class method can access or modify class state</span></span><br><span class="line">    <span class="comment"># They are called with the calling class as the first argument</span></span><br><span class="line">    <span class="comment"># We generally use class method to create factory methods. Factory methods return class object ( similar to a constructor ) for different use cases.</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_species</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> cls.species</span><br><span class="line"></span><br><span class="line">    <span class="comment"># A static method is called without a class or instance reference</span></span><br><span class="line">    <span class="comment"># A static method can’t access or modify class state.</span></span><br><span class="line">    <span class="comment"># We generally use static methods to create utility functions.</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">grunt</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"*grunt*"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># A property is just like a getter.</span></span><br><span class="line">    <span class="comment"># It turns the method age() into an read-only attribute of the same name.</span></span><br><span class="line">    <span class="comment"># There's no need to write trivial getters and setters in Python, though.</span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._age</span><br><span class="line"></span><br><span class="line">    <span class="comment"># This allows the property to be set</span></span><br><span class="line"><span class="meta">    @age.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self, age)</span>:</span></span><br><span class="line">        self._age = age</span><br><span class="line"></span><br><span class="line">    <span class="comment"># This allows the property to be deleted</span></span><br><span class="line"><span class="meta">    @age.deleter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">del</span> self._age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># When a Python interpreter reads a source file it executes all its code.</span></span><br><span class="line"><span class="comment"># This __name__ check makes sure this code block is only executed when this</span></span><br><span class="line"><span class="comment"># module is the main program.</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># Instantiate a class</span></span><br><span class="line">    i = Human(name=<span class="string">"Ian"</span>)</span><br><span class="line">    i.say(<span class="string">"hi"</span>)                     <span class="comment"># "Ian: hi"</span></span><br><span class="line">    j = Human(<span class="string">"Joel"</span>)</span><br><span class="line">    j.say(<span class="string">"hello"</span>)                  <span class="comment"># "Joel: hello"</span></span><br><span class="line">    <span class="comment"># i and j are instances of type Human, or in other words: they are Human objects</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Call our class method</span></span><br><span class="line">    i.say(i.get_species())          <span class="comment"># "Ian: H. sapiens"</span></span><br><span class="line">    <span class="comment"># Change the shared attribute</span></span><br><span class="line">    Human.species = <span class="string">"H. neanderthalensis"</span></span><br><span class="line">    i.say(i.get_species())          <span class="comment"># =&gt; "Ian: H. neanderthalensis"</span></span><br><span class="line">    j.say(j.get_species())          <span class="comment"># =&gt; "Joel: H. neanderthalensis"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Call the static method</span></span><br><span class="line">    print(Human.grunt())            <span class="comment"># =&gt; "*grunt*"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Cannot call static method with instance of object </span></span><br><span class="line">    <span class="comment"># because i.grunt() will automatically put "self" (the object i) as an argument</span></span><br><span class="line">    print(i.grunt())                <span class="comment"># =&gt; TypeError: grunt() takes 0 positional arguments but 1 was given</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Update the property for this instance</span></span><br><span class="line">    i.age = <span class="number">42</span></span><br><span class="line">    <span class="comment"># Get the property</span></span><br><span class="line">    i.say(i.age)                    <span class="comment"># =&gt; "Ian: 42"</span></span><br><span class="line">    j.say(j.age)                    <span class="comment"># =&gt; "Joel: 0"</span></span><br><span class="line">    <span class="comment"># Delete the property</span></span><br><span class="line">    <span class="keyword">del</span> i.age</span><br><span class="line">    <span class="comment"># i.age                         # =&gt; this would raise an AttributeError</span></span><br></pre></td></tr></table></figure>
+<h2 id="inheritance"><a class="markdownIt-Anchor" href="#inheritance"></a> Inheritance</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Inheritance allows new child classes to be defined that inherit methods and</span></span><br><span class="line"><span class="comment"># variables from their parent class. </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Using the Human class defined above as the base or parent class, we can</span></span><br><span class="line"><span class="comment"># define a child class, Superhero, which inherits the class variables like</span></span><br><span class="line"><span class="comment"># "species", "name", and "age", as well as methods, like "sing" and "grunt"</span></span><br><span class="line"><span class="comment"># from the Human class, but can also have its own unique properties.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To take advantage of modularization by file you could place the classes above in their own files,</span></span><br><span class="line"><span class="comment"># say, human.py</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To import functions from other files use the following format</span></span><br><span class="line"><span class="comment"># from "filename-without-extension" import "function-or-class"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> human <span class="keyword">import</span> Human</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the parent class(es) as parameters to the class definition</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Superhero</span><span class="params">(Human)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># If the child class should inherit all of the parent's definitions without</span></span><br><span class="line">    <span class="comment"># any modifications, you can just use the "pass" keyword (and nothing else)</span></span><br><span class="line">    <span class="comment"># but in this case it is commented out to allow for a unique child class:</span></span><br><span class="line">    <span class="comment"># pass</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Child classes can override their parents' attributes</span></span><br><span class="line">    species = <span class="string">'Superhuman'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Children automatically inherit their parent class's constructor including</span></span><br><span class="line">    <span class="comment"># its arguments, but can also define additional arguments or definitions</span></span><br><span class="line">    <span class="comment"># and override its methods such as the class constructor.</span></span><br><span class="line">    <span class="comment"># This constructor inherits the "name" argument from the "Human" class and</span></span><br><span class="line">    <span class="comment"># adds the "superpower" and "movie" arguments:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, movie=False,</span></span></span><br><span class="line"><span class="function"><span class="params">                 superpowers=[<span class="string">"super strength"</span>, <span class="string">"bulletproofing"</span>])</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># add additional class attributes:</span></span><br><span class="line">        self.fictional = <span class="keyword">True</span></span><br><span class="line">        self.movie = movie</span><br><span class="line">        <span class="comment"># be aware of mutable default values, since defaults are shared</span></span><br><span class="line">        self.superpowers = superpowers</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The "super" function lets you access the parent class's methods</span></span><br><span class="line">        <span class="comment"># that are overridden by the child, in this case, the __init__ method.</span></span><br><span class="line">        <span class="comment"># This calls the parent class constructor:</span></span><br><span class="line">        super().__init__(name)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># override the sing method</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sing</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Dun, dun, DUN!'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># add an additional instance method</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">boast</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> power <span class="keyword">in</span> self.superpowers:</span><br><span class="line">            print(<span class="string">"I wield the power of &#123;pow&#125;!"</span>.format(pow=power))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    sup = Superhero(name=<span class="string">"Tick"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Instance type checks</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(sup, Human):</span><br><span class="line">        print(<span class="string">'I am human'</span>)</span><br><span class="line">    <span class="keyword">if</span> type(sup) <span class="keyword">is</span> Superhero:</span><br><span class="line">        print(<span class="string">'I am a superhero'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get the Method Resolution search Order used by both getattr() and super()</span></span><br><span class="line">    <span class="comment"># This attribute is dynamic and can be updated</span></span><br><span class="line">    print(Superhero.__mro__)    <span class="comment"># =&gt; (&lt;class '__main__.Superhero'&gt;,</span></span><br><span class="line">                                <span class="comment"># =&gt; &lt;class 'human.Human'&gt;, &lt;class 'object'&gt;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calls parent method but uses its own class attribute</span></span><br><span class="line">    print(sup.get_species())    <span class="comment"># =&gt; Superhuman</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calls overridden method</span></span><br><span class="line">    print(sup.sing())           <span class="comment"># =&gt; Dun, dun, DUN!</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calls method from Human</span></span><br><span class="line">    sup.say(<span class="string">'Spoon'</span>)            <span class="comment"># =&gt; Tick: Spoon</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Call method that exists only in Superhero</span></span><br><span class="line">    sup.boast()                 <span class="comment"># =&gt; I wield the power of super strength!</span></span><br><span class="line">                                <span class="comment"># =&gt; I wield the power of bulletproofing!</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Inherited class attribute</span></span><br><span class="line">    sup.age = <span class="number">31</span></span><br><span class="line">    print(sup.age)              <span class="comment"># =&gt; 31</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Attribute that only exists within Superhero</span></span><br><span class="line">    print(<span class="string">'Am I Oscar eligible? '</span> + str(sup.movie))</span><br></pre></td></tr></table></figure>
+<h2 id="multiple-inheritance"><a class="markdownIt-Anchor" href="#multiple-inheritance"></a> Multiple Inheritance</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Another class definition</span></span><br><span class="line"><span class="comment"># bat.py</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bat</span>:</span></span><br><span class="line"></span><br><span class="line">    species = <span class="string">'Baty'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, can_fly=True)</span>:</span></span><br><span class="line">        self.fly = can_fly</span><br><span class="line"></span><br><span class="line">    <span class="comment"># This class also has a say method</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self, msg)</span>:</span></span><br><span class="line">        msg = <span class="string">'... ... ...'</span></span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line">    <span class="comment"># And its own method as well</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sonar</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'))) ... ((('</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    b = Bat()</span><br><span class="line">    print(b.say(<span class="string">'hello'</span>))</span><br><span class="line">    print(b.fly)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># And yet another class definition that inherits from Superhero and Bat</span></span><br><span class="line"><span class="comment"># superhero.py</span></span><br><span class="line"><span class="keyword">from</span> superhero <span class="keyword">import</span> Superhero</span><br><span class="line"><span class="keyword">from</span> bat <span class="keyword">import</span> Bat</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define Batman as a child that inherits from both Superhero and Bat</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Batman</span><span class="params">(Superhero, Bat)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="comment"># Typically to inherit attributes you have to call super:</span></span><br><span class="line">        <span class="comment"># super(Batman, self).__init__(*args, **kwargs)      </span></span><br><span class="line">        <span class="comment"># However we are dealing with multiple inheritance here, and super()</span></span><br><span class="line">        <span class="comment"># only works with the next base class in the MRO list.</span></span><br><span class="line">        <span class="comment"># So instead we explicitly call __init__ for all ancestors.</span></span><br><span class="line">        <span class="comment"># The use of *args and **kwargs allows for a clean way to pass arguments,</span></span><br><span class="line">        <span class="comment"># with each parent "peeling a layer of the onion".</span></span><br><span class="line">        Superhero.__init__(self, <span class="string">'anonymous'</span>, movie=<span class="keyword">True</span>, </span><br><span class="line">                           superpowers=[<span class="string">'Wealthy'</span>], *args, **kwargs)</span><br><span class="line">        Bat.__init__(self, *args, can_fly=<span class="keyword">False</span>, **kwargs)</span><br><span class="line">        <span class="comment"># override the value for the name attribute</span></span><br><span class="line">        self.name = <span class="string">'Sad Affleck'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sing</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'nan nan nan nan nan batman!'</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    sup = Batman()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get the Method Resolution search Order used by both getattr() and super().</span></span><br><span class="line">    <span class="comment"># This attribute is dynamic and can be updated</span></span><br><span class="line">    print(Batman.__mro__)       <span class="comment"># =&gt; (&lt;class '__main__.Batman'&gt;, </span></span><br><span class="line">                                <span class="comment"># =&gt; &lt;class 'superhero.Superhero'&gt;, </span></span><br><span class="line">                                <span class="comment"># =&gt; &lt;class 'human.Human'&gt;, </span></span><br><span class="line">                                <span class="comment"># =&gt; &lt;class 'bat.Bat'&gt;, &lt;class 'object'&gt;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calls parent method but uses its own class attribute</span></span><br><span class="line">    print(sup.get_species())    <span class="comment"># =&gt; Superhuman</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calls overridden method</span></span><br><span class="line">    print(sup.sing())           <span class="comment"># =&gt; nan nan nan nan nan batman!</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calls method from Human, because inheritance order matters</span></span><br><span class="line">    sup.say(<span class="string">'I agree'</span>)          <span class="comment"># =&gt; Sad Affleck: I agree</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Call method that exists only in 2nd ancestor</span></span><br><span class="line">    print(sup.sonar())          <span class="comment"># =&gt; ))) ... (((</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Inherited class attribute</span></span><br><span class="line">    sup.age = <span class="number">100</span></span><br><span class="line">    print(sup.age)              <span class="comment"># =&gt; 100</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Inherited attribute from 2nd ancestor whose default value was overridden.</span></span><br><span class="line">    print(<span class="string">'Can I fly? '</span> + str(sup.fly)) <span class="comment"># =&gt; Can I fly? False</span></span><br></pre></td></tr></table></figure>
+<h1 id="advanced"><a class="markdownIt-Anchor" href="#advanced"></a> Advanced</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generators help you make lazy code.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">double_numbers</span><span class="params">(iterable)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> iterable:</span><br><span class="line">        <span class="keyword">yield</span> i + i</span><br><span class="line"></span><br><span class="line"><span class="comment"># Just as you can create a list comprehension, you can create generator</span></span><br><span class="line"><span class="comment"># comprehensions as well.</span></span><br><span class="line">values = (-x <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> values:</span><br><span class="line">    print(x)  <span class="comment"># prints -1 -2 -3 -4 -5 to console/terminal</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># Generators are memory-efficient because they only load the data needed to</span></span><br><span class="line"><span class="comment"># process the next value in the iterable. This allows them to perform</span></span><br><span class="line"><span class="comment"># operations on otherwise prohibitively large value ranges.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Python generators are a simple way of creating iterators. All the overhead we mentioned above are automatically handled by generators in Python.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Simply speaking, a generator is a function that returns an object (iterator) which we can iterate over (one value at a time).</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Generators are excellent medium to represent an infinite stream of data. Infinite streams cannot be stored in memory and since generators produce only one item at a time, it can represent infinite stream of data.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">all_even</span><span class="params">()</span>:</span></span><br><span class="line">    n = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> n</span><br><span class="line">        n += <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="comment"># Decorators</span></span><br><span class="line"><span class="comment"># In this example `beg` wraps `say`. If say_please is True then it</span></span><br><span class="line"><span class="comment"># will change the returned message.</span></span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">beg</span><span class="params">(target_function)</span>:</span></span><br><span class="line"><span class="meta">    @wraps(target_function)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        msg, say_please = target_function(*args, **kwargs)</span><br><span class="line">        <span class="keyword">if</span> say_please:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"&#123;&#125; &#123;&#125;"</span>.format(msg, <span class="string">"Please! I am poor :("</span>)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@beg</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(say_please=False)</span>:</span></span><br><span class="line">    msg = <span class="string">"Can you buy me a beer?"</span></span><br><span class="line">    <span class="keyword">return</span> msg, say_please</span><br><span class="line"></span><br><span class="line">print(say())                 <span class="comment"># Can you buy me a beer?</span></span><br><span class="line">print(say(say_please=<span class="keyword">True</span>))  <span class="comment"># Can you buy me a beer? Please! I am poor :(</span></span><br></pre></td></tr></table></figure>
+<h1 id="libs"><a class="markdownIt-Anchor" href="#libs"></a> Libs</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># binary search: bisect</span></span><br><span class="line"><span class="comment"># Locate the insertion point for x in a to maintain sorted order.</span></span><br><span class="line">bisect.bisect_left(a, x, lo=<span class="number">0</span>, hi=len(a))</span><br><span class="line"></span><br><span class="line"><span class="comment"># random</span></span><br><span class="line">random.randrange(stop)</span><br><span class="line">random.randrange(start, stop[, step])</span><br><span class="line">random.randint(a, b) <span class="comment"># a random integer N such that a &lt;= N &lt;= b. Alias for randrange(a, b+1).</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/language/" rel="tag"># language</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/Networking-for-Interview/" rel="next" title="Networking for Interview (TODO)">
+                <i class="fa fa-chevron-left"></i> Networking for Interview (TODO)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/Distributed-System/" rel="prev" title="Distributed System">
+                Distributed System <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          
+          <div id="toc-div" class="post-toc" style="display:block">
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#primitive-datatypes-and-operators"><span class="nav-number">2.</span> <span class="nav-text"> Primitive Datatypes and Operators</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#variables-and-collections"><span class="nav-number">3.</span> <span class="nav-text"> Variables and Collections</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#control-flow-and-iterables"><span class="nav-number">4.</span> <span class="nav-text"> Control Flow and Iterables</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#functions"><span class="nav-number">5.</span> <span class="nav-text"> Functions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#modules"><span class="nav-number">6.</span> <span class="nav-text"> Modules</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#classes"><span class="nav-number">7.</span> <span class="nav-text"> Classes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#inheritance"><span class="nav-number">7.1.</span> <span class="nav-text"> Inheritance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multiple-inheritance"><span class="nav-number">7.2.</span> <span class="nav-text"> Multiple Inheritance</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#advanced"><span class="nav-number">8.</span> <span class="nav-text"> Advanced</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#libs"><span class="nav-number">9.</span> <span class="nav-text"> Libs</span></a></li></ol></div>
+            
+          </div>
+
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2019/01/Understanding-Python/';
+        this.page.identifier = '2019/01/Understanding-Python/';
+        this.page.title = 'Understanding Python';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

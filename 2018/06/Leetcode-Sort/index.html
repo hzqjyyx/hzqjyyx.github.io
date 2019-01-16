@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="sort,leetcode," />
+
+
+<meta name="description" content="Basic Idea  intersection of two arrays valid anagram longest word in dictionary through deleting sort colors reorganize string insertion sort list h-index merge intervals sort list wiggle sort larges">
+<meta name="keywords" content="sort,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode: Sort">
+<meta property="og:url" content="https://hzqjyyx.github.io/2018/06/Leetcode-Sort/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="Basic Idea  intersection of two arrays valid anagram longest word in dictionary through deleting sort colors reorganize string insertion sort list h-index merge intervals sort list wiggle sort larges">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif">
+<meta property="og:updated_time" content="2018-09-01T04:11:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode: Sort">
+<meta name="twitter:description" content="Basic Idea  intersection of two arrays valid anagram longest word in dictionary through deleting sort colors reorganize string insertion sort list h-index merge intervals sort list wiggle sort larges">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2018/06/Leetcode-Sort/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Leetcode: Sort | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/06/Leetcode-Sort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Leetcode: Sort</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-08T09:05:44-07:00">2018-06-08</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/Leetcode-Sort/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/Leetcode-Sort/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<ul>
+<li>intersection of two arrays</li>
+<li>valid anagram</li>
+<li>longest word in dictionary through deleting</li>
+<li>sort colors</li>
+<li>reorganize string</li>
+<li>insertion sort list</li>
+<li>h-index</li>
+<li>merge intervals</li>
+<li>sort list</li>
+<li>wiggle sort</li>
+<li>largest number</li>
+</ul>
+<a id="more"></a>
+<h1 id="easy"><a class="markdownIt-Anchor" href="#easy"></a> Easy</h1>
+<h2 id="intersection-of-two-arrays"><a class="markdownIt-Anchor" href="#intersection-of-two-arrays"></a> Intersection of Two Arrays</h2>
+<p>Given two arrays, write a function to compute their intersection.</p>
+<p><strong>Example:</strong><br>
+Given <em>nums1</em> = <code>[1, 2, 2, 1]</code>, <em>nums2</em> = <code>[2, 2]</code>, return <code>[2]</code>.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Each element in the result must be unique.</li>
+<li>The result can be in any order.</li>
+</ul>
+<h3 id="answer-3ms"><a class="markdownIt-Anchor" href="#answer-3ms"></a> Answer 3ms</h3>
+<p><strong>Tags</strong>: Sort, Three pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>lg</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\lg n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop">l<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, <strong>Space</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span><br>
+<strong>Explanation</strong>: It is worst in asymptotic time in the second solution, but it is compact and without overhead of <code>HashSet</code>. Besides, the dataset is small enough, so it works well.<br>
+At first, we <strong>sort</strong> nums1 and nums2. Only when nums[i] = nums[j], they can be in the intersection set. And we can proof that if nums[i] &lt; nums[j], there would be no chance that nums[0…i] can be equal to nums[j], the only chance would be nums[i+k] larger than nums[i].<br>
+Also, once we enter the equal case, it need to be <strong>skipped</strong> the equal nums, because the intersection set requires: Each element in the result must be unique.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] intersection(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</span><br><span class="line">        Arrays.sort(nums1);</span><br><span class="line">        Arrays.sort(nums2);</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] ret = <span class="keyword">new</span> <span class="keyword">int</span>[nums1.length];</span><br><span class="line">        <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums1.length &amp;&amp; j &lt; nums2.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums1[i] &lt; nums2[j])&#123;</span><br><span class="line">                i+=<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (nums1[i] &gt; nums2[j])&#123;</span><br><span class="line">                j+=<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                ret[k] = nums1[i];</span><br><span class="line">                k+=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">int</span> a = nums1[i];</span><br><span class="line">                <span class="keyword">while</span>(i &lt; nums1.length &amp;&amp; nums1[i] == a) &#123;</span><br><span class="line">                    i += <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">int</span> b = nums2[j];</span><br><span class="line">                <span class="keyword">while</span>(j &lt; nums2.length &amp;&amp; nums2[j] == b) &#123;</span><br><span class="line">                    j += <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] r = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> g=<span class="number">0</span>;g&lt;k;g++)&#123;</span><br><span class="line">            r[g]=ret[g];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-4ms"><a class="markdownIt-Anchor" href="#answer-4ms"></a> Answer 4ms</h3>
+<p><strong>Tag</strong>: HashSet, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, <strong>Space</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span><br>
+Explanation:</p>
+<ol>
+<li>Construct a <code>HashSet</code>  of nums1, it could be nums2. In my opinion, it should be the array that has less elements. Let’s say we have nums1.length = 10 and nums2.length = 10000. We can early stop if we find all characters are in intersection set.</li>
+<li>Let’s iterate nums2 and try to remove from <code>HashSet</code>. If remove successfully, it means there is same element both in nums1 and nums2. And it is in set only one time because we remove it.</li>
+<li>Here we use a simple trick. nums2[1…i] has been seen and will be never come back. Also, the intersection set’s length is always less than or equal to nums2[1…i]. So we can reuse nums2 without create a new array.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] intersection(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</span><br><span class="line">    Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> n : nums1)&#123;</span><br><span class="line">        set.add(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> n : nums2)&#123;</span><br><span class="line">        <span class="keyword">if</span> (set.remove(n)) &#123;</span><br><span class="line">            nums2[i++] = n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Arrays.copyOfRange(nums2, <span class="number">0</span>, i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Questions:</p>
+<ul>
+<li>What is the time and space complexity of <code>HashSet</code>.</li>
+</ul>
+<h2 id="intersection-of-two-arrays-ii"><a class="markdownIt-Anchor" href="#intersection-of-two-arrays-ii"></a> Intersection of Two Arrays II</h2>
+<p>Given two arrays, write a function to compute their intersection.</p>
+<p><strong>Example:</strong><br>
+Given <em>nums1</em> = <code>[1, 2, 2, 1]</code>, <em>nums2</em> = <code>[2, 2]</code>, return <code>[2, 2]</code>.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Each element in the result should appear as many times as it shows in both arrays.</li>
+<li>The result can be in any order.</li>
+</ul>
+<h3 id="answer-3ms-2"><a class="markdownIt-Anchor" href="#answer-3ms-2"></a> Answer 3ms</h3>
+<p><strong>Tags</strong>: Sort, Three pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>lg</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\lg n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop">l<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, <strong>Space</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span><br>
+<strong>Explanation</strong>: Same with one.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] intersect(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</span><br><span class="line">    Arrays.sort(nums1);</span><br><span class="line">    Arrays.sort(nums2);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[] tmp = <span class="keyword">new</span> <span class="keyword">int</span>[Math.min(nums1.length, nums2.length)];</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;nums1.length &amp;&amp; j&lt;nums2.length)&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums1[i] &lt; nums2[j])&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums1[i] &gt; nums2[j])&#123;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            tmp[k] = nums1[i];</span><br><span class="line">            k+=<span class="number">1</span>;</span><br><span class="line">            i+=<span class="number">1</span>;</span><br><span class="line">            j+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Arrays.copyOfRange(tmp, <span class="number">0</span>, k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="follow-up"><a class="markdownIt-Anchor" href="#follow-up"></a> Follow Up</h3>
+<ul>
+<li>What if the given array is already sorted? How would you optimize your algorithm?
+<ul>
+<li>Remove the first two line</li>
+</ul>
+</li>
+<li>What if <em>nums1</em>’s size is small compared to <em>nums2</em>’s size? Which algorithm is better?
+<ul>
+<li>No idea</li>
+</ul>
+</li>
+<li>What if elements of <em>nums2</em> are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
+<ul>
+<li>HashSet. We can load nums1, and use HashSet to check.</li>
+</ul>
+</li>
+</ul>
+<h2 id="valid-anagram"><a class="markdownIt-Anchor" href="#valid-anagram"></a> Valid Anagram</h2>
+<p>Given two strings <em>s</em> and <em>t</em> , write a function to determine if <em>t</em> is an anagram of <em>s</em>. <strong>Anagram</strong> means <em>s</em> and <em>t</em> have exactly same number of same characters.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong><br>
+You may assume the string contains only lowercase alphabets.</p>
+<p><strong>Follow up:</strong></p>
+<ul>
+<li>What if the inputs contain unicode characters? How would you adapt your solution to such case?
+<ul>
+<li>use hashmap. Unicode may be to large for a short string (it string is long, create a 65535 array is also great).</li>
+</ul>
+</li>
+</ul>
+<h3 id="answer-7ms"><a class="markdownIt-Anchor" href="#answer-7ms"></a> Answer 7ms</h3>
+<p><strong>Tags</strong>: Counting, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, <strong>Space</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span><br>
+<strong>Explanation</strong>: For the question, we can change it to: The number of a certain character is exactly same.<br>
+First Add, Then Subtract.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnagram</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() != t.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">int</span>[] counts = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">for</span>(Character c : s.toCharArray())&#123;</span><br><span class="line">        counts[c-<span class="string">'a'</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(Character c: t.toCharArray())&#123;</span><br><span class="line">        counts[c-<span class="string">'a'</span>]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i : counts)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-36ms"><a class="markdownIt-Anchor" href="#answer-36ms"></a> Answer 36ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass, Return Early<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, <strong>Space</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.<br>
+<strong>Explanation</strong>: Same with above.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnagram</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() != t.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    Map&lt;Character, Integer&gt; ss = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span>(Character c : s.toCharArray())&#123;</span><br><span class="line">        ss.put(c, ss.getOrDefault(c, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(Character c : t.toCharArray())&#123;</span><br><span class="line">        <span class="keyword">if</span> (ss.containsKey(c))&#123;</span><br><span class="line">            Integer i = ss.get(c);</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                ss.put(c, i-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>questions</strong>:</p>
+<ul>
+<li>What is the time complexity of <code>HashMap</code></li>
+</ul>
+<h3 id="answer-50ms"><a class="markdownIt-Anchor" href="#answer-50ms"></a> Answer 50ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, <strong>Space</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.<br>
+<strong>Explanation</strong>: Two map equality compare.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnagram</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() != t.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    Map&lt;Character, Integer&gt; ss = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span>(Character c : s.toCharArray())&#123;</span><br><span class="line">        ss.put(c, ss.getOrDefault(c, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(Character c : t.toCharArray())&#123;</span><br><span class="line">        st.put(c, st.getOrDefault(c, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (ss.equals(st))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="medium"><a class="markdownIt-Anchor" href="#medium"></a> Medium</h1>
+<h2 id="longest-word-in-dictionary-through-deleting"><a class="markdownIt-Anchor" href="#longest-word-in-dictionary-through-deleting"></a> Longest Word in Dictionary through Deleting</h2>
+<p>Given a string and a string dictionary, find the longest string in the dictionary that can be formed by deleting some characters of the given string. If there are more than one possible results, return the longest word with the smallest lexicographical order. If there is no possible result, return the empty string.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">s = &quot;abpcplea&quot;, d = [&quot;ale&quot;,&quot;apple&quot;,&quot;monkey&quot;,&quot;plea&quot;]</span><br><span class="line"></span><br><span class="line">Output: </span><br><span class="line">&quot;apple&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">s = &quot;abpcplea&quot;, d = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]</span><br><span class="line"></span><br><span class="line">Output: </span><br><span class="line">&quot;a&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ol>
+<li>All the strings in the input will only contain lower-case letters.</li>
+<li>The size of the dictionary won’t exceed 1,000.</li>
+<li>The length of all the strings in the input won’t exceed 1,000.</li>
+</ol>
+<h3 id="answer-11ms"><a class="markdownIt-Anchor" href="#answer-11ms"></a> Answer 11ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, <strong>Space</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.<br>
+<strong>Explanation</strong>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">findLongestWord</span><span class="params">(String s, List&lt;String&gt; d)</span> </span>&#123;</span><br><span class="line">    String longest = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (String str : d) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isSubsequence(s, str)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (str.length() &gt; longest.length() || str.length() == longest.length() &amp;&amp; str.compareTo(longest) &lt; <span class="number">0</span>) longest = str;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> longest;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String str, String sub)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> c : sub.toCharArray()) &#123;</span><br><span class="line">        index = str.indexOf(c,index);</span><br><span class="line">        <span class="keyword">if</span> (index == -<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        index++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-36ms-2"><a class="markdownIt-Anchor" href="#answer-36ms-2"></a> Answer 36ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] chars = s.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c: chars)&#123;</span><br><span class="line">        <span class="comment">// System.out.println(c+","+a.charAt(j));</span></span><br><span class="line">        <span class="keyword">if</span> (j&lt;a.length() &amp;&amp; c == a.charAt(j))&#123;</span><br><span class="line">            j+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> j == a.length();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">findLongestWord</span><span class="params">(String s, List&lt;String&gt; d)</span> </span>&#123;</span><br><span class="line">    String maxStr = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span>(String a : d)&#123;</span><br><span class="line">        <span class="keyword">if</span> (isSubsequence(s, a)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a.length() &gt; maxStr.length() || (a.length() == maxStr.length() &amp;&amp; a.compareTo(maxStr)&lt;<span class="number">0</span>))&#123;</span><br><span class="line">                maxStr = a;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-156ms"><a class="markdownIt-Anchor" href="#answer-156ms"></a> Answer 156ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">findLongestWord</span><span class="params">(String s, List&lt;String&gt; d)</span> </span>&#123;</span><br><span class="line">    Collections.sort(d, (String s1, String s2) -&gt; &#123;</span><br><span class="line">        <span class="keyword">int</span> len = s2.length() - s1.length();</span><br><span class="line">        <span class="keyword">return</span> len == <span class="number">0</span> ? s1.compareTo(s2) : len;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">for</span>(String a : d)&#123;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(Character c: s.toCharArray())&#123;</span><br><span class="line">            <span class="comment">// System.out.println(c+","+a.charAt(j));</span></span><br><span class="line">            <span class="keyword">if</span> (j&lt;a.length() &amp;&amp; c.equals(a.charAt(j)))&#123;</span><br><span class="line">                j+=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (j == a.length())&#123;</span><br><span class="line">            <span class="keyword">return</span> a;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="sort-colors"><a class="markdownIt-Anchor" href="#sort-colors"></a> Sort Colors</h2>
+<p>Given an array with <em>n</em> objects colored red, white or blue, sort them <strong>in-place</strong> so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
+<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
+<p><strong>Note:</strong> You are not suppose to use the library’s sort function for this problem.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [2,0,2,1,1,0]</span><br><span class="line">Output: [0,0,1,1,2,2]</span><br></pre></td></tr></table></figure>
+<h3 id="answer-1ms"><a class="markdownIt-Anchor" href="#answer-1ms"></a> Answer 1ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// nums[0..i-1] = 0</span></span><br><span class="line">        <span class="comment">// nums[i..j-1] = 1</span></span><br><span class="line">        <span class="comment">// nums[j..k-1] = 2</span></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,k=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> n : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n==<span class="number">2</span>)&#123;</span><br><span class="line">                k+=<span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n==<span class="number">1</span>)&#123;</span><br><span class="line">                swap(nums, k, j);</span><br><span class="line">                k+=<span class="number">1</span>;</span><br><span class="line">                j+=<span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">                swap(nums, k, j);</span><br><span class="line">                swap(nums, j, i);</span><br><span class="line">                i+=<span class="number">1</span>;</span><br><span class="line">                j+=<span class="number">1</span>;</span><br><span class="line">                k+=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">        nums[i] = nums[j];</span><br><span class="line">        nums[j] = tmp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-1ms-2"><a class="markdownIt-Anchor" href="#answer-1ms-2"></a> Answer 1ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] counts = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> n : nums)&#123;</span><br><span class="line">        counts[n] += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;counts[<span class="number">0</span>];i++)&#123;</span><br><span class="line">        nums[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=counts[<span class="number">0</span>];i&lt;counts[<span class="number">1</span>]+counts[<span class="number">0</span>];i++)&#123;</span><br><span class="line">        nums[i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=counts[<span class="number">1</span>]+counts[<span class="number">0</span>];i&lt;counts[<span class="number">2</span>]+counts[<span class="number">1</span>]+counts[<span class="number">0</span>];i++)&#123;</span><br><span class="line">        nums[i] = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="follow-up-2"><a class="markdownIt-Anchor" href="#follow-up-2"></a> Follow up</h3>
+<ul>
+<li>A rather straight forward solution is a two-pass algorithm using counting sort.<br>
+First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.</li>
+<li>Could you come up with a one-pass algorithm using only constant space?</li>
+</ul>
+<h2 id="reorganize-string"><a class="markdownIt-Anchor" href="#reorganize-string"></a> Reorganize String</h2>
+<p>Given a string <code>S</code>, check if the letters can be rearranged so that two characters that are adjacent to each other are not the same.</p>
+<p>If possible, output any possible result.  If not possible, return the empty string.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: S = &quot;aab&quot;</span><br><span class="line">Output: &quot;aba&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: S = &quot;aaab&quot;</span><br><span class="line">Output: &quot;&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li><code>S</code> will consist of lowercase letters and have length in range <code>[1, 500]</code>.</li>
+</ul>
+<h3 id="answer-6ms"><a class="markdownIt-Anchor" href="#answer-6ms"></a> Answer 6ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">reorganizeString</span><span class="params">(String S)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// same &lt;= (S.length() + 1) / 2</span></span><br><span class="line">    <span class="keyword">int</span>[] counts = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c: S.toCharArray())&#123;</span><br><span class="line">        counts[c-<span class="string">'a'</span>] += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> threshold = (S.length()+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> max=-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> maxI = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;counts.length;i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> c = counts[i];</span><br><span class="line">        <span class="keyword">if</span> (c&gt;threshold)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (c &gt; max) &#123;</span><br><span class="line">            maxI = i;</span><br><span class="line">            max = c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">char</span>[] chars = <span class="keyword">new</span> <span class="keyword">char</span>[S.length()];</span><br><span class="line">    <span class="keyword">int</span> i=(S.length()+<span class="number">1</span>)%<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> mode = S.length() + i;</span><br><span class="line">    <span class="keyword">int</span> k = maxI;</span><br><span class="line">    <span class="comment">// System.out.println(i);</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> c=maxI; c&lt;counts.length+maxI; c++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;counts[c % counts.length];j++)&#123;</span><br><span class="line">            chars[i] = (<span class="keyword">char</span>)(c % counts.length +<span class="string">'a'</span>);</span><br><span class="line">            i=(i+<span class="number">2</span>)%mode;</span><br><span class="line">            <span class="comment">// System.out.println(i);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(chars);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="insertion-sort-list"><a class="markdownIt-Anchor" href="#insertion-sort-list"></a> Insertion Sort List</h2>
+<p>Sort a linked list using insertion sort.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif" alt="img"><br>
+A graphical example of insertion sort. The partial sorted list (black) initially contains only the first element in the list.<br>
+With each iteration one element (red) is removed from the input data and inserted in-place into the sorted list</p>
+<p><strong>Algorithm of Insertion Sort:</strong></p>
+<ol>
+<li>Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list.</li>
+<li>At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.</li>
+<li>It repeats until no input elements remain.</li>
+</ol>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 4-&gt;2-&gt;1-&gt;3</span><br><span class="line">Output: 1-&gt;2-&gt;3-&gt;4</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: -1-&gt;5-&gt;3-&gt;4-&gt;0</span><br><span class="line">Output: -1-&gt;0-&gt;3-&gt;4-&gt;5</span><br></pre></td></tr></table></figure>
+<h3 id="answer-10ms"><a class="markdownIt-Anchor" href="#answer-10ms"></a> Answer 10ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">insertionSortList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    ListNode guard = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode curr = head, prev = guard;</span><br><span class="line">    <span class="keyword">int</span> lastVal = Integer.MIN_VALUE;</span><br><span class="line">    ListNode lastNode = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">while</span> (curr != <span class="keyword">null</span>) &#123;</span><br><span class="line">        ListNode next = curr.next;</span><br><span class="line"></span><br><span class="line">        prev = guard;</span><br><span class="line">        <span class="keyword">int</span> val = curr.val;</span><br><span class="line">        <span class="keyword">if</span> (val &gt; lastVal &amp;&amp; lastNode != <span class="keyword">null</span>) &#123;</span><br><span class="line">            prev = lastNode;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">assert</span> prev != <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (prev.next != <span class="keyword">null</span> &amp;&amp; prev.next.val &lt; val) &#123;</span><br><span class="line">            prev = prev.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//            ListNode tmp = curr.next;</span></span><br><span class="line">        <span class="comment">// curr.next = curr.next.next;</span></span><br><span class="line">        curr.next = prev.next;</span><br><span class="line">        prev.next = curr;</span><br><span class="line">        lastNode = prev;</span><br><span class="line">        lastVal = val;</span><br><span class="line">        curr = next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> guard.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-36ms-3"><a class="markdownIt-Anchor" href="#answer-36ms-3"></a> Answer 36ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">insertionSortList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    ListNode guard = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode curr = head, prev = guard;</span><br><span class="line">    <span class="keyword">int</span> lastVal = Integer.MIN_VALUE;</span><br><span class="line">    ListNode lastNode = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">while</span> (curr != <span class="keyword">null</span>) &#123;</span><br><span class="line">        ListNode next = curr.next;</span><br><span class="line"></span><br><span class="line">        prev = guard;</span><br><span class="line">        <span class="keyword">int</span> val = curr.val;</span><br><span class="line">        <span class="comment">// if (val &lt; lastVal || lastNode == null) &#123;</span></span><br><span class="line">        <span class="comment">//     iter = head;</span></span><br><span class="line">        <span class="comment">// &#125;else&#123;</span></span><br><span class="line">        <span class="comment">//     iter = lastNode;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// assert iter != null;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (prev.next != <span class="keyword">null</span> &amp;&amp; prev.next.val &lt; val) &#123;</span><br><span class="line">            prev = prev.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// remove curr.next first, then insert **after** iter</span></span><br><span class="line">        <span class="comment">//            ListNode tmp = curr.next;</span></span><br><span class="line">        <span class="comment">// curr.next = curr.next.next;</span></span><br><span class="line">        curr.next = prev.next;</span><br><span class="line">        prev.next = curr;</span><br><span class="line">        <span class="comment">// lastNode = iter;</span></span><br><span class="line">        <span class="comment">// lastVal = val;</span></span><br><span class="line">        curr = next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> guard.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="h-index"><a class="markdownIt-Anchor" href="#h-index"></a> H-Index</h2>
+<p>Given an array of citations (each citation is a non-negative integer) of a researcher, write a function to compute the researcher’s h-index.</p>
+<p>According to the <a href="https://en.wikipedia.org/wiki/H-index" target="_blank" rel="noopener">definition of h-index on Wikipedia</a>: “A scientist has index <em>h</em> if <em>h</em> of his/her <em>N</em> papers have <strong>at least</strong> <em>h</em>citations each, and the other <em>N − h</em> papers have <strong>no more than</strong> <em>h</em> citations each.”</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: citations = [3,0,6,1,5]</span><br><span class="line">Output: 3 </span><br><span class="line">Explanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of them had </span><br><span class="line">             received 3, 0, 6, 1, 5 citations respectively. </span><br><span class="line">             Since the researcher has 3 papers with at least 3 citations each and the remaining </span><br><span class="line">             two with no more than 3 citations each, her h-index is 3.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong> If there are several possible values for <em>h</em>, the maximum one is taken as the h-index.</p>
+<h3 id="answer-7ms-2"><a class="markdownIt-Anchor" href="#answer-7ms-2"></a> Answer 7ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hIndex</span><span class="params">(<span class="keyword">int</span>[] cit)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cit.length;</span><br><span class="line">    <span class="keyword">int</span>[] cnt = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> val = cit[i];</span><br><span class="line">        cnt[Math.min(val, n)]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        sum += cnt[i];</span><br><span class="line">        <span class="keyword">if</span>(sum &gt;= i)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-8ms"><a class="markdownIt-Anchor" href="#answer-8ms"></a> Answer 8ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hIndex</span><span class="params">(<span class="keyword">int</span>[] citations)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(citations.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = -<span class="number">1</span>, h = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> p=<span class="number">0</span>,r=citations.length;</span><br><span class="line">    <span class="keyword">int</span> maxH = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&lt;r)&#123;</span><br><span class="line">        q = partition(citations, p, r);</span><br><span class="line">        h = citations.length - q;</span><br><span class="line">        <span class="keyword">if</span>(q==<span class="number">0</span> &amp;&amp; h&lt;=citations[q])&#123;</span><br><span class="line">            <span class="keyword">return</span> h;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(h&lt;=citations[q] &amp;&amp; h&gt;=citations[q-<span class="number">1</span>])&#123;</span><br><span class="line">            <span class="keyword">if</span>(h&gt;maxH)&#123;</span><br><span class="line">                maxH = h;</span><br><span class="line">            &#125;</span><br><span class="line">            r = q;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(h&lt;citations[q])&#123;</span><br><span class="line">            r=q;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(h&gt;=citations[q])&#123;</span><br><span class="line">            p=q+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxH;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] citations, <span class="keyword">int</span> l, <span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivot = citations[(l+h)/<span class="number">2</span>];</span><br><span class="line">    swap(citations, h-<span class="number">1</span>, (l+h)/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">int</span> i=l-<span class="number">1</span>, j=l;</span><br><span class="line">    <span class="keyword">while</span>(j &lt; h-<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(pivot &lt; citations[j]) &#123;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i+=<span class="number">1</span>;</span><br><span class="line">            swap(citations, i, j);</span><br><span class="line">            j+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// assert j == h;</span></span><br><span class="line">    swap(citations, i+<span class="number">1</span>, h-<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] cs, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp = cs[i];</span><br><span class="line">    cs[i] = cs[j];</span><br><span class="line">    cs[j] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="merge-intervals"><a class="markdownIt-Anchor" href="#merge-intervals"></a> Merge Intervals</h2>
+<p>Given a collection of intervals, merge all overlapping intervals.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [[1,3],[2,6],[8,10],[15,18]]</span><br><span class="line">Output: [[1,6],[8,10],[15,18]]</span><br><span class="line">Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [[1,4],[4,5]]</span><br><span class="line">Output: [[1,5]]</span><br><span class="line">Explanation: Intervals [1,4] and [4,5] are considerred overlapping.</span><br></pre></td></tr></table></figure>
+<h3 id="answer-96ms"><a class="markdownIt-Anchor" href="#answer-96ms"></a> Answer 96ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Interval&gt; <span class="title">merge</span><span class="params">(List&lt;Interval&gt; intervals)</span> </span>&#123;</span><br><span class="line">    intervals.sort(Comparator.comparingInt(o -&gt; o.start));</span><br><span class="line">    LinkedList&lt;Interval&gt; merged = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Interval interval : intervals)</span><br><span class="line">        <span class="keyword">if</span> (merged.isEmpty() || merged.getLast().end &lt; interval.start)</span><br><span class="line">            merged.add(interval);</span><br><span class="line">    <span class="keyword">else</span> merged.getLast().end = Math.max(merged.getLast().end, interval.end);</span><br><span class="line">    <span class="keyword">return</span> merged;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-90ms"><a class="markdownIt-Anchor" href="#answer-90ms"></a> Answer 90ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Interval&gt; <span class="title">merge</span><span class="params">(List&lt;Interval&gt; intervals)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(intervals.size() == <span class="number">0</span>) <span class="keyword">return</span> intervals;</span><br><span class="line">    Collections.sort(intervals, (i1, i2) -&gt; &#123;</span><br><span class="line">        <span class="keyword">return</span> i1.start - i2.start;</span><br><span class="line">    &#125;);</span><br><span class="line">    List&lt;Interval&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;(intervals.size());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;intervals.size();i++)&#123;</span><br><span class="line">        Interval last = intervals.get(i), first = intervals.get(i-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(last.start &lt;= first.end) &#123;</span><br><span class="line">            <span class="comment">// merge</span></span><br><span class="line">            last.start = first.start;</span><br><span class="line">            last.end = Math.max(first.end , last.end);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            res.add(first);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    res.add(intervals.get(intervals.size()-<span class="number">1</span>));</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="answer-153ms"><a class="markdownIt-Anchor" href="#answer-153ms"></a> Answer 153ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Interval&gt; <span class="title">merge</span><span class="params">(List&lt;Interval&gt; intervals)</span> </span>&#123;</span><br><span class="line">    Collections.sort(intervals, (i1, i2) -&gt; &#123;</span><br><span class="line">        <span class="keyword">return</span> i1.start - i2.start;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;intervals.size();i++)&#123;</span><br><span class="line">        Interval last = intervals.get(i), first = intervals.get(i-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(last.start &lt;= first.end) &#123;</span><br><span class="line">            <span class="comment">// merge</span></span><br><span class="line">            last.start = first.start;</span><br><span class="line">            last.end = Math.max(first.end , last.end);</span><br><span class="line">            intervals.remove(first);</span><br><span class="line">            i-=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> intervals;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="sort-list"><a class="markdownIt-Anchor" href="#sort-list"></a> Sort List</h2>
+<p>Sort a linked list in <em>O</em>(<em>n</em> log <em>n</em>) time using constant space complexity.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 4-&gt;2-&gt;1-&gt;3</span><br><span class="line">Output: 1-&gt;2-&gt;3-&gt;4</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: -1-&gt;5-&gt;3-&gt;4-&gt;0</span><br><span class="line">Output: -1-&gt;0-&gt;3-&gt;4-&gt;5</span><br></pre></td></tr></table></figure>
+<h3 id="answer-8ms-2"><a class="markdownIt-Anchor" href="#answer-8ms-2"></a> Answer 8ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">sortList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">    <span class="comment">//merge sort</span></span><br><span class="line">    <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">    ListNode iter = head;</span><br><span class="line">    <span class="keyword">while</span> (iter.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">        size += <span class="number">1</span>;</span><br><span class="line">        iter = iter.next;</span><br><span class="line">    &#125;</span><br><span class="line">    size += <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//        ListNode guard = new ListNode(0);</span></span><br><span class="line">    <span class="comment">//        guard.next = head;</span></span><br><span class="line">    <span class="keyword">return</span> mergeSort(head, iter, size);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> ListNode <span class="title">mergeSort</span><span class="params">(ListNode low, ListNode high, <span class="keyword">int</span> size)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// low is both exclusive, high is inclusive</span></span><br><span class="line">    <span class="keyword">if</span> (size &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        ListNode mid = low;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; size / <span class="number">2</span>; i++) &#123;</span><br><span class="line">            mid = mid.next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode mergeHigh = high.next;</span><br><span class="line">        mid.next = mergeSort(mid.next, high, size - size / <span class="number">2</span>);</span><br><span class="line">        ListNode tmp = mid.next;</span><br><span class="line">        low = mergeSort(low, mid, size / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> merge(low, tmp, mergeHigh);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//        low.next = high;</span></span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> ListNode <span class="title">merge</span><span class="params">(ListNode low, ListNode mid, ListNode high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//        low = low.next;</span></span><br><span class="line">    <span class="comment">//        mid = mid.next;</span></span><br><span class="line">    <span class="comment">//        high = high.next;</span></span><br><span class="line">    ListNode head = <span class="keyword">new</span> ListNode(<span class="number">0</span>), nI = low, nJ = mid, iter = head;</span><br><span class="line">    <span class="keyword">while</span> (nI != mid || nJ != high) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nI == mid) &#123;</span><br><span class="line">            iter.next = nJ;</span><br><span class="line">            nJ = nJ.next;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nJ == high) &#123;</span><br><span class="line">            iter.next = nI;</span><br><span class="line">            nI = nI.next;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nI.val &gt; nJ.val) &#123;</span><br><span class="line">            iter.next = nJ;</span><br><span class="line">            nJ = nJ.next;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            iter.next = nI;</span><br><span class="line">            nI = nI.next;</span><br><span class="line">        &#125;</span><br><span class="line">        iter = iter.next;</span><br><span class="line">    &#125;</span><br><span class="line">    iter.next = high;</span><br><span class="line">    <span class="keyword">return</span> head.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="wiggle-sort-ii"><a class="markdownIt-Anchor" href="#wiggle-sort-ii"></a> Wiggle Sort II</h2>
+<p>Given an unsorted array <code>nums</code>, reorder it such that <code>nums[0] &lt; nums[1] &gt; nums[2] &lt; nums[3]...</code>.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [1, 5, 1, 1, 6, 4]</span><br><span class="line">Output: One possible answer is [1, 4, 1, 5, 1, 6].</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [1, 3, 2, 2, 3, 1]</span><br><span class="line">Output: One possible answer is [2, 3, 1, 3, 1, 2].</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong><br>
+You may assume all input has valid answer.</p>
+<p><strong>Follow Up:</strong><br>
+Can you do it in O(n) time and/or in-place with O(1) extra space?</p>
+<h3 id="answer-5ms"><a class="markdownIt-Anchor" href="#answer-5ms"></a> Answer 5ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wiggleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">int</span>[] ret = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=nums.length-(nums.length+<span class="number">1</span>)%<span class="number">2</span>-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j-=<span class="number">2</span>)&#123;</span><br><span class="line">        ret[j] = nums[i];</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=nums.length-(nums.length+<span class="number">0</span>)%<span class="number">2</span>-<span class="number">1</span>;j&gt;=<span class="number">1</span>;j-=<span class="number">2</span>)&#123;</span><br><span class="line">        ret[j] = nums[i];</span><br><span class="line">        i+=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    System.arraycopy(ret, <span class="number">0</span>, nums, <span class="number">0</span>, nums.length);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">    nums[i] = nums[j];</span><br><span class="line">    nums[j] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="largest-number"><a class="markdownIt-Anchor" href="#largest-number"></a> Largest Number</h2>
+<p>Given a list of non negative integers, arrange them such that they form the largest number.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [10,2]</span><br><span class="line">Output: &quot;210&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,30,34,5,9]</span><br><span class="line">Output: &quot;9534330&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong> The result may be very large, so you need to return a string instead of an integer.</p>
+<h3 id="answer-96ms-2"><a class="markdownIt-Anchor" href="#answer-96ms-2"></a> Answer 96ms</h3>
+<p><strong>Tags</strong>: Map, Count, One pass<br>
+<strong>Time</strong>: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>, Space: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, k is the number of existing characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">largestNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    String[] oNums = <span class="keyword">new</span> String[nums.length];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        oNums[i] = nums[i]+<span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Arrays.sort(oNums, (n1, n2) -&gt; &#123;</span><br><span class="line">        <span class="keyword">return</span> (n2+n1).compareTo(n1+n2);</span><br><span class="line">    &#125;);</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;oNums.length;i++)&#123;</span><br><span class="line">        sb.append(oNums[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sb.toString().replaceFirst(<span class="string">"^0+(?!$)"</span>, <span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="hard"><a class="markdownIt-Anchor" href="#hard"></a> Hard</h1>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/sort/" rel="tag"># sort</a>
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/Algorithm-02-1-Order-Statistic/" rel="next" title="Algorithm(02-1): Order Statistic">
+                <i class="fa fa-chevron-left"></i> Algorithm(02-1): Order Statistic
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/Algorithm-03-Tree/" rel="prev" title="Algorithm(03): Tree">
+                Algorithm(03): Tree <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          
+          <div id="toc-div" class="post-toc" style="display:block">
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#easy"><span class="nav-number">2.</span> <span class="nav-text"> Easy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection-of-two-arrays"><span class="nav-number">2.1.</span> <span class="nav-text"> Intersection of Two Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-3ms"><span class="nav-number">2.1.1.</span> <span class="nav-text"> Answer 3ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-4ms"><span class="nav-number">2.1.2.</span> <span class="nav-text"> Answer 4ms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection-of-two-arrays-ii"><span class="nav-number">2.2.</span> <span class="nav-text"> Intersection of Two Arrays II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-3ms-2"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Answer 3ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#follow-up"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Follow Up</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#valid-anagram"><span class="nav-number">2.3.</span> <span class="nav-text"> Valid Anagram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-7ms"><span class="nav-number">2.3.1.</span> <span class="nav-text"> Answer 7ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-36ms"><span class="nav-number">2.3.2.</span> <span class="nav-text"> Answer 36ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-50ms"><span class="nav-number">2.3.3.</span> <span class="nav-text"> Answer 50ms</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#medium"><span class="nav-number">3.</span> <span class="nav-text"> Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#longest-word-in-dictionary-through-deleting"><span class="nav-number">3.1.</span> <span class="nav-text"> Longest Word in Dictionary through Deleting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-11ms"><span class="nav-number">3.1.1.</span> <span class="nav-text"> Answer 11ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-36ms-2"><span class="nav-number">3.1.2.</span> <span class="nav-text"> Answer 36ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-156ms"><span class="nav-number">3.1.3.</span> <span class="nav-text"> Answer 156ms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort-colors"><span class="nav-number">3.2.</span> <span class="nav-text"> Sort Colors</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-1ms"><span class="nav-number">3.2.1.</span> <span class="nav-text"> Answer 1ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-1ms-2"><span class="nav-number">3.2.2.</span> <span class="nav-text"> Answer 1ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#follow-up-2"><span class="nav-number">3.2.3.</span> <span class="nav-text"> Follow up</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reorganize-string"><span class="nav-number">3.3.</span> <span class="nav-text"> Reorganize String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-6ms"><span class="nav-number">3.3.1.</span> <span class="nav-text"> Answer 6ms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#insertion-sort-list"><span class="nav-number">3.4.</span> <span class="nav-text"> Insertion Sort List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-10ms"><span class="nav-number">3.4.1.</span> <span class="nav-text"> Answer 10ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-36ms-3"><span class="nav-number">3.4.2.</span> <span class="nav-text"> Answer 36ms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#h-index"><span class="nav-number">3.5.</span> <span class="nav-text"> H-Index</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-7ms-2"><span class="nav-number">3.5.1.</span> <span class="nav-text"> Answer 7ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-8ms"><span class="nav-number">3.5.2.</span> <span class="nav-text"> Answer 8ms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-intervals"><span class="nav-number">3.6.</span> <span class="nav-text"> Merge Intervals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-96ms"><span class="nav-number">3.6.1.</span> <span class="nav-text"> Answer 96ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-90ms"><span class="nav-number">3.6.2.</span> <span class="nav-text"> Answer 90ms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-153ms"><span class="nav-number">3.6.3.</span> <span class="nav-text"> Answer 153ms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort-list"><span class="nav-number">3.7.</span> <span class="nav-text"> Sort List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-8ms-2"><span class="nav-number">3.7.1.</span> <span class="nav-text"> Answer 8ms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wiggle-sort-ii"><span class="nav-number">3.8.</span> <span class="nav-text"> Wiggle Sort II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-5ms"><span class="nav-number">3.8.1.</span> <span class="nav-text"> Answer 5ms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#largest-number"><span class="nav-number">3.9.</span> <span class="nav-text"> Largest Number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#answer-96ms-2"><span class="nav-number">3.9.1.</span> <span class="nav-text"> Answer 96ms</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hard"><span class="nav-number">4.</span> <span class="nav-text"> Hard</span></a></li></ol></div>
+            
+          </div>
+
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2018/06/Leetcode-Sort/';
+        this.page.identifier = '2018/06/Leetcode-Sort/';
+        this.page.title = 'Leetcode: Sort';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

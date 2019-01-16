@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="notes,todo,mysql," />
+
+
+<meta name="description" content="基本概念  数据库基础 检索 插入，更新与删除">
+<meta name="keywords" content="notes,todo,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 必知必会笔记 (TODO)">
+<meta property="og:url" content="https://hzqjyyx.github.io/2018/08/MySQL-Crash-Course-Notes/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="基本概念  数据库基础 检索 插入，更新与删除">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180827/jJ8JAc4mki.png?imageslim">
+<meta property="og:updated_time" content="2019-01-11T01:27:22.258Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 必知必会笔记 (TODO)">
+<meta name="twitter:description" content="基本概念  数据库基础 检索 插入，更新与删除">
+<meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180827/jJ8JAc4mki.png?imageslim">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2018/08/MySQL-Crash-Course-Notes/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>MySQL 必知必会笔记 (TODO) | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/08/MySQL-Crash-Course-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL 必知必会笔记 (TODO)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-29T11:49:30-07:00">2018-08-29</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/MySQL-Crash-Course-Notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/MySQL-Crash-Course-Notes/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="基本概念"><a class="markdownIt-Anchor" href="#基本概念"></a> 基本概念</h1>
+<ul>
+<li>数据库基础</li>
+<li>检索</li>
+<li>插入，更新与删除</li>
+</ul>
+<a id="more"></a>
+<h1 id="数据库基础"><a class="markdownIt-Anchor" href="#数据库基础"></a> 数据库基础</h1>
+<h2 id="数据库相关"><a class="markdownIt-Anchor" href="#数据库相关"></a> 数据库相关</h2>
+<p><strong>数据库(database)</strong> 保存有组织的数据的容器（通常是一个文 件或一组文件）。<br>
+<strong>数据库软件(DBMS)</strong>：数据库软件称为DBMS（数据库管理系统）。数据库是通过DBMS创建和操纵的容器。数据库可以是保存在硬设备上的文件，但也可以不是。在很大程度上说，数据库究竟是 文件还是别的什么东西并不重要，因为你并不直接访问数据库；你使用的是DBMS，它替你访问数据库。<br>
+**表(table)**是一种结构化的文件，可用来存储某种特定类型的数据。数据库中的每个表都有一个名字，用来标识自己。此名字是唯一的， 这表示数据库中没有其他表具有相同的名字。<br>
+<strong>模式</strong>是关于数据库和表的布局及特性的信息。 模式可以用来描述数据库中特定的表以及整个数据库（和其中表的关系）。 模式定义了数据在表中如何存储，如可以存储什么样的数据，数据如何分解，各部分信息如何命名，等等。<br>
+<strong>列(column)</strong> 表中的一个字段。所有表都是由一个或多个列组成的。<br>
+<strong>数据类型（datatype）</strong> 所容许的数据的类型。每个表列都有相应的数据类型，它限制（或容许）该列中存储的数据。<br>
+<strong>行</strong>表中的一个记录。表中的数据是按行存储的，所保存的每个记录存储在自己的行内。 如果将表想象为网格，网格中垂直的列为表列，水平行为表行。<br>
+<strong>主键</strong>一列（或一组列），其值能够唯一区分表中每个行。<br>
+表中的任何列都可以作为主键，只要它满足以下条件：</p>
+<ul>
+<li>任意两行都不具有相同的主键值</li>
+<li>每个行都必须具有一个主键值（主键列不允许NULL值）。<br>
+主键通常定义在表的一列上，但这并不是必需的，也可以一起使用 多个列作为主键。在使用多列作为主键时，上述条件必须应用到构成主 键的所有列，所有列值的组合必须是唯一的（但单个列的值可以不唯一）。</li>
+</ul>
+<p><strong>主键的最好习惯</strong>  除MySQL强制实施的规则外，应该坚持的 几个普遍认可的最好习惯为：</p>
+<ul>
+<li>不更新主键列中的值</li>
+<li>不重用主键列的值</li>
+<li>不在主键列中使用可能会更改的值。（例如，如果使用一个 名字作为主键以标识某个供应商，当该供应商合并和更改其 名字时，必须更改这个主键。）</li>
+</ul>
+<p><strong>外键（foreign key）</strong>  外键为某个表中的一列，它包含另一个表 的主键值，定义了两个表之间的关系。<br>
+这样做的好处如下：</p>
+<ul>
+<li>信息不重复，从而不浪费时间和空间。</li>
+<li>如果供应商信息变动，可以只更新vendors表中的单个记录，相关表中的数据不用改动</li>
+<li>由于数据无重复，显然数据是一致的，这使得处理数据更简单。</li>
+</ul>
+<p>缺点为：</p>
+<ul>
+<li>每次查询，更新，删除都需要跨表执行，效率低。</li>
+</ul>
+<p>**子句（clause）**SQL由子句组成，例如<code>from</code>子句，<code>order by</code>子句。<br>
+**别名（alias）**是一个字段或值的替换名，用<code>AS</code>关键字。<br>
+<strong>SELECT子句顺序</strong></p>
+<ul>
+<li>SELECT</li>
+<li>FROM</li>
+<li>WHERE</li>
+<li>GROUP BY</li>
+<li>HAVING</li>
+<li>ORDER BY</li>
+<li>LIMIT</li>
+</ul>
+<h2 id="mysql使用"><a class="markdownIt-Anchor" href="#mysql使用"></a> MySQL使用</h2>
+<p>连接：主机名（计算机名）、端口、用户名、密码。<br>
+选择数据库：<code>USE</code><br>
+查看数据库：<code>SHOW DATABASES;</code><br>
+查看表：<code>SHOW TABLES;</code><br>
+查看列：<code>SHOW COLUMNS FROM customers;</code>，<code>DESCRIBE customers</code></p>
+<h1 id="检索数据"><a class="markdownIt-Anchor" href="#检索数据"></a> 检索数据</h1>
+<h2 id="简单检索"><a class="markdownIt-Anchor" href="#简单检索"></a> 简单检索</h2>
+<p>检索单个列：<code>select prod_name from products;</code>数据未排序，顺序没有意义。<br>
+检索多个列：<code>select prod_id, prod_name from products;</code><br>
+检索所有列：<code>select * from products;</code><br>
+检索不同的行：使用<code>distinct</code>关键字。<code>select distinct vend_id from products;</code>。 DISTINCT关键字应用于所有列而 不仅是前置它的列。<br>
+限制结果：<code>select prod_name from products limit 4,5;</code>从第0行开始，从第4行开始（包括第4行），取5行，即[4,9)。<br>
+完全限定表名：<code>select products.prod_name from products;</code></p>
+<h2 id="排序检索"><a class="markdownIt-Anchor" href="#排序检索"></a> 排序检索</h2>
+<p>用<code>order by</code>子句可对检索结果进行排序输出。<br>
+升序排序：<code>select prod_name from products order by prod_name;</code>。默认即为升序，若想明确指明，在后面加上<code>ASC</code>。也可以使用非选择列进行检索（只要存在这一列）。<br>
+多个列排序：<code>select prod_id, prod_name from products order by prod_price, prod_name;</code>，仅在多个行具有相同的prod_price 值时才对产品按prod_name进行排序。如果prod_price列中所有的值都是唯一的，则不会按prod_name排序。<br>
+降序排序：<code>select prod_id, prod_name from products order by prod_price, prod_name;</code><strong>DESC</strong>关键字只应用到<strong>直接</strong>位于其前面的列名。如果想在多个列上进行降序排序，必须 对每个列指定DESC关键字。如果区分大小写，需设置数据库。</p>
+<h2 id="过滤"><a class="markdownIt-Anchor" href="#过滤"></a> 过滤</h2>
+<h3 id="基础"><a class="markdownIt-Anchor" href="#基础"></a> 基础</h3>
+<p>数据库表一般包含大量的数据，很少需要检索表中所有行。通常只会根据特定操作或报告的需要提取表数据的子集。只检索所需数据需要指定搜索条件（search criteria），搜索条件也称为过滤条件（filter condition）。使用where子句进行过滤。</p>
+<p>操作符：等于<code>=</code>，不等于<code>&lt;&gt;</code>或<code>!=</code>，小于<code>&lt;</code>，小于等于<code>&lt;=</code>，大于<code>&gt;</code>，大于等于<code>&gt;=</code>，在制定的两个值之间<code>BETWEEN</code>。<br>
+过滤（数值）：<code>select * from products where prod_price=2.50;</code><br>
+过滤（字符）：<code>select * from products where prod_name='fuses';</code>。字符串表示需要加双引号，并且默认不区分大小写。<br>
+空值检查：NULL  无值（no value），它与字段包含0、空字符串或仅仅包含空格不同。 在创建表时，表设计人员可以指定其中的列是否可以不包含值。在一个列不包含值时，称其为包含空值NULL。空值在过滤时在上文提到的任意操作符都会被过滤掉。<br>
+空值检查：<code>select cust_id from customers where cust_email IS NULL;</code>。<code>IS</code>只用来检查<code>boolean</code>类型的值，包括<code>True\False\NULL</code>。</p>
+<p>通过组合where子句可以得到功能更强的搜索条件。<br>
+AND操作符：<code>select * from products where prod_price=2.50 AND prod_name = 'fuses';</code><br>
+OR操作符：<code>select prod_name, prod_price from products where vend_id = 1002 OR vend_id = 1003;</code><br>
+计算次序：AND高于OR，可以用小括号改变计算次序。<br>
+IN操作符：<code>select prod_name, prod_price from products where vend_id in (1002,1003)</code>在使用长的合法选项清单时，IN操作符的语法更清楚且更直观。 在使用<code>IN</code>时，计算的次序更容易管理，IN的最大优点是<strong>可以包含其他SELECT语句</strong>，使得能够更动态地建 立WHERE子句。<br>
+NOT操作符：否定它之后的任何条件。<code>select prod_name, prod_price from products where vend_id NOT IN (1002, 1003);</code>为什么使用NOT？对于简单的WHERE子句，使用NOT确实没有什么优 势。但在更复杂的子句中，NOT是非常有用的。例如，在与IN操作符联合 使用时，NOT使找出与条件列表不匹配的行非常简单。</p>
+<h3 id="通配符"><a class="markdownIt-Anchor" href="#通配符"></a> 通配符</h3>
+<p>通配符（wildcard） 用来匹配值的一部分的特殊字符。<br>
+搜索模式（search pattern） 由字面值、通配符或两者组合构成的搜索条件。<br>
+使用<code>LIKE</code>语句来匹配。<br>
+<code>%</code>通配符：表示<strong>任何字符出现任意次数，包括0，1或多个</strong>。<br>
+<code>_</code>通配符：表示任意字符出现且仅出现1次。<br>
+注意事项</p>
+<ul>
+<li>不要过度使用通配符。如果其他操作符能达到相同的目的，应该使用其他操作符。</li>
+<li>在确实需要使用通配符时，除非绝对有必要，否则不要把它们用 在搜索模式的开始处。把通配符置于搜索模式的开始处，搜索起 来是最慢的。</li>
+<li>仔细注意通配符的位置。如果放错地方，可能不会返回想要的数据。</li>
+</ul>
+<h3 id="正则表达式"><a class="markdownIt-Anchor" href="#正则表达式"></a> 正则表达式</h3>
+<p>关键字为<code>REGEXP</code><br>
+MySQL仅支持多数正则表达式实现的一个很小的子集。<br>
+注意<code>REGEXP</code>只匹配子串，而<code>LIKE</code>匹配全部字符串。<br>
+默认不区分大小写，为了区分大小写，可使用<code>BINARY</code>关键字，如<code>WHERE prod_name REGEXP BINARY 'JetPack .000'</code>。</p>
+<p>语法：</p>
+<ul>
+<li>OR匹配：<code>'1000H|2000Y'</code>匹配子串<code>1000H</code>或<code>2000Y</code>。</li>
+<li>匹配多个字符：<code>[123]</code>, <code>[0-9]</code>，<code>[a-zA-Z]</code></li>
+<li>否定多个字符：<code>[^0-9]</code></li>
+<li>匹配特殊字符：<code>\\.',</code>\n`</li>
+<li>匹配多个实例：<code>*,+,?,{n},{n,},{n,m}</code></li>
+<li>定位符：<code>^,$,[[:&lt;:]](词的开始),[[:&gt;:]](词的结束)</code></li>
+</ul>
+<h3 id="计算字段"><a class="markdownIt-Anchor" href="#计算字段"></a> 计算字段</h3>
+<p>存储在数据库表中的数据一般不是应用程序所需要的格式。我们希望直接从数据库中检索出转换、计算或格式化过的数据。这就是计算字段的作用。计算字段并不实际存在于数据库表中。计算字段是运行时在SELECT语句 内创建的。<br>
+只有数据库知道SELECT语句中哪些列是实际的 表列，哪些列是计算字段。从客户机（如应用程序）的角度来看，计算 字段的数据是以与其他列的数据相同的方式返回的。</p>
+<h4 id="拼接字段"><a class="markdownIt-Anchor" href="#拼接字段"></a> 拼接字段</h4>
+<p><code>Concat()函数</code>把多个串连接起来形成一个较长的串。 Concat()需要一个或多个指定的串，各个串之间用逗号分隔。 <code>SELECT Concat(vend_name, '(', vend_country, ')') FROM vendors ORDER BY vend_name;</code><br>
+<code>Trim()函数</code>删除空格。<br>
+使用<code>别名</code>来使客户端能够引用计算得到的值。</p>
+<h4 id="算术计算"><a class="markdownIt-Anchor" href="#算术计算"></a> 算术计算</h4>
+<p>可以用加减乘除</p>
+<h3 id="数据处理函数"><a class="markdownIt-Anchor" href="#数据处理函数"></a> 数据处理函数</h3>
+<p>与其他大多数计算机语言一样，SQL支持利用函数来处理数据。函数 一般是在数据上执行的，它给数据的转换和处理提供了方便。</p>
+<p>常见文本处理函数</p>
+<ul>
+<li><code>Left()</code> and <code>Right()</code></li>
+<li><code>Length()</code></li>
+<li><code>Locate()</code> 具体操作参考<img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180827/jJ8JAc4mki.png?imageslim" alt="mark"></li>
+<li><code>Lower()</code> and <code>Upper()</code></li>
+<li><code>LTrim()</code> and <code>RTrim()</code> and <code>Trim()</code></li>
+<li><code>SubString()</code></li>
+</ul>
+<p>常见日期函数</p>
+<ul>
+<li><code>AddDate()</code> and <code>AddTime()</code> 增加一个日期或时间</li>
+<li><code>CurDate()</code> and <code>CurTime()</code> 返回当前日期或时间，<code>Now()</code>返回当前日期及时间</li>
+<li><code>Date()</code>, <code>Time()</code>, <code>Year()</code>, <code>Month()</code>, <code>Day()</code></li>
+<li>如果需要的是日期，推荐使用<code>Date()</code>函数</li>
+</ul>
+<p>数值处理函数</p>
+<ul>
+<li><code>Abs()</code></li>
+<li><code>Sin()</code> and <code>Cos()</code> and <code>Tan()</code></li>
+<li><code>Exp()</code></li>
+<li><code>Mod()</code></li>
+<li><code>Pi()</code></li>
+<li><code>Rand()</code></li>
+<li><code>Sqrt()</code></li>
+</ul>
+<h3 id="汇总数据"><a class="markdownIt-Anchor" href="#汇总数据"></a> 汇总数据</h3>
+<p>我们经常需要汇总数据而不用把它们实际检索出来，例如确定表中行数（或者满足某个条件或包含某个特定值的行数）。获得表中行组的和。 找出表列（或所有行或某些特定的行）的最大值、最小值和平均 值。<br>
+<strong>聚集函数（aggregate function）</strong> 是运行在行组（rows）上，计算和返回单个值的函数。</p>
+<ul>
+<li><code>AVG()</code>可用来返回所有列的平均值，也可以用来返回特定列或行的平均值。用法为<code>select AVG(prod_price) from products;</code> 或<code>select AVG(prod_price*prod_item) from products;</code></li>
+<li><code>COUNT()</code>函数有两种使用方式。
+<ul>
+<li>使用<code>COUNT(*)</code>对表中行的数目进行计数，不管表列中包含的是空 值（NULL）还是非空值。</li>
+<li>使用COUNT(column)对特定列中具有值的行进行计数，忽略 NULL值。</li>
+</ul>
+</li>
+<li><code>MAX()</code>返回指定列中的最大值</li>
+<li><code>MIN()</code>返回指定列中的最小值</li>
+<li><code>SUM()</code>用来返回指定列值的和</li>
+</ul>
+<p>以上5种aggregate均可以用<code>DISTINCT</code>来排除不同值。</p>
+<h3 id="分组数据"><a class="markdownIt-Anchor" href="#分组数据"></a> 分组数据</h3>
+<p>分组允许把数据分为多个逻辑组，以 便能对每个组进行聚集计算成。GROUP BY子句指示MySQL分组数据，然后对每个组而不是整个结果集进行聚集。</p>
+<p>在具体使用<code>GROUP BY</code>子句前，需要知道一些重要的规定。</p>
+<ul>
+<li><code>GROUP BY</code>子句可以包含任意数目的列。这使得能对分组进行嵌套， 为数据分组提供更细致的控制。</li>
+<li>如果在<code>GROUP BY</code>子句中嵌套了分组，数据将在后规定的分组上进行汇总。换句话说，在建立分组时，指定的所有列都一起计算 （所以不能从个别的列取回数据）。</li>
+<li><code>GROUP BY</code>子句中列出的每个列都必须是检索列或有效的表达式 （但不能是聚集函数）。如果在<code>SELECT</code>中使用表达式，则必须在<code>GROUP BY</code>子句中指定相同的表达式。</li>
+<li>除聚集计算语句外，<code>SELECT</code>语句中的每个列都必须在<code>GROUP BY</code>子句中给出。</li>
+<li>如果分组列中具有NULL值，则NULL将作为一个分组返回。如果列中有多行NULL值，它们将分为一组。</li>
+<li><code>GROUP BY</code>子句必须出现在<code>WHERE</code>子句之后，<code>ORDER BY</code>子句之前。</li>
+</ul>
+<p>除了能用GROUP BY分组数据外，MySQL还允许过滤分组，规定包括 哪些分组，排除哪些分组。可以使用<code>HAVING</code>子句来过滤分组。<br>
+目前为止所 学过的所有类型的WHERE子句都可以用HAVING来替代。唯一的差别是 WHERE过滤行，而HAVING过滤分组。而且WHERE在数据 分组前进行过滤，HAVING在数据分组后进行过滤。HAVING中可以使用聚集函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT order_num, SUM(quantity*item_price) AS ordertotal </span><br><span class="line">FROM orderitems </span><br><span class="line">GROUP BY order_num </span><br><span class="line">HAVING ordertotal &gt;=50 </span><br><span class="line">ORDER BY ordertotal;`</span><br><span class="line">-- or</span><br><span class="line">SELECT order_num, SUM(quantity*item_price) AS ordertotal </span><br><span class="line">FROM orderitems </span><br><span class="line">GROUP BY order_num </span><br><span class="line">HAVING SUM(quantity*item_price) &gt;=50 </span><br><span class="line">ORDER BY ordertotal;`</span><br></pre></td></tr></table></figure>
+<h3 id="子查询"><a class="markdownIt-Anchor" href="#子查询"></a> 子查询</h3>
+<p>SQL允许创建子查询（subquery），即嵌套在其他查询中的查询。 可以把一条<code>SELECT</code> 语句返回的结果用于另一条<code>SELECT</code>语句的<code>WHERE</code>子句。 在<code>WHERE</code>子句中使用子查询能够编写出功能很强并且很灵活的 <code>SQL</code>语句。</p>
+<p><strong>列必须匹配</strong> 在<code>WHERE</code>子句中使用子查询，应该保证<code>SELECT</code>语句具有与<code>WHERE</code>子句中相同数目的列。<br>
+<strong>子查询和性能</strong>子查询可以有效并获得所需的结果。但是，使用子查询并不总是执行这种类型的数据检索的最有效的方法。可以使用表连接操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT 	cust_name, cust_state, </span><br><span class="line">		(SELECT COUNT(*) FROM orders WHERE orders.cust_id=customers.cust_id) AS orders</span><br><span class="line">FROM customers</span><br><span class="line">ORDER BY cust_name;</span><br><span class="line"></span><br><span class="line">-- must count rows in orders table.</span><br><span class="line">SELECT cust_name, cust_state, COUNT(order_num) AS orders</span><br><span class="line">FROM customers LEFT JOIN orders</span><br><span class="line"> ON customers.cust_id = orders.cust_id</span><br><span class="line">GROUP BY customers.cust_id</span><br><span class="line">ORDER BY cust_name;</span><br></pre></td></tr></table></figure>
+<h3 id="联结表"><a class="markdownIt-Anchor" href="#联结表"></a> 联结表</h3>
+<p>关系型数据库不用联结表就是傻逼。</p>
+<p><strong>笛卡儿积（cartesian product）</strong>  由没有联结条件的表关系返回的结果为笛卡儿积。检索出的行的数目将是第一个表中的行数乘以第二个表中的行数。</p>
+<p>联结可以用<code>FROM</code>后跟多个表用逗号隔开，也可以用<code>INNER JOIN</code>，<code>LEFT OUTER JOIN</code>，<code>RIGHT OUTER JOIN</code>指定联结类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT vend_name, prod_name, prod_price</span><br><span class="line">FROM vendors INNER JOIN products</span><br><span class="line"> ON vendors.vend_id = products.vend_id;</span><br></pre></td></tr></table></figure>
+<p><strong>表别名</strong>，SQL允许给表名起别名。使用表别名可以缩短SQL语句、允许在单条<code>SELECT</code>语句中多次使用相同的表。表别名只在查询执行中使用。与列别名不一样，表别名 不返回到客户机。<br>
+<strong>自然联结</strong>自然联结排除多次出现，使每个列只返回一次。 使用<code>INNER JOIN</code>，<code>INNER</code>可省略。<br>
+<strong>外部联结</strong>将一个表中的行与另一个表中的行相关联，需要包含没有关联行的那些行。使用<code>LEFT OUTER JOIN</code>, <code>RIGHT OUTER JOIN</code>, <code>OUTER JOIN</code>。前两个<code>OUTER</code>可省略。</p>
+<h2 id="组合查询-union"><a class="markdownIt-Anchor" href="#组合查询-union"></a> 组合查询 (UNION)</h2>
+<p>可用UNION操作符来组合数条SQL查询。利用UNION，可给出多条SELECT语句，将它们的结果组合成单个结果集。</p>
+<p>有两种基本情况，其中需要使用组合查询：</p>
+<ul>
+<li>在单个查询中从不同的表返回类似结构的数据。</li>
+<li>对单个表执行多个查询，按单个查询返回数据。</li>
+</ul>
+<p>规则：</p>
+<ul>
+<li>UNION必须由两条或两条以上的SELECT语句组成，语句之间用关键字UNION分隔（因此，如果组合4条SELECT语句，将要使用3个<code>UNION</code>关键字）。</li>
+<li>UNION中的每个查询必须包含相同的列、表达式或聚集函数（不过各个列不需要以相同的次序列出）。 如果使用多表则需要顺序相同。</li>
+<li>列数据类型必须兼容：类型不必完全相同，但必须是DBMS可以 隐含地转换的类型</li>
+</ul>
+<h3 id="全文本搜索"><a class="markdownIt-Anchor" href="#全文本搜索"></a> 全文本搜索</h3>
+<p>MySQL5.7开始支持全文索引，包括中文<a href="https://blog.csdn.net/qq_33663251/article/details/69612619" target="_blank" rel="noopener">InnoDB</a></p>
+<p>全文本搜索对比LIKE和正则表达式，更智能，而且因为提前建立了索引，速度会快很多。</p>
+<ul>
+<li><strong>性能</strong>——通配符和正则表达式匹配通常要求MySQL尝试匹配表中所有行（而且这些搜索极少使用表索引）。因此，由于被搜索行数不断增加，这些搜索可能非常耗时。</li>
+<li><strong>明确控制</strong>——使用通配符和正则表达式匹配，很难（而且并不总是能）明确地控制匹配什么和不匹配什么。例如，指定一个词必须匹配，一个词必须不匹配，而一个词仅在第一个词确实匹配的情况下才可以匹配或者才可以不匹配。</li>
+<li><strong>智能化的结果</strong>——虽然基于通配符和正则表达式的搜索提供了非 常灵活的搜索，但它们都不能提供一种智能化的选择结果的方法。 例如，一个特殊词的搜索将会返回包含该词的所有行，而不区分包含单个匹配的行和包含多个匹配的行（按照可能是更好的匹配 来排列它们）。类似，一个特殊词的搜索将不会找出不包含该词但包含其他相关词的行。</li>
+</ul>
+<p>为了进行全文本搜索，必须索引被搜索的列，而且要随着数据的改变不断地重新索引（由MySQL完成）。</p>
+<p>一般在创建表时启用全文本搜索。CREATE TABLE语句（第21章中介 绍）接受FULLTEXT子句，它给出被索引列的一个逗号分隔的列表。 这里的 FULLTEXT索引单个列，如果需要也可以指定多个列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE productnotes</span><br><span class="line">(</span><br><span class="line">	note_id		int			NOT NULL AUTO_INCREMENT,</span><br><span class="line">	prod_id		char(10)	NOT NULL,</span><br><span class="line">	note_date	datetime	NOT NULL,</span><br><span class="line">	note_text	text		NULL,</span><br><span class="line">	PRIMARY KEY(note_id),</span><br><span class="line">	FULLTEXT(note_text)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>不要在导入数据时使用FULLTEXT</strong></p>
+<p>使用两个函数<code>Match()</code>和<code>Against()</code>执行全文本搜索， 其中<code>Match()</code>指定被搜索的列，<code>Against()</code>指定要使用的搜索表达式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT note_text</span><br><span class="line">FROM productnotes</span><br><span class="line">WHERE Match(note_text) Against(&apos;rabbit&apos;);</span><br></pre></td></tr></table></figure>
+<p>我们可以使用查询扩展放宽所返回的全文本搜索结果的范围。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT note_text</span><br><span class="line">FROM productnotes</span><br><span class="line">WHERE Match(note_text) Against(&apos;rabbit&apos; WITH QUERY EXPANSION);</span><br></pre></td></tr></table></figure>
+<p>表中的行越多（这些行中的文本就越多），使用 查询扩展返回的结果越好。</p>
+<p>MySQL支持全文本搜索的另外一种形式，称为布尔方式（boolean mode）。以布尔方式，可以提供关于如下内容的细节：</p>
+<ul>
+<li>要匹配的词</li>
+<li>要排斥的词（如果某行包含这个词，则不返回该行，即使它包含 其他指定的词也是如此）</li>
+<li>排列提示（指定某些词比其他词更重要，更重要的词等级更高）</li>
+<li>表达式分组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT note_text</span><br><span class="line">FROM productnotes</span><br><span class="line">WHERE Match(note_text) Against(&apos;heavy -rope*&apos; IN BOOLEAN MODE);</span><br></pre></td></tr></table></figure>
+<p>常见全文本布尔操作符</p>
+<p>一些重要说明，版本（MySQL5.0）：</p>
+<ul>
+<li>在索引全文本数据时，短词被忽略且从索引中排除。短词定义为 那些具有3个或3个以下字符的词</li>
+<li>Stopwords</li>
+<li>许多词出现的频率很高，搜索它们没有用处。MySQL规定了一条50%规则，如果一个词出现在50%以上 的行中，则将它作为一个非用词忽略。50%规则不用于IN BOOLEAN MODE。</li>
+<li>如果表中的行数少于3行，则全文本搜索不返回结果（因为每个词 或者不出现，或者至少出现在50%的行中）。</li>
+<li>忽略词中的单引号。例如，don’t索引为dont。</li>
+</ul>
+<h2 id="插入更新和删除数据"><a class="markdownIt-Anchor" href="#插入更新和删除数据"></a> 插入，更新和删除数据</h2>
+<h3 id="插入"><a class="markdownIt-Anchor" href="#插入"></a> 插入</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-- 可以省略部分列，只要该列允许为NULL或者有默认值。</span><br><span class="line">INSERT INTO customers(cust_name, cust_contact)</span><br><span class="line">VALUES(&apos;Pep E. LaPew&apos;, NULL);</span><br></pre></td></tr></table></figure>
+<p>数据检索是最重要的（通常是这样），则你可以通过在 INSERT和INTO之间添加关键字LOW_PRIORITY</p>
+<p>可以将<code>SELECT</code>与<code>INSERT</code>组合起来，使得INSERT可以插入动态数据。MySQL不关心SELECT返回的列名。它使用的是列的位置。</p>
+<h3 id="更新"><a class="markdownIt-Anchor" href="#更新"></a> 更新</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE customers</span><br><span class="line">SET cust_email = &apos;elmer@fudd.com&apos;</span><br><span class="line">WHERE cust_id = 10005;</span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a class="markdownIt-Anchor" href="#删除"></a> 删除</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM customers</span><br><span class="line">WHERE cust_id = 10006;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/notes/" rel="tag"># notes</a>
+          
+            <a href="/tags/todo/" rel="tag"># todo</a>
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/线性代数/" rel="next" title="线性代数">
+                <i class="fa fa-chevron-left"></i> 线性代数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/Understanding-Java/" rel="prev" title="Understanding Java">
+                Understanding Java <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          
+          <div id="toc-div" class="post-toc" style="display:block">
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text"> 基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库基础"><span class="nav-number">2.</span> <span class="nav-text"> 数据库基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库相关"><span class="nav-number">2.1.</span> <span class="nav-text"> 数据库相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql使用"><span class="nav-number">2.2.</span> <span class="nav-text"> MySQL使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检索数据"><span class="nav-number">3.</span> <span class="nav-text"> 检索数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单检索"><span class="nav-number">3.1.</span> <span class="nav-text"> 简单检索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序检索"><span class="nav-number">3.2.</span> <span class="nav-text"> 排序检索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤"><span class="nav-number">3.3.</span> <span class="nav-text"> 过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础"><span class="nav-number">3.3.1.</span> <span class="nav-text"> 基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符"><span class="nav-number">3.3.2.</span> <span class="nav-text"> 通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式"><span class="nav-number">3.3.3.</span> <span class="nav-text"> 正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算字段"><span class="nav-number">3.3.4.</span> <span class="nav-text"> 计算字段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拼接字段"><span class="nav-number">3.3.4.1.</span> <span class="nav-text"> 拼接字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算术计算"><span class="nav-number">3.3.4.2.</span> <span class="nav-text"> 算术计算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据处理函数"><span class="nav-number">3.3.5.</span> <span class="nav-text"> 数据处理函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汇总数据"><span class="nav-number">3.3.6.</span> <span class="nav-text"> 汇总数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组数据"><span class="nav-number">3.3.7.</span> <span class="nav-text"> 分组数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子查询"><span class="nav-number">3.3.8.</span> <span class="nav-text"> 子查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联结表"><span class="nav-number">3.3.9.</span> <span class="nav-text"> 联结表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合查询-union"><span class="nav-number">3.4.</span> <span class="nav-text"> 组合查询 (UNION)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全文本搜索"><span class="nav-number">3.4.1.</span> <span class="nav-text"> 全文本搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入更新和删除数据"><span class="nav-number">3.5.</span> <span class="nav-text"> 插入，更新和删除数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-number">3.5.1.</span> <span class="nav-text"> 插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">3.5.2.</span> <span class="nav-text"> 更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">3.5.3.</span> <span class="nav-text"> 删除</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2018/08/MySQL-Crash-Course-Notes/';
+        this.page.identifier = '2018/08/MySQL-Crash-Course-Notes/';
+        this.page.title = 'MySQL 必知必会笔记 (TODO)';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

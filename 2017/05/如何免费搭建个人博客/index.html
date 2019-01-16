@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -100,23 +100,24 @@
 
 
   
-  <meta name="keywords" content="github pages,hexo," />
+  <meta name="keywords" content="hexo,github pages," />
 
 
 <meta name="description" content="备注：必做或强烈推荐阅读的网址，会有标识： eg： 推荐阅读 本文部分步骤采用直接贴上网址的方式，以压缩篇幅。请多注意   现在有什么方式可以来搭建博客呢  搭建个人服务器，在服务器上安装WordPress，Hexo，Jekyll或者自己实现一套博客系统  优点：可定制性好，能够随意更改behavior，添加更多有趣的功能 缺点：可能大多数时间不是在写博客而是在写代码。。。，付费（很低）   W">
-<meta name="keywords" content="github pages,hexo">
+<meta name="keywords" content="hexo,github pages">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何免费搭建个人博客">
 <meta property="og:url" content="https://hzqjyyx.github.io/2017/05/如何免费搭建个人博客/index.html">
 <meta property="og:site_name" content="泽强的工作台">
 <meta property="og:description" content="备注：必做或强烈推荐阅读的网址，会有标识： eg： 推荐阅读 本文部分步骤采用直接贴上网址的方式，以压缩篇幅。请多注意   现在有什么方式可以来搭建博客呢  搭建个人服务器，在服务器上安装WordPress，Hexo，Jekyll或者自己实现一套博客系统  优点：可定制性好，能够随意更改behavior，添加更多有趣的功能 缺点：可能大多数时间不是在写博客而是在写代码。。。，付费（很低）   W">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/153813334.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/160442151.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/160758091.png?imageslim">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/155403160.PNG">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/155006572.PNG">
 <meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/164326999.png?imageslim">
-<meta property="og:updated_time" content="2018-05-09T18:33:45.000Z">
+<meta property="og:updated_time" content="2018-09-01T04:11:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何免费搭建个人博客">
 <meta name="twitter:description" content="备注：必做或强烈推荐阅读的网址，会有标识： eg： 推荐阅读 本文部分步骤采用直接贴上网址的方式，以压缩篇幅。请多注意   现在有什么方式可以来搭建博客呢  搭建个人服务器，在服务器上安装WordPress，Hexo，Jekyll或者自己实现一套博客系统  优点：可定制性好，能够随意更改behavior，添加更多有趣的功能 缺点：可能大多数时间不是在写博客而是在写代码。。。，付费（很低）   W">
@@ -176,7 +177,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -382,6 +383,24 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -466,12 +485,13 @@ Github官方默认的引擎是Jekyll，创建起来非常容易，甚至不需�
 <h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
 <h3 id="安装nodejs"><a class="markdownIt-Anchor" href="#安装nodejs"></a> 安装Nodejs</h3>
 <p>安装非常简单，去官网或者<a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143450141843488beddae2a1044cab5acb5125baf0882000" target="_blank" rel="noopener">安装教程</a>，按照步骤安装。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
 <p>测试：</p>
 <p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/160442151.png?imageslim" alt="mark"></p>
 <p><strong>重要</strong>：由于国内网络环境原因，强烈推荐将npm源换成淘宝源，参见<i class="fa fa-hand-o-right"></i><a href="https://npm.taobao.org/" target="_blank" rel="noopener">npm.taobao</a></p>
 <h3 id="安装hexo"><a class="markdownIt-Anchor" href="#安装hexo"></a> 安装Hexo</h3>
 <p>详细文档参考 <i class="fa fa-hand-o-right"></i> <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo官方文档</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server -p 8001</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server -p 8001</span><br></pre></td></tr></table></figure>
 <p>这个时候应该已经能够在命令行中看到：</p>
 <p><img src="http://o9bjjf9jh.bkt.clouddn.com/blogs/20170511/160758091.png?imageslim" alt="mark"></p>
 <p>在浏览器里打开，就能看到你的首页啦！</p>
@@ -677,9 +697,9 @@ Github官方默认的引擎是Jekyll，创建起来非常容易，甚至不需�
       
         <div class="post-tags">
           
-            <a href="/tags/github-pages/" rel="tag"># github pages</a>
-          
             <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/github-pages/" rel="tag"># github pages</a>
           
         </div>
       
@@ -788,7 +808,7 @@ Github官方默认的引擎是Jekyll，创建起来非常容易，甚至不需�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -811,7 +831,13 @@ Github官方默认的引擎是Jekyll，创建起来非常容易，甚至不需�
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -858,7 +884,55 @@ Github官方默认的引擎是Jekyll，创建起来非常容易，甚至不需�
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -925,12 +999,19 @@ Github官方默认的引擎是Jekyll，创建起来非常容易，甚至不需�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
   
 
   

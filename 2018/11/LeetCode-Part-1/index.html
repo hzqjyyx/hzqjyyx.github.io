@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="algorithm,leetcode," />
+
+
+<meta name="description" content="Basic Idea Record problems of leetcode">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode Problems (Part 1)">
+<meta property="og:url" content="https://hzqjyyx.github.io/2018/11/LeetCode-Part-1/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="Basic Idea Record problems of leetcode">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-01-01T19:27:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode Problems (Part 1)">
+<meta name="twitter:description" content="Basic Idea Record problems of leetcode">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2018/11/LeetCode-Part-1/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>LeetCode Problems (Part 1) | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/11/LeetCode-Part-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LeetCode Problems (Part 1)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-05T17:09:12-08:00">2018-11-05</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/LeetCode-Part-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/LeetCode-Part-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<p>Record problems of leetcode</p>
+<a id="more"></a>
+<h1 id="problems-set-1"><a class="markdownIt-Anchor" href="#problems-set-1"></a> Problems Set 1</h1>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>One sentence explanation</th>
+<th>Solution</th>
+<th>Related Topic</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Two Sum</strong></td>
+<td>find two elements sum to <code>target</code>.</td>
+<td>HashMap.<br> Two Pass/One Pass.</td>
+<td>Array, HashTable</td>
+<td><strong>Two pass</strong> need to check <code>map.get(target-nums[i]) != i</code>, while <strong>one pass</strong> do not need to do so.</td>
+</tr>
+<tr>
+<td><strong>2. Add Two Numbers</strong></td>
+<td>add two number represented by linked list in reverse order.</td>
+<td>Iterate one by one with carry.</td>
+<td>LinkedList</td>
+<td>Remember to deal with different size of linked list, and leading 1 caused by carry.</td>
+</tr>
+<tr>
+<td><strong>3. Longest Substring Without Repeating Characters</strong></td>
+<td>find the length of longest substring of original string without repeating character.</td>
+<td>Use array of length 26 to record characters has visited and its index. <br>Then use <strong>Two Pointers</strong>. We can expand <strong>right pointer</strong> as much as possible if there is no same characters. If we find repeated char, which means its index value is not -1(default value), set <strong>left pointer</strong> to <code>counter[nums[i]]+1</code>.</td>
+<td>HashTable, Two Pointers, String, Substring</td>
+<td>If they do not specify that characters are restricted to lower letters, then  use a map is always a good choice.<br><u>Why it is good to use <strong>Two Pointers</strong>?</u><br>Because it is a substring(continues array) problem, and we can use a map to store everything we want.<br><u>Why choose to use <code>map</code> and key is <code>char</code>, value is <code>index</code>?</u><br>If repeated character comes, all characters between left pointer and the char in previous substring is invalid. So we can store index in order to skip such useless string.</td>
+</tr>
+<tr>
+<td><strong>4. Median of Two Sorted Arrays</strong></td>
+<td>find the median of two sorted array <code>nums1</code> and <code>nums2</code>.</td>
+<td>1. concatenate <code>nums1</code> and <code>nums2</code>, sort, find median as usual. (fast, easy, memory consumed).<br>2. make sure <code>nums1</code> is longer than <code>nums2</code>. split <code>nums1</code> by i, which also determine j, used to split <code>nums2</code>. if <code>A[i-1]&lt;=B[j]</code> and <code>B[j-1]&lt;=A[i]</code>, we are succeed. If not, work like binary search.</td>
+<td>Array, Binary Search, Divide and Conquer</td>
+<td>The <strong>median</strong> is splitting array into two equal length subarray.<br>Corner cases are too difficult to handle.</td>
+</tr>
+<tr>
+<td><strong>5. Longest Palindromic Substring</strong></td>
+<td>find the longest palindromic substring in <strong>s</strong></td>
+<td>1. <strong>DP</strong>: Use <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> space store result of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>[</mo><mi>i</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi>j</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">s[i..j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mord">.</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>. If <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>[</mo><mi>i</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi>j</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">s[i..j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mord">.</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span> is palindromic, and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>[</mo><mi>i</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>=</mo><mi>s</mi><mo>[</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">s[i-1] = s[j+1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">s</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>, then <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>[</mo><mi>i</mi><mo>−</mo><mn>1</mn><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi>j</mi><mo>+</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">s[i-1..j+1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> is palindromic.<br>2. <strong>ExpandAroundCenter</strong>: for every element i, expand from s[i] to left and right and from s[i],s[i+1] to left and right until it is not palindromic. It is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> time and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> space.</td>
+<td>String, <br>DP</td>
+<td>Basic way of 2D DP problem. Fill in diagonal case.</td>
+</tr>
+<tr>
+<td><strong>6. ZigZag Conversion</strong></td>
+<td>display string in zigzag way.</td>
+<td>find the pattern. every circle is <code>2*numRows-2</code></td>
+<td>String</td>
+<td>Hard to classify.<br></td>
+</tr>
+<tr>
+<td><strong>7. Reverse Integer</strong></td>
+<td>Given a 32-bit signed integer, reverse digits of an integer.</td>
+<td>get last digit, multiply <code>res</code> by 10, add to <code>res</code>.</td>
+<td>Math</td>
+<td>Use long to store interval res. If long is not allowed, compare <code>Integer.MAX_VALUE/10</code> with <code>res</code> before add.</td>
+</tr>
+<tr>
+<td><strong>8. String to Integer (atoi)</strong></td>
+<td>convert a string to integer</td>
+<td>follow the specification</td>
+<td>Math, String</td>
+<td><strong>think ahead.</strong><br>space, word, ±, invalid, larger than 32-integer.</td>
+</tr>
+<tr>
+<td><strong>9. Palindromic Number</strong></td>
+<td>determine whether an integer is a palindrome.</td>
+<td>reverse half of integer, then compare</td>
+<td>Math</td>
+<td>reverse until <code>x&gt;reversed x</code></td>
+</tr>
+<tr>
+<td><strong>10. Regular Expression Matching</strong></td>
+<td>determine whether <code>string</code> matches a <code>pattern</code>. special character are <code>.</code> and <code>*</code></td>
+<td>if pattern[i+1]=’*’, <code>process(string[i],pattern[j+2]) or firstMatch &amp; process(string[i+1], pattern[j])</code><br>if pattern[i] = string[i], continue.</td>
+<td>String, <br>DP, <br>Backtracing</td>
+<td>You have to look ahead. be care of combination of <code>*</code> and <code>.</code><br>firstMatch is true when pattern[i] = string[j] or pattern[i] = ‘.’ or i=string.length.</td>
+</tr>
+<tr>
+<td><strong>11. Container With Most Water</strong></td>
+<td>find max area of two vertical lines.</td>
+<td>start from leftmost and rightmost. move the pointer pointing to the shorter line towards the other end.</td>
+<td>Array, <br>Two Pointers</td>
+<td>We can use such a simple method because height of water is determined by lowest line, not by other lines between starting and ending.</td>
+</tr>
+<tr>
+<td><strong>12. Integer to Roman</strong></td>
+<td>convert integer to roman representation</td>
+<td>use two smart array, <code>val</code> and <code>name</code> can be easy.</td>
+<td>Math,<br>String</td>
+<td>use array can simplify code.</td>
+</tr>
+<tr>
+<td><strong>13. Roman to Integer</strong></td>
+<td>convert roman representation to integer</td>
+<td>look before.</td>
+<td>Math,<br>String</td>
+<td>easy</td>
+</tr>
+<tr>
+<td><strong>14. Longest Common Prefix</strong></td>
+<td>find longest common prefix string amongst an array of string</td>
+<td>look one line of chars at a time. If larger than some length or not exactly same for one line, return current prefix.</td>
+<td>String</td>
+<td>be careful of the first element, current index may exceed its length.</td>
+</tr>
+<tr>
+<td><strong>15. 3Sum</strong></td>
+<td>find all unique triplet that satisfies a+b+c=0. may contains duplicates</td>
+<td>sort array. for each element, first, we take it as ‘a’, so b+c = -a. use two pointers. if b+c=-a, then add to result list. if b+c&lt;-a, then increase left pointer, else decrease right pointer<br>for duplicated nums, only check the first element, and during two pointer search, skip all duplicated nums if we have used one.</td>
+<td>Array<br>Two Pointers</td>
+<td>in order to keep unique, skip whatever needed.<br>two pointer way is a little bit tricky.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="problem-set-2"><a class="markdownIt-Anchor" href="#problem-set-2"></a> Problem Set 2</h1>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>One sentence explanation</th>
+<th>Solution</th>
+<th>Related Topic</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>16. 3Sum Closest</strong></td>
+<td>find 3 nums that the sum is closet to target.</td>
+<td>same with 3Sum, just record minVal</td>
+<td>Array<br>Two Pointers</td>
+<td>see 15. 3Sum</td>
+</tr>
+<tr>
+<td><strong>17. Letter Combination of a Phone Number</strong></td>
+<td>find all combination of phone dial mapping of a  list of digits</td>
+<td>1. simple dfs, store path in an array.<br>2. use queue to store temp val. use val.length to get next digit and make sure every val will expand and append with new digit mapping.</td>
+<td>String, Backtracing</td>
+<td>think carefully. It is dfs!</td>
+</tr>
+<tr>
+<td><strong>18. 4Sum</strong></td>
+<td>find 4 nums that sum is equal to target.</td>
+<td>same with 3Sum</td>
+<td>Array<br>Two Pointers</td>
+<td>see 15. 3Sum</td>
+</tr>
+<tr>
+<td><strong>19. Remove Nth Node From End of List</strong>*</td>
+<td>remove n-th node from end of linked list, return its head.</td>
+<td>1. One pass: two pointer, first move to pos:n-1, then move first and second pointers at the same time, until first.next is null (first points to the last element.) At that time, the second pointer points to length-n-1, and we just need to set its.next to its.next.next</td>
+<td>LinkedList<br>Tow Pointers</td>
+<td>head may be removed.</td>
+</tr>
+<tr>
+<td><strong>20. Valid Parentheses</strong></td>
+<td>check if parentheses are valid, closed by same open brackets and in correct order</td>
+<td>stack.push(left type of brackets(’[’,’(’,’{’)). if encounter right brackets, check if it matches top element of stack.</td>
+<td>String, Stack</td>
+<td>parentheses are often tied to stack</td>
+</tr>
+<tr>
+<td><strong>21. Merge Two Sorted List</strong></td>
+<td>merge two sorted linked list and return as one new list</td>
+<td>create a dummy node at first, and maintain a curr node, points to visited node, and we want to modify its next pointer. get less node of two list and append it to curr node.</td>
+<td>LinkedList</td>
+<td>deal with different length of two list.</td>
+</tr>
+<tr>
+<td><strong>22. Generate Parentheses</strong>*</td>
+<td>given n pairs, generate all valid parentheses</td>
+<td>We have n available opened brackets and n available closed brackets. If have opened k, closed p, then we can still open n-k, also can close k-p.</td>
+<td>String, Backtracking</td>
+<td>backtracing while maintaining valid.</td>
+</tr>
+<tr>
+<td><strong>23. Merge k Sorted List</strong></td>
+<td>merge k sorted linked list as one new sorted list</td>
+<td>use divide and conquer, merge every two list, until there is only one list left.</td>
+<td>Linked List,<br>Divide and Conquer<br>Heap</td>
+<td><strong>basic divide and conquer answer</strong></td>
+</tr>
+<tr>
+<td><strong>24. Swap Nodes in Pairs</strong></td>
+<td>swap two adjacent nodes and return its head without modify its value.</td>
+<td>traverse the list, two nodes a time until there is no node left or only one node left.</td>
+<td>Linked List</td>
+<td>termination condition. avoid null pointer</td>
+</tr>
+<tr>
+<td><strong>25. Reverse Nodes in k-Group</strong></td>
+<td>reverse nodes for every k nodes. do not reverse if it left nodes less than k.</td>
+<td>iterate two times, one is ensuring it does not reach the end of list.<br>one to reverse list O(1) space.</td>
+<td>Linked List</td>
+<td>reverse is important</td>
+</tr>
+<tr>
+<td><strong>26. Remove Duplicates from Sorted Array</strong></td>
+<td>remove duplicates <strong>in-place</strong></td>
+<td>two pointer, one points leftmost of unvisited elements, one points to guaranteed no-duplicated rightmost element. If found next one is NOT the same as current one, copy to <code>nums[j++]</code>.</td>
+<td>Array, <br>Two Pointers</td>
+<td>O(N) scan and O(N) copy.</td>
+</tr>
+<tr>
+<td><strong>27. Remove Element</strong></td>
+<td>remove all instance of a certain val, can change order.</td>
+<td>two pointer, swap to last element if found <code>val</code>.</td>
+<td>Array,<br>Two Pointers</td>
+<td>Two Pointers can be used in one-by-one scan and can record all necessary information in some ways.</td>
+</tr>
+<tr>
+<td><strong>28. Implement <code>strStr()</code></strong></td>
+<td>find first index of needle in haystack, if needle is empty, return 0.</td>
+<td>check substring(i,i+k).equals(needle)</td>
+<td>Two Pointers<br>String</td>
+<td>remember to ask corner case.</td>
+</tr>
+<tr>
+<td><strong>29. Divide Two Integers</strong></td>
+<td>divide two integers without using multiplication and long.</td>
+<td>dividend minus multiple divisor can achieve the result, we can speed up by every time multiply  divisor by 2 if dividend larger than divisor. else shrink the divisor by 2 until dividend less than original divisor.</td>
+<td>Math,<br>Binary Search</td>
+<td>If long can not be used, then Integer.MIN_VALUE is such an hard situation to handle.</td>
+</tr>
+<tr>
+<td><strong>30. Substring with Concatenation of All Words</strong>*</td>
+<td>find all start index of concatenation of words in S.</td>
+<td>use two map. one count for words, one count for window.</td>
+<td>Hash Table<br>Two Pointers</td>
+<td>O(kN) solution is too difficult to be understood.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="problem-set-3"><a class="markdownIt-Anchor" href="#problem-set-3"></a> Problem Set 3</h1>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>One sentence explanation</th>
+<th>Solution</th>
+<th>Related Topic</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>31. Next Permutation</strong></td>
+<td>find next greater permutation of current number.</td>
+<td>find the leftmost index of nums that have increasing order from right to left. if it is -1, it means the next permutation is least possible arrangement. then try to find min value larger than nums[i] between nums[i+1…n-1]. And make it be nums[i]. and sort nums[i+1…n-1]</td>
+<td>Array</td>
+<td>I think it is a math problem</td>
+</tr>
+<tr>
+<td><strong>32. Longest Valid Parentheses</strong></td>
+<td>find length of longest substring of valid parentheses</td>
+<td>DP. you need  to check if it is the same level or nested level.</td>
+<td>String, DP</td>
+<td>hard to think, easy to implement</td>
+</tr>
+<tr>
+<td><strong>33. Search in Rotated Sorted Array</strong></td>
+<td>find target in rotated sorted array in O(log n) time</td>
+<td>Binary Search. If <code>nums[left]&lt;nums[mid]</code> {if <code>target&lt;nums[mid]</code> then in [left, mid-1], if <code>target&gt;nums[mid]</code> then in [mid+1, right]}, <br>else {if <code>target&lt;nums[mid]</code> then in [left, mid-1], else {}}</td>
+<td>Binary Search</td>
+<td>dropdown point.</td>
+</tr>
+<tr>
+<td><strong>34. Find First and Last Position of Element in Sorted Array</strong></td>
+<td>find start and end index of target value in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(lg N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td>
+<td>binary search, but when met equal case, continue search left/right until left==right.</td>
+<td>Binary Search</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>35. Search Insert Position</strong></td>
+<td>implement Arrays.binarySearch of Java</td>
+<td>binary search, return left pointer.</td>
+<td>Binary Search</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>37. Sudoku Solver</strong>*</td>
+<td>solve sudoku in DFS</td>
+<td>basic dfs, try one valid char and backtracking if faild</td>
+<td>Backtracking</td>
+<td>backtracking is fast</td>
+</tr>
+<tr>
+<td><strong>38. Count and Say</strong></td>
+<td>find continues repeated nums and change it to compact way</td>
+<td>same as description</td>
+<td>String</td>
+<td>Understand problem is important</td>
+</tr>
+<tr>
+<td><strong>39. Combination Sum</strong></td>
+<td>find all subset that combinations are equal to target, without duplicated in array.</td>
+<td>1. fixed and mystery</td>
+<td>Backtracking</td>
+<td>See <a href="https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)" target="_blank" rel="noopener">here</a></td>
+</tr>
+<tr>
+<td><strong>40. Combination Sum II</strong></td>
+<td>with duplicated</td>
+<td>1. fixed and mystery</td>
+<td>Backtracking</td>
+<td>See <a href="https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)" target="_blank" rel="noopener">here</a></td>
+</tr>
+<tr>
+<td><strong>41. First Missing Positive</strong></td>
+<td>find the smallest missing positive integer in an unsorted array.</td>
+<td>assign nums[i] to pos i. and find first non equal with i+1 element</td>
+<td>Array</td>
+<td>Interesting.</td>
+</tr>
+<tr>
+<td><strong>42. Trapping Rain Water</strong></td>
+<td>find total water can be trapped of a few lines.</td>
+<td>1. for each pos, the capacity of holding water in that pos is, min(highest left line, highest right line)-current height.<br>2. stack.<br>3. two pointer (cannot even understand)</td>
+<td>Array, Two Pointers, Stack</td>
+<td>find left and right highest array is pretty easy.<br>but use stack is not that easy. However, it is a must-have knowledge</td>
+</tr>
+<tr>
+<td><strong>43. Multiply Strings</strong></td>
+<td>return product of two nums that represented as string</td>
+<td>behave like a human</td>
+<td>Math, String</td>
+<td>be careful of leading zero</td>
+</tr>
+<tr>
+<td><strong>44. Wildcard Matching</strong></td>
+<td>match string and pattern contains ‘*’ and ‘?’</td>
+<td>1. DP: 2D boolean record isMatch(s[0…i] and p[0…j]). if * happens, <code>dp[i][j] = dp[i-1][j] || dp[i][j-1]</code><br>2. Iterative: may re-match if after *.</td>
+<td>Dynamic Programming</td>
+<td>DP is not that hard to think. And I think my own solution is the same as iterative way but in recursive fashion. Sadly always TLE</td>
+</tr>
+<tr>
+<td><strong>45. Jump Game II</strong></td>
+<td>jump properly to last element.</td>
+<td><code>maxFur</code> is currently maximum element that can be reached. <code>maxEnd</code> is only updated when <code>maxEnd=i</code>. That means once we have an <code>maxEnd</code>. It is always the best solution until we need to check next element.</td>
+<td>Array, Greedy</td>
+<td>My own solution use DP array to store maxEnd at each pos. It is unnecessary.</td>
+</tr>
+<tr>
+<td><strong>46. Permutation</strong></td>
+<td>all different permutations of a list without duplicated</td>
+<td>basic backtracking</td>
+<td>Backtracking</td>
+<td>see subset and combination</td>
+</tr>
+<tr>
+<td><strong>47. Permutation II</strong></td>
+<td>all different permutations of a list with duplicated</td>
+<td>basic backtracking</td>
+<td>Backtracking</td>
+<td>see subset and combination</td>
+</tr>
+<tr>
+<td><strong>48. Rotate Image</strong></td>
+<td>rotate image by 90</td>
+<td>1. flip horizontally and flip   diagonal.<br>2. use tmp value store information, just like 5 chained elements swap.</td>
+<td>Array</td>
+<td>corner case are difficult to handle.</td>
+</tr>
+<tr>
+<td><strong>49. Group Anagrams</strong></td>
+<td>group anagrams together</td>
+<td><code>Map&lt;String, List&lt;String&gt;</code>.</td>
+<td>Map</td>
+<td>change to char array and sort and convert to String again.</td>
+</tr>
+<tr>
+<td><strong>50. Pow(x, n)</strong></td>
+<td>calculate <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.664392em;"></span><span class="strut bottom" style="height:0.664392em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span></span></span></span></span></span></span></span></td>
+<td>see boostnote</td>
+<td>Math</td>
+<td>Tricky part is dealing with negative n. use <code>1/myPow(x, -(n+1))/x</code></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/Understanding-Java/" rel="next" title="Understanding Java">
+                <i class="fa fa-chevron-left"></i> Understanding Java
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/Cloud-Infrastructure/" rel="prev" title="Cloud Infrastructure">
+                Cloud Infrastructure <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          
+          <div id="toc-div" class="post-toc" style="display:block">
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problems-set-1"><span class="nav-number">2.</span> <span class="nav-text"> Problems Set 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-set-2"><span class="nav-number">3.</span> <span class="nav-text"> Problem Set 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-set-3"><span class="nav-number">4.</span> <span class="nav-text"> Problem Set 3</span></a></li></ol></div>
+            
+          </div>
+
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2018/11/LeetCode-Part-1/';
+        this.page.identifier = '2018/11/LeetCode-Part-1/';
+        this.page.title = 'LeetCode Problems (Part 1)';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

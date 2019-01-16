@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="todo,cloud," />
+
+
+<meta name="description" content="Basic Idea  virtualization consistency">
+<meta name="keywords" content="todo,cloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cloud Infrastructure">
+<meta property="og:url" content="https://hzqjyyx.github.io/2018/11/Cloud-Infrastructure/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="Basic Idea  virtualization consistency">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://s3.amazonaws.com/15619public/webcontent/kubernetes_pod.png">
+<meta property="og:image" content="https://i.stack.imgur.com/exIhw.png">
+<meta property="og:image" content="https://cmucc-public.s3.amazonaws.com/p33/figures/Figure3.png">
+<meta property="og:image" content="https://cmucc-public.s3.amazonaws.com/p33/figures/Figure4.png">
+<meta property="og:updated_time" content="2019-01-11T01:30:29.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cloud Infrastructure">
+<meta name="twitter:description" content="Basic Idea  virtualization consistency">
+<meta name="twitter:image" content="https://s3.amazonaws.com/15619public/webcontent/kubernetes_pod.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2018/11/Cloud-Infrastructure/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Cloud Infrastructure | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/11/Cloud-Infrastructure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Cloud Infrastructure</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T11:03:22-08:00">2018-11-08</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/Cloud-Infrastructure/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/Cloud-Infrastructure/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<ul>
+<li>virtualization</li>
+<li>consistency</li>
+</ul>
+<a id="more"></a>
+<h1 id="virtualization"><a class="markdownIt-Anchor" href="#virtualization"></a> Virtualization</h1>
+<h2 id="hypervisor"><a class="markdownIt-Anchor" href="#hypervisor"></a> HyperVisor</h2>
+<p>A <strong>hypervisor</strong> or <strong>virtual machine monitor</strong> (<strong>VMM</strong>) is computer <a href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>, <a href="https://en.wikipedia.org/wiki/Firmware" target="_blank" rel="noopener">firmware</a> or <a href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> that creates and runs <a href="https://en.wikipedia.org/wiki/Virtual_machine" target="_blank" rel="noopener">virtual machines</a>. A computer on which a hypervisor runs one or more virtual machines is called a <em>host machine</em>, and each virtual machine is called a <em>guest machine</em>. The hypervisor presents the guest operating systems with a <a href="https://en.wikipedia.org/wiki/Platform_virtualization" target="_blank" rel="noopener">virtual operating platform</a> and manages the execution of the guest operating systems. Multiple instances of a variety of operating systems may share the virtualized hardware resources: for example, <a href="https://en.wikipedia.org/wiki/Linux" target="_blank" rel="noopener">Linux</a>, <a href="https://en.wikipedia.org/wiki/Microsoft_Windows" target="_blank" rel="noopener">Windows</a>, and <a href="https://en.wikipedia.org/wiki/MacOS" target="_blank" rel="noopener">macOS</a> instances can all run on a single physical <a href="https://en.wikipedia.org/wiki/X86" target="_blank" rel="noopener">x86</a> machine.<br>
+This contrasts with <a href="https://en.wikipedia.org/wiki/Operating-system-level_virtualization" target="_blank" rel="noopener">operating-system-level virtualization</a>, where all instances (usually called <em>containers</em>) must share a single kernel, though the guest operating systems can differ in <a href="https://en.wikipedia.org/wiki/User_space" target="_blank" rel="noopener">user space</a>, such as different <a href="https://en.wikipedia.org/wiki/Linux_distribution" target="_blank" rel="noopener">Linux distributions</a> with the same kernel.</p>
+<h3 id="type-1-native-or-bare-metal-hypervisors"><a class="markdownIt-Anchor" href="#type-1-native-or-bare-metal-hypervisors"></a> Type-1, native or bare-metal hypervisors</h3>
+<p>These hypervisors run directly on the host’s hardware to control the hardware and to manage guest operating systems.</p>
+<h3 id="type-2-or-hosted-hypervisors"><a class="markdownIt-Anchor" href="#type-2-or-hosted-hypervisors"></a> Type-2 or hosted hypervisors</h3>
+<p>These hypervisors run on a conventional operating system (OS) just as other computer programs do. A guest operating system runs as a <a href="https://en.wikipedia.org/wiki/Computer_process" target="_blank" rel="noopener">process</a> on the host. Type-2 hypervisors abstract guest operating systems from the host operating system. <a href="https://en.wikipedia.org/wiki/VMware_Workstation" target="_blank" rel="noopener">VMware Workstation</a>, <a href="https://en.wikipedia.org/wiki/VMware_Player" target="_blank" rel="noopener">VMware Player</a>, <a href="https://en.wikipedia.org/wiki/VirtualBox" target="_blank" rel="noopener">VirtualBox</a>, <a href="https://en.wikipedia.org/wiki/Parallels_Desktop_for_Mac" target="_blank" rel="noopener">Parallels Desktop for Mac</a> and <a href="https://en.wikipedia.org/wiki/QEMU" target="_blank" rel="noopener">QEMU</a> are examples of type-2 hypervisors.</p>
+<h2 id="container"><a class="markdownIt-Anchor" href="#container"></a> Container</h2>
+<p>Operating-system-level virtualization is a server virtualization method in which the kernel of an operating system allows the existence of multiple isolated user-space instances, instead of just one.</p>
+<p>Under OS level virtualization, we no longer refer to the virtualized environment as a virtual machine, but instead they are called containers. Containers may be run on either bare metal hardware or in virtual machines. Unlike hardware virtualization, OS level virtualization provides containers with certain access to the host machine’s kernel. This means that the guest machine (container) must be able run using the same kernel as the host machine.</p>
+<ul>
+<li>Each container has only necessary software to run the application.
+<ul>
+<li>Only the application and dependencies account for disk space overhead.</li>
+<li>The host machine’s kernel is share between all of the containers.</li>
+<li>Containers can be run on any system (bare metal or virtual) where the Docker Engine is installed.</li>
+</ul>
+</li>
+<li>The unit of isolation is the software container.
+<ul>
+<li>The isolation between containers and between the host machine and containers is enabled by cgroups and namespaces as discussed in the previous section.</li>
+</ul>
+</li>
+<li>Containers have a start up time on the order of seconds.
+<ul>
+<li>Similarly, building new container images is on the order of seconds to minutes.</li>
+</ul>
+</li>
+<li>A single application is run in single container.
+<ul>
+<li>Multiple containers / application may be deployed together and may communicate over a network.</li>
+<li>This approach to application delivery is more in line with <a href="https://martinfowler.com/articles/microservices.html" target="_blank" rel="noopener">microservices</a>, as compared to monolithic applications.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kubernetes"><a class="markdownIt-Anchor" href="#kubernetes"></a> Kubernetes</h3>
+<p>In the previous section we learned how to build Docker images and run Docker containers on a single VM. If we wanted to expand the number of VMs the application runs on or to run multiple applications across many VMs, then we are faced with the issue of deploying and managing applications on a set of VMs.</p>
+<p>Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.</p>
+<p>Kubernetes groups containers into logical units (<strong>Pods</strong>) for deployment and management. Kubernetes makes running and scaling a cluster of containers easier, and supports major cloud vendors. Some of the features of Kubernetes include:</p>
+<ul>
+<li><strong>Managing the whole cluster as if it is a single logical unit</strong>. This means that all the underlying hardware, software and network protocol are abstracted from the administrator and the user is able to interact with the Kubernetes cluster using a few commands or programming interfaces.</li>
+<li>Automatic placement of containers according to their resource usages for best utilization.</li>
+<li>Easy deployment and dynamic horizontal scaling.</li>
+<li>Automatic rollouts and rollbacks of any change to the configuration or system settings of the containers. A mistake in the new configuration that would kill the containers would not happen at once, and Kubernetes is able to rollback to the previous version.</li>
+<li>Easy deployment of Kubernetes on major cloud vendors such as AWS, Azure and GCP, with support to services like Load Balancing.</li>
+<li>Automated health check and container replacement on failure.</li>
+<li>Kubernetes uses a single DNS name for a Pod which may contain one or more containers. This gives easy access to the services running by the containers and forms the basis of Load Balancing inside the Kubernetes cluster.</li>
+<li>Security control with easy-to-manage secret configuration.</li>
+</ul>
+<h2 id="introduction-to-pods"><a class="markdownIt-Anchor" href="#introduction-to-pods"></a> Introduction to Pods</h2>
+<p>A Pod is a logical group of containers in Kubernetes. The containers in a Pod share the same context, and are under the same IP address. There are access controls for containers inside the same Pod.</p>
+<p><img src="https://s3.amazonaws.com/15619public/webcontent/kubernetes_pod.png" alt=""></p>
+<ul>
+<li><strong>Kubernetes Master</strong> - The Master is the node which runs the Kubernetes API Server. As the developer, running <code>kubectl</code> will make REST API calls to the API Server to interact with the resources deployed to the cluster.</li>
+<li><strong>Kubernetes Node</strong> - The Node is where applications can be deployed. You will notice that multiple pods may run on the same cluster. The <code>kube-proxy</code> will manage the networking on each node and is responsible for exposing pods to the internet (either via the ClusterIP, NodePort, or LoadBalancer).</li>
+<li><strong>Pods</strong> - Pods are a grouping of containers. Each pod will have a separate namespace and specific networking characteristics, which allows containers to communicate within a pod and for the pod to be exposed over the internet.</li>
+</ul>
+<h2 id="difference"><a class="markdownIt-Anchor" href="#difference"></a> Difference</h2>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-virtual-machine" target="_blank" rel="noopener">https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-virtual-machine</a></p>
+</blockquote>
+<p>Docker originally used <a href="http://lxc.sourceforge.net/" target="_blank" rel="noopener">LinuX Containers</a> (LXC), but later switched to <a href="https://github.com/opencontainers/runc" target="_blank" rel="noopener">runC</a> (formerly known as <strong>libcontainer</strong>), which runs in the same operating system as its host. This allows it to share a lot of the host operating system resources. Also, it uses a layered filesystem (<a href="http://aufs.sourceforge.net/" target="_blank" rel="noopener">AuFS</a>) and manages networking.</p>
+<p>AuFS is a layered file system, so you can have a read only part and a write part which are merged together. One could have the common parts of the operating system as read only (and shared amongst all of your containers) and then give each container its own mount for writing.</p>
+<p>A full virtualized system gets its own set of resources allocated to it, and does minimal sharing. You get more isolation, but it is much heavier (requires more resources). With Docker you get less isolation, but the containers are lightweight (require fewer resources). So you could easily run thousands of containers on a host, and it won’t even blink. Try doing that with Xen, and unless you have a really big host, I don’t think it is possible.</p>
+<blockquote>
+<p>Interesting! I suppose I’m still confused by the notion of “snapshot[ting] the OS”. How does one do that without, well, making an image of the OS?</p>
+</blockquote>
+<p>Well, let’s see if I can explain. You start with a base image, and then make your changes, and commit those changes using docker, and it creates an image. This image contains only the differences from the base. When you want to run your image, you also need the base, and it layers your image on top of the base using a layered file system: as mentioned above, Docker uses AUFS. AUFS merges the different layers together and you get what you want; you just need to run it. You can keep adding more and more images (layers) and it will continue to only save the diffs. Since Docker typically builds on top of ready-made images from a <a href="https://registry.hub.docker.com/" target="_blank" rel="noopener">registry</a>, you rarely have to “snapshot” the whole OS yourself.</p>
+<p><img src="https://i.stack.imgur.com/exIhw.png" alt=""></p>
+<h1 id="consistency"><a class="markdownIt-Anchor" href="#consistency"></a> Consistency</h1>
+<p>In large globally distributed applications, the data for an application may be replicated across various locations across the globe. This is done for a number of reasons. Some of the reasons for doing this are listed below:</p>
+<ol>
+<li><strong>Reliability/Availability:</strong> Having a distributed data store ensures normal operation in case of single node failures.</li>
+<li><strong>Performance:</strong> Having multiple replicas for the application data can reduce the potential of one data store being overloaded with requests, which could become a potential bottleneck to the application.</li>
+<li><strong>Latency:</strong> Having multiple replicas for the same data can help in reducing access time for requests coming from different geographic locations, as the data can be served from the nearest datastore.</li>
+</ol>
+<h2 id="consistency-models"><a class="markdownIt-Anchor" href="#consistency-models"></a> Consistency Models</h2>
+<p>Ordered from the strongest to the weakest, these are the various consistency models that we will be discussing:</p>
+<ol>
+<li><strong>Strict</strong></li>
+<li><strong>Strong (Linearizability)</strong></li>
+<li><strong>Sequential</strong></li>
+<li><strong>Causal</strong></li>
+<li><strong>Eventual</strong></li>
+</ol>
+<h3 id="strict-consistency"><a class="markdownIt-Anchor" href="#strict-consistency"></a> Strict Consistency</h3>
+<p>In strict consistency, each operation must be stamped with <strong>an absolute global time</strong> and all operations must be <strong>executed in the order of their timestamps.</strong> Further, each read must get the latest written value. However, in a distributed system, it is hard to <strong>synchronize clocks to be exactly equal</strong>, and the time between instructions can be less than the time taken to communicate with the other processor(s)/node(s) to let them know about the issuing of an operation. Thus, strict consistency is hard to achieve on multiprocessors, let alone distributed datacenters.<strong>We do not have any real world applications that implement strict consistency.</strong></p>
+<h3 id="sequential-consistency"><a class="markdownIt-Anchor" href="#sequential-consistency"></a> Sequential Consistency</h3>
+<p>Sequential consistency is achieved when <strong>all operations were executed in some sequential order and all replicas see the operations in the exact same order.</strong> Hence, all datacenters must see the operations in the same order, and any write occurring at a datacenter node must be instantly visible at the other datacenter nodes. To achieve this, <strong>operations for the object being updated must be locked until the updates have been made across all replicas</strong>.</p>
+<p>As shown in the following figure, while the value of X is being updated at Datacenter 1, the clients reading from Datacenters 2 and 3 are locked from accessing X. They cannot read or write to object X, but they can read/write to other objects in those datacenters. Once the value of X has been updated across all datacenters, Clients 2 and 3 can read the latest updated value from their respective datacenters.</p>
+<p><img src="https://cmucc-public.s3.amazonaws.com/p33/figures/Figure3.png" alt=""></p>
+<h3 id="strong-consistency-linearizability"><a class="markdownIt-Anchor" href="#strong-consistency-linearizability"></a> Strong Consistency (Linearizability)</h3>
+<p>Strong consistency is sequential consistency with an additional requirement. In sequential consistency, every operation had a timestamp associated with it. This timestamp can be obtained through a <a href="https://en.wikipedia.org/wiki/Vector_clock" target="_blank" rel="noopener">vector clock</a>, <strong>in which two timestamps can be concurrent and there may not be a global ordering.</strong> The timestamps of two operations can be compared in order to determine whether one operation occurred before the other or if the two operations were concurrent. If two operations were concurrent, sequential consistency gives you the liberty to order those arbitrarily as long as the same order is seen by all nodes in the distributed system. In strong consistency, however, each operation <strong>receives a global timestamp sometime during its execution (For example, when your server receives this operation)</strong>, and all operations must be ordered according to their timestamps. This is in contrast to strict consistency in which <strong>the timestamp is always the exact global time when the operation was issued.</strong></p>
+<p>Thus, the key difference between strong consistency (linearizability) and sequential consistency is that, sequential consistency ensures a unique order of operations in order of timestamp with <strong>only partial global ordering</strong> because some operations can be concurrent, whereas strong consistency ensures operations in order of time with <strong>full global ordering</strong>. Thus, sequential consistency allows the system to interleave operations coming from different nodes as long as the order from each node is maintained. In linearizability, the interleaving of operations across clients is limited by the wall clock time.</p>
+<p><img src="https://cmucc-public.s3.amazonaws.com/p33/figures/Figure4.png" alt=""></p>
+<h3 id="eventual-consistency"><a class="markdownIt-Anchor" href="#eventual-consistency"></a> Eventual Consistency</h3>
+<p><strong>Eventual consistency is one of the most widely used consistency models in the real world.</strong></p>
+<p>For some applications, even Causal Consistency is not necessary and eventual consistency is a consideration. The requirement to achieve eventual consistency is that <strong>operations are executed as they are received by the datacenters</strong>. This relaxes the requirement of having to lock all datastores when performing an operation, and further removes the requirement that each datacenter carries out each update request in the order they are received. While this provides higher throughput due to the lack of blocked requests, it comes at a cost of possible inconsistency amongst the replicas, especially during periods of high traffic. The only consistency guarantee that eventual consistency provides is that <strong>after some period of time, and the operations have slowed down, the replicas will be consistent again.</strong></p>
+<p>As an example of eventual consistency, geo-replicated key-value stores each update in the order that write requests arrive at the replica, with only one requirement- the newly received write operation must have a greater timestamp than the write operation that updated the currently stored value. If the timestamp is less than the timestamp of the operation that stored the current value, then that means that the new operation contains a stale value, and should be discarded. This ensures that older write requests will not overwrite newer ones, and still provides the same high throughput benefit. This means that updates on a particular key may have the different ordering than updates on the same key at a different replica, due to delays in communication between regions. As a result, the clients who read the value in between these operations may read improperly ordered values or stale data. However, what eventual consistency can guarantee is given a long enough period of time of slow traffic, the latest value associated with each key will be consistent againbecause the replicas will never overwrite the latest value.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/todo/" rel="tag"># todo</a>
+          
+            <a href="/tags/cloud/" rel="tag"># cloud</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/LeetCode-Part-1/" rel="next" title="LeetCode Problems (Part 1)">
+                <i class="fa fa-chevron-left"></i> LeetCode Problems (Part 1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/Leetcode-Part-2/" rel="prev" title="Leetcode Problem (Part 2)">
+                Leetcode Problem (Part 2) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          
+          <div id="toc-div" class="post-toc" style="display:block">
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#virtualization"><span class="nav-number">2.</span> <span class="nav-text"> Virtualization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hypervisor"><span class="nav-number">2.1.</span> <span class="nav-text"> HyperVisor</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#type-1-native-or-bare-metal-hypervisors"><span class="nav-number">2.1.1.</span> <span class="nav-text"> Type-1, native or bare-metal hypervisors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type-2-or-hosted-hypervisors"><span class="nav-number">2.1.2.</span> <span class="nav-text"> Type-2 or hosted hypervisors</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#container"><span class="nav-number">2.2.</span> <span class="nav-text"> Container</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#kubernetes"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Kubernetes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-pods"><span class="nav-number">2.3.</span> <span class="nav-text"> Introduction to Pods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">2.4.</span> <span class="nav-text"> Difference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#consistency"><span class="nav-number">3.</span> <span class="nav-text"> Consistency</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#consistency-models"><span class="nav-number">3.1.</span> <span class="nav-text"> Consistency Models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#strict-consistency"><span class="nav-number">3.1.1.</span> <span class="nav-text"> Strict Consistency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sequential-consistency"><span class="nav-number">3.1.2.</span> <span class="nav-text"> Sequential Consistency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strong-consistency-linearizability"><span class="nav-number">3.1.3.</span> <span class="nav-text"> Strong Consistency (Linearizability)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eventual-consistency"><span class="nav-number">3.1.4.</span> <span class="nav-text"> Eventual Consistency</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2018/11/Cloud-Infrastructure/';
+        this.page.identifier = '2018/11/Cloud-Infrastructure/';
+        this.page.title = 'Cloud Infrastructure';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

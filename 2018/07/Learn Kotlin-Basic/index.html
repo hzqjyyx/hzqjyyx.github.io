@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="todo,language,kotlin," />
+
+
+<meta name="description" content="Basic Idea  basic type class function">
+<meta name="keywords" content="todo,language,kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learn Kotlin: Overall">
+<meta property="og:url" content="https://hzqjyyx.github.io/2018/07/Learn Kotlin-Basic/index.html">
+<meta property="og:site_name" content="泽强的工作台">
+<meta property="og:description" content="Basic Idea  basic type class function">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180704/0iL5jffmKA.jpeg?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/9kJ7lLjlki.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/hFjAL0i7Gj.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/i9m7lEIK51.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/DaE7HdIbmD.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/CLg6ajibhj.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/ALL9hfmKA1.png?imageslim">
+<meta property="og:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/G6b4gKk325.png?imageslim">
+<meta property="og:updated_time" content="2019-01-11T01:27:45.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learn Kotlin: Overall">
+<meta name="twitter:description" content="Basic Idea  basic type class function">
+<meta name="twitter:image" content="http://o9bjjf9jh.bkt.clouddn.com/blog/180704/0iL5jffmKA.jpeg?imageslim">
+
+
+
+
+
+
+  <link rel="canonical" href="https://hzqjyyx.github.io/2018/07/Learn Kotlin-Basic/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Learn Kotlin: Overall | 泽强的工作台</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">泽强的工作台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">笔记/科研</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            About</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            Tags</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            Categories</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            Archives</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/07/Learn Kotlin-Basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Learn Kotlin: Overall</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T17:02:59-07:00">2018-07-04</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/Learn Kotlin-Basic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/07/Learn Kotlin-Basic/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180704/0iL5jffmKA.jpeg?imageslim" alt="mark"></p>
+<h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<ul>
+<li>basic type</li>
+<li>class</li>
+<li>function</li>
+</ul>
+<a id="more"></a>
+<h1 id="basic"><a class="markdownIt-Anchor" href="#basic"></a> Basic</h1>
+<h2 id="basic-type"><a class="markdownIt-Anchor" href="#basic-type"></a> Basic Type</h2>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/9kJ7lLjlki.png?imageslim" alt="mark"></p>
+<h2 id="control-flow"><a class="markdownIt-Anchor" href="#control-flow"></a> Control Flow</h2>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/hFjAL0i7Gj.png?imageslim" alt="mark"></p>
+<h1 id="class"><a class="markdownIt-Anchor" href="#class"></a> Class</h1>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/i9m7lEIK51.png?imageslim" alt="mark"></p>
+<h2 id="constructor-property"><a class="markdownIt-Anchor" href="#constructor-property"></a> Constructor &amp; Property</h2>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/DaE7HdIbmD.png?imageslim" alt="mark"></p>
+<h2 id="inheritance"><a class="markdownIt-Anchor" href="#inheritance"></a> Inheritance</h2>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/CLg6ajibhj.png?imageslim" alt="mark"></p>
+<h2 id="specialized-classes"><a class="markdownIt-Anchor" href="#specialized-classes"></a> Specialized classes</h2>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/ALL9hfmKA1.png?imageslim" alt="mark"></p>
+<h2 id="useful-but-difficult"><a class="markdownIt-Anchor" href="#useful-but-difficult"></a> Useful but difficult</h2>
+<p><img src="http://o9bjjf9jh.bkt.clouddn.com/blog/180705/G6b4gKk325.png?imageslim" alt="mark"></p>
+<h1 id="kotlin-glance"><a class="markdownIt-Anchor" href="#kotlin-glance"></a> Kotlin Glance</h1>
+<p>Here you can write a basic, simple and boring kotlin code, but it should be remembered clearly.</p>
+<blockquote>
+<p><a href="https://kotlinlang.org/docs/reference/basic-syntax.html" target="_blank" rel="noopener">https://kotlinlang.org/docs/reference/basic-syntax.html</a></p>
+</blockquote>
+<h2 id="package-specification"><a class="markdownIt-Anchor" href="#package-specification"></a> Package specification</h2>
+<p><strong>Package specification</strong> should be at the top of the source file:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.demo</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*</span><br></pre></td></tr></table></figure>
+<p>It is <strong>NOT</strong> required to match directories and packages: source files can be placed arbitrarily in the file system.</p>
+<h2 id="defining-functions"><a class="markdownIt-Anchor" href="#defining-functions"></a> Defining functions</h2>
+<p>Function having two <code>Int</code> parameters with <code>Int</code> return type:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">sum</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Function with an expression body and inferred return type:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">sum</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span> = a + b</span><br></pre></td></tr></table></figure>
+<p>Function returning no meaningful value:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">printSum</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span>: <span class="built_in">Unit</span> &#123;</span><br><span class="line">    println(<span class="string">"sum of <span class="variable">$a</span> and <span class="variable">$b</span> is <span class="subst">$&#123;a + b&#125;</span>"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Unit</code> return type can be omitted:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">printSum</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">    println(<span class="string">"sum of <span class="variable">$a</span> and <span class="variable">$b</span> is <span class="subst">$&#123;a + b&#125;</span>"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="defining-variables"><a class="markdownIt-Anchor" href="#defining-variables"></a> Defining variables</h2>
+<p>Assign-once (read-only) local variable:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> a: <span class="built_in">Int</span> = <span class="number">1</span>  <span class="comment">// immediate assignment</span></span><br><span class="line"><span class="keyword">val</span> b = <span class="number">2</span>   <span class="comment">// `Int` type is inferred</span></span><br><span class="line"><span class="keyword">val</span> c: <span class="built_in">Int</span>  <span class="comment">// Type required when no initializer is provided</span></span><br><span class="line">c = <span class="number">3</span>       <span class="comment">// deferred assignment</span></span><br></pre></td></tr></table></figure>
+<p>Mutable variable:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span> <span class="comment">// `Int` type is inferred</span></span><br><span class="line">x += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>Top-level variables:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> PI = <span class="number">3.14</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">incrementX</span><span class="params">()</span></span> &#123; </span><br><span class="line">    x += <span class="number">1</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="comments"><a class="markdownIt-Anchor" href="#comments"></a> Comments</h2>
+<p>Just like Java and JavaScript, Kotlin supports end-of-line and block comments.</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// This is an end-of-line comment</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* This is a block comment</span></span><br><span class="line"><span class="comment">   on multiple lines. */</span></span><br></pre></td></tr></table></figure>
+<p>Unlike Java, <strong>block comments</strong> in Kotlin can be nested.</p>
+<h2 id="using-string-templates"><a class="markdownIt-Anchor" href="#using-string-templates"></a> Using string templates</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="comment">// simple name in template:</span></span><br><span class="line"><span class="keyword">val</span> s1 = <span class="string">"a is <span class="variable">$a</span>"</span> </span><br><span class="line">a = <span class="number">2</span></span><br><span class="line"><span class="comment">// arbitrary **expression** in template:</span></span><br><span class="line"><span class="keyword">val</span> s2 = <span class="string">"<span class="subst">$&#123;s1.replace("is", "was")&#125;</span>, but now is <span class="variable">$a</span>"</span></span><br></pre></td></tr></table></figure>
+<h2 id="using-conditional-expressions"><a class="markdownIt-Anchor" href="#using-conditional-expressions"></a> Using conditional expressions</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">maxOf</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Using <em>if</em> as an expression:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">maxOf</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span> = <span class="keyword">if</span> (a &gt; b) a <span class="keyword">else</span> b</span><br></pre></td></tr></table></figure>
+<p>See <a href="https://kotlinlang.org/docs/reference/control-flow.html#if-expression" target="_blank" rel="noopener"><em>if</em>-expressions</a>.</p>
+<h2 id="using-nullable-values-and-checking-for-null"><a class="markdownIt-Anchor" href="#using-nullable-values-and-checking-for-null"></a> Using nullable values and checking for <em>null</em></h2>
+<p>A reference must be explicitly marked as nullable when <em>null</em> value is possible.<br>
+Once the variable can be infered that it can not be null, it will auto-cast to non-nullable variable.</p>
+<p>Return <em>null</em> if <code>str</code> does not hold an integer:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">parseInt</span><span class="params">(str: <span class="type">String</span>)</span></span>: <span class="built_in">Int</span>? &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Use a function returning nullable value:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">printProduct</span><span class="params">(arg1: <span class="type">String</span>, arg2: <span class="type">String</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> x = parseInt(arg1)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> y = parseInt(arg2)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Using `x * y` yields error because they may hold nulls.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (x != <span class="literal">null</span> &amp;&amp; y != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// x and y are automatically cast to non-nullable after null check</span></span><br><span class="line">        println(x * y)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        println(<span class="string">"either '<span class="variable">$arg1</span>' or '<span class="variable">$arg2</span>' is not a number"</span>)</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">if</span> (x == <span class="literal">null</span>) &#123;</span><br><span class="line">    println(<span class="string">"Wrong number format in arg1: '<span class="variable">$arg1</span>'"</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (y == <span class="literal">null</span>) &#123;</span><br><span class="line">    println(<span class="string">"Wrong number format in arg2: '<span class="variable">$arg2</span>'"</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// x and y are automatically cast to non-nullable after null check</span></span><br><span class="line">println(x * y)</span><br></pre></td></tr></table></figure>
+<p>See <a href="https://kotlinlang.org/docs/reference/null-safety.html" target="_blank" rel="noopener">Null-safety</a>.</p>
+<h2 id="using-type-checks-and-automatic-casts"><a class="markdownIt-Anchor" href="#using-type-checks-and-automatic-casts"></a> Using type checks and automatic casts</h2>
+<p>The <em>is</em> operator checks if an expression is an instance of a type. If an <strong>immutable</strong> local variable or property is checked for a specific type, there’s no need to cast it explicitly:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getStringLength</span><span class="params">(obj: <span class="type">Any</span>)</span></span>: <span class="built_in">Int</span>? &#123;</span><br><span class="line">    <span class="keyword">if</span> (obj <span class="keyword">is</span> String) &#123;</span><br><span class="line">        <span class="comment">// `obj` is automatically cast to `String` in this branch</span></span><br><span class="line">        <span class="keyword">return</span> obj.length</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// `obj` is still of type `Any` outside of the type-checked branch</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getStringLength</span><span class="params">(obj: <span class="type">Any</span>)</span></span>: <span class="built_in">Int</span>? &#123;</span><br><span class="line">    <span class="keyword">if</span> (obj !<span class="keyword">is</span> String) <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    <span class="comment">// `obj` is automatically cast to `String` in this branch</span></span><br><span class="line">    <span class="keyword">return</span> obj.length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>or even</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getStringLength</span><span class="params">(obj: <span class="type">Any</span>)</span></span>: <span class="built_in">Int</span>? &#123;</span><br><span class="line">    <span class="comment">// `obj` is automatically cast to `String` on the right-hand side of `&amp;&amp;`</span></span><br><span class="line">    <span class="keyword">if</span> (obj <span class="keyword">is</span> String &amp;&amp; obj.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> obj.length</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>See <a href="https://kotlinlang.org/docs/reference/classes.html" target="_blank" rel="noopener">Classes</a> and <a href="https://kotlinlang.org/docs/reference/typecasts.html" target="_blank" rel="noopener">Type casts</a>.</p>
+<h2 id="using-a-for-loop"><a class="markdownIt-Anchor" href="#using-a-for-loop"></a> Using a <code>for</code> loop</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> items = listOf(<span class="string">"apple"</span>, <span class="string">"banana"</span>, <span class="string">"kiwifruit"</span>)</span><br><span class="line"><span class="keyword">for</span> (item <span class="keyword">in</span> items) &#123;</span><br><span class="line">    println(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> items = listOf(<span class="string">"apple"</span>, <span class="string">"banana"</span>, <span class="string">"kiwifruit"</span>)</span><br><span class="line"><span class="keyword">for</span> (index <span class="keyword">in</span> items.indices) &#123;</span><br><span class="line">    println(<span class="string">"item at <span class="variable">$index</span> is <span class="subst">$&#123;items[index]&#125;</span>"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>See <a href="https://kotlinlang.org/docs/reference/control-flow.html#for-loops" target="_blank" rel="noopener">for loop</a>.</p>
+<h2 id="using-a-while-loop"><a class="markdownIt-Anchor" href="#using-a-while-loop"></a> Using a <code>while</code> loop</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> items = listOf(<span class="string">"apple"</span>, <span class="string">"banana"</span>, <span class="string">"kiwifruit"</span>)</span><br><span class="line"><span class="keyword">var</span> index = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> (index &lt; items.size) &#123;</span><br><span class="line">    println(<span class="string">"item at <span class="variable">$index</span> is <span class="subst">$&#123;items[index]&#125;</span>"</span>)</span><br><span class="line">    index++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>See <a href="https://kotlinlang.org/docs/reference/control-flow.html#while-loops" target="_blank" rel="noopener">while loop</a>.</p>
+<h2 id="using-when-expression"><a class="markdownIt-Anchor" href="#using-when-expression"></a> Using <code>when</code> expression</h2>
+<p>like <code>switch</code></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">describe</span><span class="params">(obj: <span class="type">Any</span>)</span></span>: String =</span><br><span class="line"><span class="keyword">when</span> (obj) &#123;</span><br><span class="line">    <span class="number">1</span>          -&gt; <span class="string">"One"</span></span><br><span class="line">    <span class="string">"Hello"</span>    -&gt; <span class="string">"Greeting"</span></span><br><span class="line">    <span class="keyword">is</span> <span class="built_in">Long</span>    -&gt; <span class="string">"Long"</span></span><br><span class="line">    !<span class="keyword">is</span> String -&gt; <span class="string">"Not a string"</span></span><br><span class="line">    <span class="keyword">else</span>       -&gt; <span class="string">"Unknown"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>See <a href="https://kotlinlang.org/docs/reference/control-flow.html#when-expression" target="_blank" rel="noopener">when expression</a>.</p>
+<h2 id="using-ranges"><a class="markdownIt-Anchor" href="#using-ranges"></a> Using ranges</h2>
+<p>Check if a number is within a range using <em>in</em> operator:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> x = <span class="number">10</span></span><br><span class="line"><span class="keyword">val</span> y = <span class="number">9</span></span><br><span class="line"><span class="keyword">if</span> (x <span class="keyword">in</span> <span class="number">1.</span>.y+<span class="number">1</span>) &#123;</span><br><span class="line">    println(<span class="string">"fits in range"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Check if a number is out of range:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> list = listOf(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>)</span><br><span class="line"><span class="keyword">if</span> (<span class="number">-1</span> !<span class="keyword">in</span> <span class="number">0.</span>.list.lastIndex) &#123;</span><br><span class="line">    println(<span class="string">"-1 is out of range"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (list.size !<span class="keyword">in</span> list.indices) &#123;</span><br><span class="line">    println(<span class="string">"list size is out of valid list indices range too"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Iterating over a range:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> <span class="number">1.</span><span class="number">.5</span>) &#123;</span><br><span class="line">    print(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>or over a progression:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> <span class="number">1.</span><span class="number">.10</span> step <span class="number">2</span>) &#123;</span><br><span class="line">    print(x)</span><br><span class="line">&#125;</span><br><span class="line">println()</span><br><span class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> <span class="number">9</span> downTo <span class="number">0</span> step <span class="number">3</span>) &#123;</span><br><span class="line">    print(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>See <a href="https://kotlinlang.org/docs/reference/ranges.html" target="_blank" rel="noopener">Ranges</a>.</p>
+<h2 id="using-collections"><a class="markdownIt-Anchor" href="#using-collections"></a> Using collections</h2>
+<p>Iterating over a collection:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (item <span class="keyword">in</span> items) &#123;</span><br><span class="line">    println(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Checking if a collection contains an object using <em>in</em> operator:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">when</span> &#123;</span><br><span class="line">    <span class="string">"orange"</span> <span class="keyword">in</span> items -&gt; println(<span class="string">"juicy"</span>)</span><br><span class="line">    <span class="string">"apple"</span> <span class="keyword">in</span> items -&gt; println(<span class="string">"apple is fine too"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Using lambda expressions to filter and map collections:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fruits</span><br><span class="line">.filter &#123; it.startsWith(<span class="string">"a"</span>) &#125;</span><br><span class="line">.sortedBy &#123; it &#125;</span><br><span class="line">.map &#123; it.toUpperCase() &#125;</span><br><span class="line">.forEach &#123; println(it) &#125;</span><br></pre></td></tr></table></figure>
+<p>See <a href="https://kotlinlang.org/docs/reference/lambdas.html" target="_blank" rel="noopener">Higher-order functions and Lambdas</a>.</p>
+<h2 id="creating-basic-classes-and-their-instances"><a class="markdownIt-Anchor" href="#creating-basic-classes-and-their-instances"></a> Creating basic classes and their instances:</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> rectangle = Rectangle(<span class="number">5.0</span>, <span class="number">2.0</span>) <span class="comment">//no 'new' keyword required</span></span><br><span class="line"><span class="keyword">val</span> triangle = Triangle(<span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="idioms"><a class="markdownIt-Anchor" href="#idioms"></a> Idioms</h1>
+<p>A collection of random and frequently used idioms in Kotlin</p>
+<blockquote>
+<p><a href="https://kotlinlang.org/docs/reference/idioms.html" target="_blank" rel="noopener">https://kotlinlang.org/docs/reference/idioms.html</a></p>
+</blockquote>
+<h2 id="creating-dtos-pojospocos"><a class="markdownIt-Anchor" href="#creating-dtos-pojospocos"></a> Creating DTOs (POJOs/POCOs)</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">Customer</span></span>(<span class="keyword">var</span> name: String, <span class="keyword">val</span> email: String)</span><br><span class="line"><span class="comment">// name can be changed, while email can not be changed</span></span><br></pre></td></tr></table></figure>
+<p>provides a <code>Customer</code> class with the following functionality:</p>
+<ul>
+<li>getters (and setters in case of <em>var</em>s) for all properties</li>
+<li><code>equals()</code></li>
+<li><code>hashCode()</code></li>
+<li><code>toString()</code></li>
+<li><code>copy()</code></li>
+<li><code>component1()</code>, <code>component2()</code>, …, for all properties (see <a href="https://kotlinlang.org/docs/reference/data-classes.html" target="_blank" rel="noopener">Data classes</a>)</li>
+</ul>
+<h2 id="default-values-for-function-parameters"><a class="markdownIt-Anchor" href="#default-values-for-function-parameters"></a> Default values for function parameters</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">(a: <span class="type">Int</span> = <span class="number">0</span>, b: <span class="type">String</span> = <span class="string">""</span>)</span></span> &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="filtering-a-list"><a class="markdownIt-Anchor" href="#filtering-a-list"></a> Filtering a list</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> positives = list.filter &#123; x -&gt; x &gt; <span class="number">0</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>Or alternatively, even shorter:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> positives = list.filter &#123; it &gt; <span class="number">0</span> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="string-interpolation"><a class="markdownIt-Anchor" href="#string-interpolation"></a> String Interpolation</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">println(<span class="string">"Name <span class="variable">$name</span>"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="instance-checks"><a class="markdownIt-Anchor" href="#instance-checks"></a> Instance Checks</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">when</span> (x) &#123;</span><br><span class="line">    <span class="keyword">is</span> Foo -&gt; ...</span><br><span class="line">    <span class="keyword">is</span> Bar -&gt; ...</span><br><span class="line">    <span class="keyword">else</span>   -&gt; ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="traversing-a-maplist-of-pairs"><a class="markdownIt-Anchor" href="#traversing-a-maplist-of-pairs"></a> Traversing a map/list of pairs</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ((k, v) <span class="keyword">in</span> map) &#123;</span><br><span class="line">    println(<span class="string">"<span class="variable">$k</span> -&gt; <span class="variable">$v</span>"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>k</code>, <code>v</code> can be called anything.</p>
+<h2 id="using-ranges-2"><a class="markdownIt-Anchor" href="#using-ranges-2"></a> Using ranges</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1.</span><span class="number">.100</span>) &#123; ... &#125;  <span class="comment">// closed range: includes 100</span></span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span> until <span class="number">100</span>) &#123; ... &#125; <span class="comment">// half-open range: does not include 100</span></span><br><span class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> <span class="number">2.</span><span class="number">.10</span> step <span class="number">2</span>) &#123; ... &#125;</span><br><span class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> <span class="number">10</span> downTo <span class="number">1</span>) &#123; ... &#125;</span><br><span class="line"><span class="keyword">if</span> (x <span class="keyword">in</span> <span class="number">1.</span><span class="number">.10</span>) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="read-only-list"><a class="markdownIt-Anchor" href="#read-only-list"></a> Read-only list</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> list = listOf(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="read-only-map"><a class="markdownIt-Anchor" href="#read-only-map"></a> Read-only map</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> map = mapOf(<span class="string">"a"</span> to <span class="number">1</span>, <span class="string">"b"</span> to <span class="number">2</span>, <span class="string">"c"</span> to <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="accessing-a-map"><a class="markdownIt-Anchor" href="#accessing-a-map"></a> Accessing a map</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(map[<span class="string">"key"</span>])</span><br><span class="line">map[<span class="string">"key"</span>] = value</span><br></pre></td></tr></table></figure>
+<h2 id="lazy-property"><a class="markdownIt-Anchor" href="#lazy-property"></a> Lazy property</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> p: String <span class="keyword">by</span> lazy &#123;</span><br><span class="line">    <span class="comment">// compute the string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="extension-functions"><a class="markdownIt-Anchor" href="#extension-functions"></a> Extension Functions</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> String.<span class="title">spaceToCamelCase</span><span class="params">()</span></span> &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="string">"Convert this to camelcase"</span>.spaceToCamelCase()</span><br></pre></td></tr></table></figure>
+<h2 id="creating-a-singleton"><a class="markdownIt-Anchor" href="#creating-a-singleton"></a> Creating a singleton</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">object</span> Resource &#123;</span><br><span class="line">    <span class="keyword">val</span> name = <span class="string">"Name"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="if-not-null-shorthand"><a class="markdownIt-Anchor" href="#if-not-null-shorthand"></a> If not null shorthand</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> files = File(<span class="string">"Test"</span>).listFiles()</span><br><span class="line"></span><br><span class="line">println(files?.size)</span><br></pre></td></tr></table></figure>
+<h3 id="if-not-null-and-else-shorthand"><a class="markdownIt-Anchor" href="#if-not-null-and-else-shorthand"></a> If not null and else shorthand</h3>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> files = File(<span class="string">"Test"</span>).listFiles()</span><br><span class="line"></span><br><span class="line">println(files?.size ?: <span class="string">"empty"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="executing-a-statement-if-null"><a class="markdownIt-Anchor" href="#executing-a-statement-if-null"></a> Executing a statement if null</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> values = ...</span><br><span class="line"><span class="keyword">val</span> email = values[<span class="string">"email"</span>] ?: <span class="keyword">throw</span> IllegalStateException(<span class="string">"Email is missing!"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="get-first-item-of-a-possibly-empty-collection"><a class="markdownIt-Anchor" href="#get-first-item-of-a-possibly-empty-collection"></a> Get first item of a possibly empty collection</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> emails = ... <span class="comment">// might be empty</span></span><br><span class="line"><span class="keyword">val</span> mainEmail = emails.firstOrNull() ?: <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<h2 id="execute-if-not-null"><a class="markdownIt-Anchor" href="#execute-if-not-null"></a> Execute if not null</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> value = ...</span><br><span class="line"></span><br><span class="line">value?.let &#123;</span><br><span class="line">    ... <span class="comment">// execute this block if not null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="map-nullable-value-if-not-null"><a class="markdownIt-Anchor" href="#map-nullable-value-if-not-null"></a> Map nullable value if not null</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> value = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> mapped = value?.let &#123; transformValue(it) &#125; ?: defaultValueIfValueIsNull</span><br></pre></td></tr></table></figure>
+<h2 id="return-on-when-statement"><a class="markdownIt-Anchor" href="#return-on-when-statement"></a> Return on when statement</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">transform</span><span class="params">(color: <span class="type">String</span>)</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">when</span> (color) &#123;</span><br><span class="line">        <span class="string">"Red"</span> -&gt; <span class="number">0</span></span><br><span class="line">        <span class="string">"Green"</span> -&gt; <span class="number">1</span></span><br><span class="line">        <span class="string">"Blue"</span> -&gt; <span class="number">2</span></span><br><span class="line">        <span class="keyword">else</span> -&gt; <span class="keyword">throw</span> IllegalArgumentException(<span class="string">"Invalid color param value"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="trycatch-expression"><a class="markdownIt-Anchor" href="#trycatch-expression"></a> ‘try/catch’ expression</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">test</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> result = <span class="keyword">try</span> &#123;</span><br><span class="line">        count()</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e: ArithmeticException) &#123;</span><br><span class="line">        <span class="keyword">throw</span> IllegalStateException(e)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Working with result</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="if-expression"><a class="markdownIt-Anchor" href="#if-expression"></a> ‘if’ expression</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">(param: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> result = <span class="keyword">if</span> (param == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="string">"one"</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (param == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="string">"two"</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="string">"three"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="builder-style-usage-of-methods-that-return-unit"><a class="markdownIt-Anchor" href="#builder-style-usage-of-methods-that-return-unit"></a> Builder-style usage of methods that return <code>Unit</code></h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">arrayOfMinusOnes</span><span class="params">(size: <span class="type">Int</span>)</span></span>: IntArray &#123;</span><br><span class="line">    <span class="keyword">return</span> IntArray(size).apply &#123; fill(<span class="number">-1</span>) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="single-expression-functions"><a class="markdownIt-Anchor" href="#single-expression-functions"></a> Single-expression functions</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">theAnswer</span><span class="params">()</span></span> = <span class="number">42</span></span><br></pre></td></tr></table></figure>
+<p>This is equivalent to</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">theAnswer</span><span class="params">()</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">42</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This can be effectively combined with other idioms, leading to shorter code. E.g. with the <em>when</em>-expression:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">transform</span><span class="params">(color: <span class="type">String</span>)</span></span>: <span class="built_in">Int</span> = <span class="keyword">when</span> (color) &#123;</span><br><span class="line">    <span class="string">"Red"</span> -&gt; <span class="number">0</span></span><br><span class="line">    <span class="string">"Green"</span> -&gt; <span class="number">1</span></span><br><span class="line">    <span class="string">"Blue"</span> -&gt; <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span> -&gt; <span class="keyword">throw</span> IllegalArgumentException(<span class="string">"Invalid color param value"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="calling-multiple-methods-on-an-object-instance-with"><a class="markdownIt-Anchor" href="#calling-multiple-methods-on-an-object-instance-with"></a> Calling multiple methods on an object instance (‘with’)</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Turtle</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">penDown</span><span class="params">()</span></span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">penUp</span><span class="params">()</span></span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">turn</span><span class="params">(degrees: <span class="type">Double</span>)</span></span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">forward</span><span class="params">(pixels: <span class="type">Double</span>)</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> myTurtle = Turtle()</span><br><span class="line">with(myTurtle) &#123; <span class="comment">//draw a 100 pix square</span></span><br><span class="line">    penDown()</span><br><span class="line">    <span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1.</span><span class="number">.4</span>) &#123;</span><br><span class="line">        forward(<span class="number">100.0</span>)</span><br><span class="line">        turn(<span class="number">90.0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    penUp()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="java-7s-try-with-resources"><a class="markdownIt-Anchor" href="#java-7s-try-with-resources"></a> Java 7’s try with resources</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> stream = Files.newInputStream(Paths.<span class="keyword">get</span>(<span class="string">"/some/file.txt"</span>))</span><br><span class="line">stream.buffered().reader().use &#123; reader -&gt;</span><br><span class="line">    println(reader.readText())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="convenient-form-for-a-generic-function-that-requires-the-generic-type-information"><a class="markdownIt-Anchor" href="#convenient-form-for-a-generic-function-that-requires-the-generic-type-information"></a> Convenient form for a generic function that requires the generic type information</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  public final class Gson &#123;</span></span><br><span class="line"><span class="comment">//     ...</span></span><br><span class="line"><span class="comment">//     public &lt;T&gt; T fromJson(JsonElement json, Class&lt;T&gt; classOfT) throws JsonSyntaxException &#123;</span></span><br><span class="line"><span class="comment">//     ...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="function"><span class="keyword">fun</span> <span class="type">&lt;<span class="keyword">reified</span> T: Any&gt;</span> Gson.<span class="title">fromJson</span><span class="params">(json: <span class="type">JsonElement</span>)</span></span>: T = <span class="keyword">this</span>.fromJson(json, T::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>)</span></span><br></pre></td></tr></table></figure>
+<h2 id="consuming-a-nullable-boolean"><a class="markdownIt-Anchor" href="#consuming-a-nullable-boolean"></a> Consuming a nullable Boolean</h2>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> b: <span class="built_in">Boolean</span>? = ...</span><br><span class="line"><span class="keyword">if</span> (b == <span class="literal">true</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// `b` is false or null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/todo/" rel="tag"># todo</a>
+          
+            <a href="/tags/language/" rel="tag"># language</a>
+          
+            <a href="/tags/kotlin/" rel="tag"># kotlin</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/Algorithm-04-Graph/" rel="next" title="Algorithm(04): Graph">
+                <i class="fa fa-chevron-left"></i> Algorithm(04): Graph
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/线性代数/" rel="prev" title="线性代数">
+                线性代数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">黄泽强（Zeqiang Huang)</p>
+              <p class="site-description motion-element" itemprop="description">笔记/科研</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/hzqjyyx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          
+          <div id="toc-div" class="post-toc" style="display:block">
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-idea"><span class="nav-number">1.</span> <span class="nav-text"> Basic Idea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#basic"><span class="nav-number">2.</span> <span class="nav-text"> Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-type"><span class="nav-number">2.1.</span> <span class="nav-text"> Basic Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#control-flow"><span class="nav-number">2.2.</span> <span class="nav-text"> Control Flow</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class"><span class="nav-number">3.</span> <span class="nav-text"> Class</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor-property"><span class="nav-number">3.1.</span> <span class="nav-text"> Constructor &amp; Property</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inheritance"><span class="nav-number">3.2.</span> <span class="nav-text"> Inheritance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#specialized-classes"><span class="nav-number">3.3.</span> <span class="nav-text"> Specialized classes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useful-but-difficult"><span class="nav-number">3.4.</span> <span class="nav-text"> Useful but difficult</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kotlin-glance"><span class="nav-number">4.</span> <span class="nav-text"> Kotlin Glance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#package-specification"><span class="nav-number">4.1.</span> <span class="nav-text"> Package specification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defining-functions"><span class="nav-number">4.2.</span> <span class="nav-text"> Defining functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defining-variables"><span class="nav-number">4.3.</span> <span class="nav-text"> Defining variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comments"><span class="nav-number">4.4.</span> <span class="nav-text"> Comments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-string-templates"><span class="nav-number">4.5.</span> <span class="nav-text"> Using string templates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-conditional-expressions"><span class="nav-number">4.6.</span> <span class="nav-text"> Using conditional expressions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-nullable-values-and-checking-for-null"><span class="nav-number">4.7.</span> <span class="nav-text"> Using nullable values and checking for null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-type-checks-and-automatic-casts"><span class="nav-number">4.8.</span> <span class="nav-text"> Using type checks and automatic casts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-a-for-loop"><span class="nav-number">4.9.</span> <span class="nav-text"> Using a for loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-a-while-loop"><span class="nav-number">4.10.</span> <span class="nav-text"> Using a while loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-when-expression"><span class="nav-number">4.11.</span> <span class="nav-text"> Using when expression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-ranges"><span class="nav-number">4.12.</span> <span class="nav-text"> Using ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-collections"><span class="nav-number">4.13.</span> <span class="nav-text"> Using collections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#creating-basic-classes-and-their-instances"><span class="nav-number">4.14.</span> <span class="nav-text"> Creating basic classes and their instances:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#idioms"><span class="nav-number">5.</span> <span class="nav-text"> Idioms</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#creating-dtos-pojospocos"><span class="nav-number">5.1.</span> <span class="nav-text"> Creating DTOs (POJOs/POCOs)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#default-values-for-function-parameters"><span class="nav-number">5.2.</span> <span class="nav-text"> Default values for function parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filtering-a-list"><span class="nav-number">5.3.</span> <span class="nav-text"> Filtering a list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-interpolation"><span class="nav-number">5.4.</span> <span class="nav-text"> String Interpolation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instance-checks"><span class="nav-number">5.5.</span> <span class="nav-text"> Instance Checks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#traversing-a-maplist-of-pairs"><span class="nav-number">5.6.</span> <span class="nav-text"> Traversing a map/list of pairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-ranges-2"><span class="nav-number">5.7.</span> <span class="nav-text"> Using ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#read-only-list"><span class="nav-number">5.8.</span> <span class="nav-text"> Read-only list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#read-only-map"><span class="nav-number">5.9.</span> <span class="nav-text"> Read-only map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#accessing-a-map"><span class="nav-number">5.10.</span> <span class="nav-text"> Accessing a map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lazy-property"><span class="nav-number">5.11.</span> <span class="nav-text"> Lazy property</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extension-functions"><span class="nav-number">5.12.</span> <span class="nav-text"> Extension Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#creating-a-singleton"><span class="nav-number">5.13.</span> <span class="nav-text"> Creating a singleton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if-not-null-shorthand"><span class="nav-number">5.14.</span> <span class="nav-text"> If not null shorthand</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-not-null-and-else-shorthand"><span class="nav-number">5.14.1.</span> <span class="nav-text"> If not null and else shorthand</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#executing-a-statement-if-null"><span class="nav-number">5.15.</span> <span class="nav-text"> Executing a statement if null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-first-item-of-a-possibly-empty-collection"><span class="nav-number">5.16.</span> <span class="nav-text"> Get first item of a possibly empty collection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#execute-if-not-null"><span class="nav-number">5.17.</span> <span class="nav-text"> Execute if not null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map-nullable-value-if-not-null"><span class="nav-number">5.18.</span> <span class="nav-text"> Map nullable value if not null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return-on-when-statement"><span class="nav-number">5.19.</span> <span class="nav-text"> Return on when statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trycatch-expression"><span class="nav-number">5.20.</span> <span class="nav-text"> ‘try/catch’ expression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if-expression"><span class="nav-number">5.21.</span> <span class="nav-text"> ‘if’ expression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#builder-style-usage-of-methods-that-return-unit"><span class="nav-number">5.22.</span> <span class="nav-text"> Builder-style usage of methods that return Unit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#single-expression-functions"><span class="nav-number">5.23.</span> <span class="nav-text"> Single-expression functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calling-multiple-methods-on-an-object-instance-with"><span class="nav-number">5.24.</span> <span class="nav-text"> Calling multiple methods on an object instance (‘with’)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-7s-try-with-resources"><span class="nav-number">5.25.</span> <span class="nav-text"> Java 7’s try with resources</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convenient-form-for-a-generic-function-that-requires-the-generic-type-information"><span class="nav-number">5.26.</span> <span class="nav-text"> Convenient form for a generic function that requires the generic type information</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#consuming-a-nullable-boolean"><span class="nav-number">5.27.</span> <span class="nav-text"> Consuming a nullable Boolean</span></a></li></ol></li></ol></div>
+            
+          </div>
+
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://hzqjyyx.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://hzqjyyx.github.io/2018/07/Learn Kotlin-Basic/';
+        this.page.identifier = '2018/07/Learn Kotlin-Basic/';
+        this.page.title = 'Learn Kotlin: Overall';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hzqjyyx.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -109,6 +109,7 @@
 <meta property="og:url" content="https://hzqjyyx.github.io/page/3/index.html">
 <meta property="og:site_name" content="泽强的工作台">
 <meta property="og:description" content="笔记/科研">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="泽强的工作台">
 <meta name="twitter:description" content="笔记/科研">
@@ -167,7 +168,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -311,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/01/Github Open Source for Android Dev/">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/06/Algorithm-02-1-Order-Statistic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
@@ -330,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/Github Open Source for Android Dev/" itemprop="url">Open Source for Android Dev (Part I)</a></h1>
+                <a class="post-title-link" href="/2018/06/Algorithm-02-1-Order-Statistic/" itemprop="url">Algorithm(02-1): Order Statistic</a></h1>
         
 
         <div class="post-meta">
@@ -342,7 +343,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-24T09:42:44-08:00">2018-01-24</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-07T09:59:28-07:00">2018-06-07</time>
             
 
             
@@ -352,6 +353,31 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -360,9 +386,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/Github Open Source for Android Dev/#comments" itemprop="discussionUrl">
+                <a href="/2018/06/Algorithm-02-1-Order-Statistic/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/Github Open Source for Android Dev/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/06/Algorithm-02-1-Order-Statistic/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,6 +399,24 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -391,16 +435,602 @@
 
       
         
-          <p>A collection of awesome open sources for android development in github.</p>
-<p>I have stared lots of awesome librarys. However, after 2 years, I realized that I could not find more information if the librarys are just stay at github stars. The clearer and more efficient to organize them is using my own blog. And it is the draft post. I plan to:</p>
+          <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<ul>
+<li>quick select</li>
+<li>order statistic tree</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/Algorithm-02-1-Order-Statistic/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/06/Algorithm-02-0-Sorting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/Algorithm-02-0-Sorting/" itemprop="url">Algorithm(02): Sorting</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-06T10:35:35-07:00">2018-06-06</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/Algorithm-02-0-Sorting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/Algorithm-02-0-Sorting/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<ul>
+<li>analysis comparison sort</li>
+<li>insertion sort</li>
+<li>selection sort</li>
+<li>merge sort
+<ul>
+<li>array</li>
+<li>linked list</li>
+<li>N(3)-way merge sort</li>
+</ul>
+</li>
+<li>heap sort</li>
+<li>quick sort
+<ul>
+<li>array</li>
+<li>linked list</li>
+<li>iterative</li>
+</ul>
+</li>
+<li>counting sort</li>
+<li>radix sort</li>
+<li>bucket sort</li>
+<li>summary</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/Algorithm-02-0-Sorting/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/06/Algorithm-01-2-Greedy-Algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/Algorithm-01-2-Greedy-Algorithm/" itemprop="url">Algorithm(01-2): Greedy Algorithm</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-02T18:09:27-07:00">2018-06-02</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/Algorithm-01-2-Greedy-Algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/Algorithm-01-2-Greedy-Algorithm/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<ul>
+<li>activity selection</li>
+<li>Huffman code</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/Algorithm-01-2-Greedy-Algorithm/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/06/Algorithm-01-1-Dynamic-Programming/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/Algorithm-01-1-Dynamic-Programming/" itemprop="url">Algorithm(01-1): Dynamic Programming</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-01T16:07:13-07:00">2018-06-01</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/Algorithm-01-1-Dynamic-Programming/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/Algorithm-01-1-Dynamic-Programming/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
+<p>Here are some examples of dynamic programming</p>
+<ul>
+<li>rod-cut problem</li>
+<li>matrix-chaining multiplication</li>
+<li>longest common subsequence</li>
+<li>optimal binary search tree</li>
+</ul>
+<p>Here it is important to state the four steps when apply the dp algorithm.</p>
 <ol>
-<li>Add all of useful library I have stared, which you could see here: [<a href="https://github.com/hzqjyyx?tab=stars" target="_blank" rel="noopener">https://github.com/hzqjyyx?tab=stars</a>].</li>
-<li>Orgainzed them in two-level category.</li>
+<li>Characterize the structure of an optimal solution.</li>
+<li>Recursively deﬁne the value of an optimal solution.</li>
+<li>Compute the value of an optimal solution, typically in a bottom-up fashion.</li>
+<li>Construct an optimal solution from computed information.</li>
 </ol>
-<p>Doing and Improving. 😃</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/Github Open Source for Android Dev/#more" rel="contents">
+            <a class="btn" href="/2018/06/Algorithm-01-1-Dynamic-Programming/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -456,7 +1086,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/11/C-Language-Learning/">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/05/Algorithm-01-0-Concepts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
@@ -475,7 +1105,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/C-Language-Learning/" itemprop="url">C Language Learning</a></h1>
+                <a class="post-title-link" href="/2018/05/Algorithm-01-0-Concepts/" itemprop="url">Algorithm(01): Concepts</a></h1>
         
 
         <div class="post-meta">
@@ -487,7 +1117,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-26T10:42:44-08:00">2017-11-26</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-31T10:35:24-07:00">2018-05-31</time>
             
 
             
@@ -497,6 +1127,31 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -505,9 +1160,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/C-Language-Learning/#comments" itemprop="discussionUrl">
+                <a href="/2018/05/Algorithm-01-0-Concepts/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/C-Language-Learning/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/Algorithm-01-0-Concepts/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -518,6 +1173,24 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -536,916 +1209,244 @@
 
       
         
-          <h3 id="c-language"><a class="markdownIt-Anchor" href="#c-language"></a> C Language</h3>
-<h4 id="array"><a class="markdownIt-Anchor" href="#array"></a> Array</h4>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// initialize</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">block_t</span> *heap_listp[MAX_CLASS] = &#123;<span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>&#125;;</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">block_t</span> *heap_listp[MAX_CLASS] = &#123;<span class="literal">NULL</span>&#125;;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/C-Language-Learning/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/07/JavaScript-Introduction/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="泽强的工作台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/JavaScript-Introduction/" itemprop="url">JavaScript Re-Introduction</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T10:27:29-07:00">2017-07-21</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/JavaScript-Introduction/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/JavaScript-Introduction/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h1>
-<p>This is a mini-version of <i class="fa fa-hand-o-right"></i><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank" rel="noopener">A Re-introduction to JavaScript</a>.</p>
-<p>Why a re-introduction? Because JavaScript is notorious for being the world’s most misunderstood programming language.</p>
-<p>JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/JavaScript-Introduction/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/05/重置Android Studio/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="泽强的工作台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/重置Android Studio/" itemprop="url">使用命令行删除Android Studio（Mac）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-25T15:54:09-07:00">2017-05-25</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/重置Android Studio/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/重置Android Studio/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Android Studio被玩坏了，打算全部清除一遍，然而在Mac上删除桌面程序仅仅是拖到垃圾箱是不够的，还需要把配置文件清楚一下。在网上找了一个教程，非常有用。</p>
-<blockquote>
-<p>Dwarf_Lin</p>
-<p><i class="fa fa-hand-o-right"></i><a href="http://blog.csdn.net/qq_21996633/article/details/51079380" target="_blank" rel="noopener">在Mac上完全删除android studio初始配置文件</a></p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/重置Android Studio/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/05/数学公式和Markdown的结合/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="泽强的工作台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/数学公式和Markdown的结合/" itemprop="url">数学公式和Markdown的结合</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-12T14:37:25-07:00">2017-05-12</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/数学公式和Markdown的结合/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/数学公式和Markdown的结合/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="mathjax"><a class="markdownIt-Anchor" href="#mathjax"></a> MathJax</h1>
-<blockquote>
-<p><strong>Beautiful math in all browsers</strong></p>
-<p>A JavaScript display engine for mathematics that works in all browsers.<br>
-No more setup for readers. It just works.</p>
-</blockquote>
-<p>MathJax是一个js库，能用简洁的语法生成出版级的公式，支持LaTeX，Tex，MathML等等，感觉是搞学术的必备啊！</p>
-<p>安装其实就一句话（任何网页下）：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> <span class="keyword">async</span></span><br><span class="line">  src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/数学公式和Markdown的结合/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/05/机器学习：一些需要知道的知识-论文翻译/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="泽强的工作台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/机器学习：一些需要知道的知识-论文翻译/" itemprop="url">机器学习：一些需要知道的知识-论文翻译</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-11T21:10:49-07:00">2017-05-11</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/机器学习：一些需要知道的知识-论文翻译/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/机器学习：一些需要知道的知识-论文翻译/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="a-few-useful-things-to-know-about-machine-learning"><a class="markdownIt-Anchor" href="#a-few-useful-things-to-know-about-machine-learning"></a> A Few Useful Things to Know about Machine Learning</h1>
-<p><em>Pedro Domingos</em><br>
-<em>Department of Computer Science and Engineering</em><br>
-<em>University of Washington</em><br>
-<em>Seattle, WA 98195-2350, U.S.A.</em><br>
-<em><a href="mailto:pedrod@cs.washington.edu" target="_blank" rel="noopener">pedrod@cs.washington.edu</a></em></p>
-<h1 id="摘要"><a class="markdownIt-Anchor" href="#摘要"></a> 摘要</h1>
-<p>机器学习算法可以从训练集中泛化（generalize），自动编程完成重要任务。对于手动编程来说，这通常是不可行和高成本的。随着时代发展，我们可以获得更多的数据，可以解决更多的困难的问题。因此，机器学习被广泛应用于计算机科学等领域。然而，开发成功的机器学习应用程序需要大量的“black art”，这些东西在教科书中很难找到的。本文总结了机器学习研究人员和从业人员学到的12个关键点。这些包括要避免的陷阱，重点关注的问题和常见问题的答案。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/机器学习：一些需要知道的知识-论文翻译/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-    
-  
-
-  
-
-  <article class="post post-type-normal post-sticky" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/05/如何免费搭建个人博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="泽强的工作台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                  <span class="post-sticky-flag" title="Sticky">
-                    <i class="fa fa-thumb-tack"></i>
-                  </span>
-                
-                <a class="post-title-link" href="/2017/05/如何免费搭建个人博客/" itemprop="url">如何免费搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-07T18:38:15-07:00">2017-05-07</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/如何免费搭建个人博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/如何免费搭建个人博客/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p><strong>备注</strong>：必做或强烈推荐阅读的网址，会有<i class="fa fa-hand-o-right"></i>标识：<br>
-eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推荐阅读</a><br>
-本文部分步骤采用直接贴上网址的方式，以压缩篇幅。请多注意</p>
-</blockquote>
-<h1 id="现在有什么方式可以来搭建博客呢"><a class="markdownIt-Anchor" href="#现在有什么方式可以来搭建博客呢"></a> 现在有什么方式可以来搭建博客呢</h1>
+          <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
 <ul>
-<li>搭建个人服务器，在服务器上安装WordPress，Hexo，Jekyll或者自己实现一套博客系统
+<li>what is algorithm</li>
+<li>how to analysis an algorithm</li>
+<li>master method</li>
+<li>randomized algorithm</li>
+<li>divide and conquer</li>
+<li>dynamic programming</li>
+<li>greedy</li>
+<li>hashing</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/Algorithm-01-0-Concepts/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/05/SOC-Final-Review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/SOC-Final-Review/" itemprop="url">SOC: Final Review</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-07T17:46:21-07:00">2018-05-07</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/reviews/" itemprop="url" rel="index"><span itemprop="name">reviews</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/SOC-Final-Review/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/SOC-Final-Review/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="basic-idea"><a class="markdownIt-Anchor" href="#basic-idea"></a> Basic Idea</h1>
 <ul>
-<li>优点：可定制性好，能够随意更改behavior，添加更多有趣的功能</li>
-<li>缺点：可能大多数时间不是在写博客而是在写代码。。。，付费（很低）</li>
+<li>Basic
+<ul>
+<li>soa, soc, ws</li>
+<li>soap-ws/rest</li>
+<li>lda</li>
+<li>ecosystem, IT-enabled</li>
+<li>lifecycle, web x.0</li>
 </ul>
 </li>
-<li><a href="http://WordPress.com" target="_blank" rel="noopener">WordPress.com</a>，在线服务
+<li>XML &amp; JSON
 <ul>
-<li>优点：可定制性也蛮高的，各种服务，如评论，页面统计都已经做的很好</li>
-<li>缺点：但是改起来受到各种条条框框约束</li>
+<li>xml, dtd, xml schema</li>
+<li>xpath, xslt, namespace</li>
+<li>json</li>
 </ul>
 </li>
-<li>Farbox在线服务等</li>
-<li>使用Jekyll + Github Pages</li>
-<li>使用Hexo + Github Pages</li>
-</ul>
-<p>后两者搭建简单，免费，主题丰富，借用Gtihub的服务甚至连CDN都已经帮你做好了。但是这是纯粹的静态页面，很多需要交互的功能都要自己动手添加，比如评论，页面统计等等。</p>
-<p>把上面几个通通看了一遍，实在是喜欢Hexo上的NexT主题，<strong>界面简洁大方，可定制性高，而且第三方服务集成特别方便</strong>，简直是一个完美的主题。</p>
-<p>第一开始写博客，暂时还不需要那么多定制功能，先用这个！（其实现在其他平台也已经有仿NexT的主题了，大家可以看看，我就先不尝鲜啦）</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/如何免费搭建个人博客/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="泽强的工作台">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/" itemprop="url">如何搭建深度学习平台：Python, TensorFlow</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-07T15:24:49-07:00">2017-04-07</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>备注</strong>：必做或强烈推荐阅读的网址，会有<i class="fa fa-hand-o-right"></i>标识：<br>
-eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推荐阅读</a></p>
-<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>最近准备学习神经网络，尝试搭建了各个库，最后选择了TensorFlow。期间遇到大量问题，所幸通过Google一一解决，现留做记录。</p>
-<p>说来到是不难，只是非常繁杂，希望这份记录能让新入门的朋友或者等我以后换一台电脑的时候有所帮助 😃</p>
-<h1 id="为什么要使用tensorflow"><a class="markdownIt-Anchor" href="#为什么要使用tensorflow"></a> 为什么要使用TensorFlow</h1>
-<p>首先列出来目前非常火的几个深度学习的平台</p>
+<li>Web Service
 <ul>
-<li>TensorFlow</li>
-<li>Theano</li>
-<li>Caffe</li>
-<li>Caffe2</li>
-<li>Matlab</li>
-<li>Keras</li>
-<li>待补充</li>
+<li>soap, wsdl</li>
+<li>http, service broker</li>
+<li>bpel</li>
+<li>security</li>
+<li>web service standard stack</li>
 </ul>
-<p>还有非常多的可选项，自然，由于诞生时间，针对的细分领域不同，都有各自的优势、劣势。<br>
-下面引用CS231n的PPT简要说明，还有很多我也不太了解，希望大家在下面补充。</p>
+</li>
+<li>Web Service Discovery
+<ul>
+<li>uddi, wsil</li>
+<li>business requirements model, requirements driven services discovery</li>
+<li>service cluster, genetic algorithm</li>
+</ul>
+</li>
+<li>Microservice
+<ul>
+<li>microservice, soa</li>
+<li>suit for cloud computing</li>
+<li>monolith, microservice</li>
+</ul>
+</li>
+<li>Semantic Web
+<ul>
+<li>owl, owl-s</li>
+<li>semantic &amp; sentatic</li>
+<li>rdf, rdfs, sparql, rdf rank</li>
+<li>rdf knowledge, rdf model, sparql query</li>
+</ul>
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/如何搭建深度学习平台：Python-Keras-TensorFlow/#more" rel="contents">
+            <a class="btn" href="/2018/05/SOC-Final-Review/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1501,7 +1502,7 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2016/07/推荐网页/">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/04/概率论06-回归，相关与方差分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
@@ -1520,7 +1521,7 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/推荐网页/" itemprop="url">推荐网页</a></h1>
+                <a class="post-title-link" href="/2018/04/概率论06-回归，相关与方差分析/" itemprop="url">概率论06：回归，相关与方差分析</a></h1>
         
 
         <div class="post-meta">
@@ -1532,7 +1533,7 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-12T14:37:25-07:00">2016-07-12</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T09:24:36-07:00">2018-04-16</time>
             
 
             
@@ -1542,6 +1543,24 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/概率论/" itemprop="url" rel="index"><span itemprop="name">概率论</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1550,9 +1569,9 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/07/推荐网页/#comments" itemprop="discussionUrl">
+                <a href="/2018/04/概率论06-回归，相关与方差分析/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/07/推荐网页/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/04/概率论06-回归，相关与方差分析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1563,6 +1582,24 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -1581,17 +1618,574 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
 
       
         
-          <h1 id="coding"><a class="markdownIt-Anchor" href="#coding"></a> Coding</h1>
-<h2 id="basic"><a class="markdownIt-Anchor" href="#basic"></a> Basic</h2>
-<p><a href="https://people.cs.vt.edu/shaffer/Book/" target="_blank" rel="noopener">Data Structures and Algorithm Analysis</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/26081885" target="_blank" rel="noopener">Stack Overflow 推荐编程书单 - 知乎专栏</a></p>
-<p><a href="http://www.cs.cmu.edu/afs/cs/academic/class/15210-f15/www/" target="_blank" rel="noopener">15210 — Parallel and Sequential Data Structures and Algorithms</a></p>
-<p><a href="https://www.zhihu.com/question/26682382" target="_blank" rel="noopener">CMU有哪些值得一上的算法课？ - 知乎</a></p>
-<p><a href="http://www.cnblogs.com/chkkch/archive/2011/06/24/2089378.html" target="_blank" rel="noopener">CSAPP第五章就在“扯淡”！ - chkkch - 博客园</a></p>
-<p><a href="http://simpleprogrammer.com/2015/03/23/the-ultimate-list-of-programming-books/" target="_blank" rel="noopener">The Ultimate List of Programming Books</a></p>
+          <h1 id="主要内容"><a class="markdownIt-Anchor" href="#主要内容"></a> 主要内容</h1>
+<ul>
+<li>回归的基本概念</li>
+<li>一元线性回归</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fq5sp89yrqj30kz04x0ta.jpg" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/07/推荐网页/#more" rel="contents">
+            <a class="btn" href="/2018/04/概率论06-回归，相关与方差分析/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/04/概率论05-假设检验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/概率论05-假设检验/" itemprop="url">概率论05：假设检验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T09:24:03-07:00">2018-04-16</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/概率论/" itemprop="url" rel="index"><span itemprop="name">概率论</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/概率论05-假设检验/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/概率论05-假设检验/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="主要内容"><a class="markdownIt-Anchor" href="#主要内容"></a> 主要内容</h1>
+<ul>
+<li>检验假设的基本内容</li>
+<li>功效函数，两类错误，检验的水平</li>
+<li>重要参数假设</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fq5sp89yrqj30kz04x0ta.jpg" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/概率论05-假设检验/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/04/概率论04-参数估计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/概率论04-参数估计/" itemprop="url">概率论04：参数估计</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T09:23:46-07:00">2018-04-16</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/概率论/" itemprop="url" rel="index"><span itemprop="name">概率论</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/概率论04-参数估计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/概率论04-参数估计/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="主要内容"><a class="markdownIt-Anchor" href="#主要内容"></a> 主要内容</h1>
+<ul>
+<li>总体，样本，样本量的基本概念</li>
+<li>点估计：矩估计，极大似然估计，贝叶斯估计</li>
+<li>Something interesting</li>
+<li>区间估计</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fq5sp89yrqj30kz04x0ta.jpg" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/概率论04-参数估计/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzqjyyx.github.io/2018/04/概率论-常见分布/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄泽强（Zeqiang Huang)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="泽强的工作台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/概率论-常见分布/" itemprop="url">概率论：常见分布</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T09:21:43-07:00">2018-04-16</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/概率论/" itemprop="url" rel="index"><span itemprop="name">概率论</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/概率论-常见分布/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/概率论-常见分布/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article&#58;</span>
+                
+                <span title="Symbols count in article"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="主要内容"><a class="markdownIt-Anchor" href="#主要内容"></a> 主要内容</h1>
+<p>包含：</p>
+<ul>
+<li>离散型
+<ul>
+<li>伯努利分布</li>
+<li>二项分布和多项分布</li>
+<li>柏松分布</li>
+</ul>
+</li>
+<li>连续型
+<ul>
+<li>正态分布</li>
+<li>指数分布</li>
+<li>均匀分布</li>
+<li>F分布</li>
+<li>t分布</li>
+<li>卡方分布</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fq5sp89yrqj30kz04x0ta.jpg" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/概率论-常见分布/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1636,7 +2230,7 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1679,7 +2273,7 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1702,7 +2296,13 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1749,7 +2349,55 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1798,12 +2446,19 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">黄泽强（Zeqiang Huang)</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total"></span>
   
 
   
@@ -2296,15 +2951,17 @@ eg：<i class="fa fa-hand-o-right"></i> <a href="https://hzqjyyx.github.io">推�
   
     
       
-    
-      
-    
-      
-    
-      
-    
-      
         
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
